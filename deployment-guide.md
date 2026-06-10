@@ -47,8 +47,8 @@ You also need:
 ## 2. Clone the Repository
 
 ```bash
-git clone https://github.com/VirtualAdam/victros.git
-cd victros
+git clone https://github.com/VirtualAdam/Victros-Archive.git
+cd Victros-Archive
 ```
 
 ---
