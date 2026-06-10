@@ -1,0 +1,807 @@
+[
+  {
+    "key": "weak_problem_definition",
+    "name": "Weak Problem Definition",
+    "description": "Buyer pain is not converted into a compelling problem with measurable consequence.",
+    "summary": "Buyer has not established a clear, measurable problem with meaningful consequences",
+    "trigger_signals": [
+      "problem_not_validated"
+    ],
+    "diagnostic_questions": [
+      "What consequence is associated with the problem, How would the business measure this problem, Why would the business prioritize solving this problem?"
+    ],
+    "root_cause_themes": [
+      "A relevant business problem and desired outcome were not defined in terms meaningful to the buyer",
+      "Consequences of inaction were not articulated or owned by a buyer with influence"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "CRITICAL",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "buyer_urgency"
+    ],
+    "candidate_strategy_path_keys": [
+      "Qualify_CaseForChange",
+      "Identify_Champion_Targets",
+      "Selling_to_Consensus",
+      "Disqualify_or_Deprioritize"
+    ]
+  },
+  {
+    "key": "outcome_misalignment",
+    "name": "Outcome Misalignment",
+    "description": "Buyer has unclear or misaligned desired outcomes, leading to feature-driven conversations.",
+    "summary": "Buyer stakeholders are not aligned on desired outcomes or success criteria",
+    "trigger_signals": [
+      "outcomes_unclear_or_misaligned"
+    ],
+    "diagnostic_questions": [
+      "What does success look like, What future outcomes would justify making a change?"
+    ],
+    "root_cause_themes": [
+      "Seller value framing was not anchored to buyer success criteria",
+      "Sales conversations were focused on features rather than outcomes",
+      "Stakeholder outcomes or decision criteria were misaligned across the consensus"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "CRITICAL",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Qualify_CaseForChange",
+      "Position_Outcomes_Vision",
+      "Selling_to_Consensus"
+    ]
+  },
+  {
+    "key": "commodity_relegation",
+    "name": "Commodity Relegation",
+    "description": "Buyer decision criteria reduce all solutions to interchangeable options, minimizing differentiation and value.",
+    "summary": "Decision criteria favor commodity capabilities or alternatives over your differentiated strengths",
+    "trigger_signals": [
+      "no_differentiated_decision_criteria"
+    ],
+    "diagnostic_questions": [
+      "How has the buyer defined solution selection criteria, Which buyer problems or outcomes are driving the evaluation, What aspects of the solution has the buyer described as meaningfully different or valuable?"
+    ],
+    "root_cause_themes": [
+      "Decision criteria were not shaped around differentiated outcomes",
+      "Internal advocacy did not influence how alternatives were evaluated"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "differentiation_leverage",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Qualify_CaseForChange",
+      "Position_Outcomes_Vision",
+      "Champion_Negotiation"
+    ]
+  },
+  {
+    "key": "champion_absence",
+    "name": "Champion Absence",
+    "description": "No individual is coaching, influencing, or advocating internally.",
+    "summary": "No internal advocate is actively driving the decision forward",
+    "trigger_signals": [
+      "no_named_or_active_champion"
+    ],
+    "diagnostic_questions": [
+      "Who is selling internally on our behalf, Which buyer benefits most from the change, Do supportive buyers meet champion criteria of power, influence, and EB access?"
+    ],
+    "root_cause_themes": [
+      "No qualified internal buyer with power",
+      "influence",
+      "and EB access was identified",
+      "Champion commitment was assumed without behavioral evidence",
+      "Engagement or rapport was treated as proof of advocacy",
+      "No strategic action was requested to validate champion influence",
+      "Trust and alignment required for advocacy were not established",
+      "Champion advocacy was not enabled to shape internal alignment and decisions"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "CRITICAL",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus",
+      "economic_buyer_commitment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Identify_Champion_Targets",
+      "Build_Champion",
+      "Selling_to_Consensus",
+      "Disqualify_or_Deprioritize"
+    ]
+  },
+  {
+    "key": "singlethreaded_risk",
+    "name": "Single‑Threaded Risk",
+    "description": "Only one buyer contact is engaged over a period of time, limiting consensus creation.",
+    "summary": "Only one stakeholder is engaged, limiting consensus formation",
+    "trigger_signals": [
+      "single_threaded_contact"
+    ],
+    "diagnostic_questions": [
+      "Are we repeatedly meeting the same person without expanding stakeholder access, Are there decision-makers or influencers we have not engaged, Has our contact introduced us to additional stakeholders?"
+    ],
+    "root_cause_themes": [
+      "Engagement was limited to a single buyer",
+      "Stakeholder expansion was not intentionally pursued",
+      "Shared decision ownership was not established"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "buyer_consensus",
+      "champion_strength"
+    ],
+    "candidate_strategy_path_keys": [
+      "Identify_Champion_Targets",
+      "Selling_to_Consensus",
+      "Test_Champion",
+      "Decision_Process_Alignment"
+    ]
+  },
+  {
+    "key": "messaging_disconnect",
+    "name": "Messaging Disconnect",
+    "description": "Buyer pushes back on claims, value, or relevance early.",
+    "summary": "Buyer reactions indicate the message is not relevant or compelling to their priorities",
+    "trigger_signals": [
+      "buyer_objections_surfacing_early"
+    ],
+    "diagnostic_questions": [
+      "Is the buyer pushing back on positioning or value claims, Is the buyer unclear on solution relevance to their priorities, Is the buyer misinterpreting what the solution enables or solves?"
+    ],
+    "root_cause_themes": [
+      "Solution value was not translated into persona-specific priorities",
+      "Messaging lacked personal relevance to the individual buyer"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "MEDIUM",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "differentiation_leverage"
+    ],
+    "candidate_strategy_path_keys": [
+      "Position_Outcomes_Vision",
+      "Qualify_CaseForChange",
+      "Selling_to_Consensus"
+    ]
+  },
+  {
+    "key": "competitive_mindshare",
+    "name": "Competitive Mindshare",
+    "description": "Competitor influence appears in buyer language, criteria, or behavior.",
+    "summary": "Buyer language or evaluation steps are leaning toward a competitor’s approach",
+    "trigger_signals": [
+      "competition_gaining_mindshare"
+    ],
+    "diagnostic_questions": [
+      "Is the buyer signaling growing interest in a competitor, Are decision criteria being shaped around competitor strengths, Is the champion unable to influence internal narratives toward our solution?"
+    ],
+    "root_cause_themes": [
+      "Decision criteria were shaped by competitors",
+      "incumbents",
+      "or alternative champions before seller framing",
+      "Champion advocacy did not influence alternative perception",
+      "Competing solutions or priorities gained internal influence without coordinated champion response"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "differentiation_leverage",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Position_Outcomes_Vision",
+      "Build_Champion",
+      "Empower_Champion"
+    ]
+  },
+  {
+    "key": "process_misalignment",
+    "name": "Process Misalignment",
+    "description": "Buyer in process conflict, or wants validation steps that do not support your strengths.",
+    "summary": "Requested decision steps or validation approach do not align to your strengths",
+    "trigger_signals": [
+      "validation_process_misalignment"
+    ],
+    "diagnostic_questions": [
+      "Is the buyer driving a decision process that conflicts with how we win, Have evaluation and purchase steps been confirmed with someone in authority, Are we reacting to requests without a mutually agreed decision path?"
+    ],
+    "root_cause_themes": [
+      "Decision process steps were not fully identified or validated early",
+      "Changes in the decision process were not reconciled"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "decision_process_alignment",
+      "differentiation_leverage"
+    ],
+    "candidate_strategy_path_keys": [
+      "Decision_Process_Alignment",
+      "Test_Champion",
+      "Champion_Negotiation"
+    ]
+  },
+  {
+    "key": "eb_alignment_gap",
+    "name": "EB Alignment Gap",
+    "description": "Economic Buyer hasn't been engaged or has not validated their alignment and support of the purchase.",
+    "summary": "Economic Buyer is not engaged or aligned to the initiative",
+    "trigger_signals": [
+      "no_eb_validation"
+    ],
+    "diagnostic_questions": [
+      "Who has discretionary authority to approve this spend, Has the economic buyer validated alignment on the initiative, Has access to the economic buyer been declined or repeatedly delayed?"
+    ],
+    "root_cause_themes": [
+      "Economic buyer was not aligned on the case for change",
+      "solution",
+      "investment",
+      "or timing",
+      "Economic buyer engagement was delayed",
+      "Economic buyer priorities and constraints were not understood",
+      "Progress was attempted without champion-mediated EB alignment",
+      "EB alignment gaps were not addressed through champion strategy"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "CRITICAL",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "economic_buyer_commitment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Secure_EB_Alignment",
+      "Qualify_CaseForChange",
+      "Test_Champion",
+      "Empower_Champion",
+      "Disqualify_or_Deprioritize"
+    ]
+  },
+  {
+    "key": "stagnant_deal",
+    "name": "Stagnant Deal",
+    "description": "We never built movement to begin with. Activity ≠ progress.",
+    "summary": "Activity is occurring, but the deal is not progressing structurally",
+    "trigger_signals": [
+      "activity_without_progress"
+    ],
+    "diagnostic_questions": [
+      "Is the deal progressing without qualification progress, Are required stakeholders or decision steps not advancing, Is the buyer unclear on next steps?"
+    ],
+    "root_cause_themes": [
+      "A business-critical problem was not owned by the buyer",
+      "Urgency tied to cost of inaction was not established",
+      "Stakeholder expansion across personas and use cases did not occur"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "buyer_urgency",
+      "champion_strength"
+    ],
+    "candidate_strategy_path_keys": [
+      "Qualify_CaseForChange",
+      "Identify_Champion_Targets",
+      "Build_Champion",
+      "Selling_to_Consensus",
+      "Disqualify_or_Deprioritize"
+    ]
+  },
+  {
+    "key": "momentum_loss",
+    "name": "Momentum Loss",
+    "description": "Movement existed but then declined or stopped.",
+    "summary": "Engagement pace or responsiveness is declining across interactions",
+    "trigger_signals": [
+      "slowdowns_or_silence"
+    ],
+    "diagnostic_questions": [
+      "Has buyer responsiveness slowed, Has urgency decreased compared to earlier conversations, Has tone or engagement become hesitant?"
+    ],
+    "root_cause_themes": [
+      "Internal prioritization weakened against competing initiatives",
+      "Champion-led advancement of key deal gaps was not tested",
+      "Momentum remained seller-driven",
+      "Decision ownership and next-step accountability were not reinforced",
+      "Case for change was not presented to sufficient influencers"
+    ],
+    "polarity": "negative",
+    "type": "momentum_risk",
+    "severity": "MEDIUM",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "buyer_urgency",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Qualify_CaseForChange",
+      "Build_Champion",
+      "Test_Champion",
+      "Decision_Process_Alignment",
+      "Empower_Champion"
+    ]
+  },
+  {
+    "key": "validation_disadvantage",
+    "name": "Validation Disadvantage",
+    "description": "Buyer structures validation event around competitor strengths, incumbent approaches, or commodity requirements that erode the seller’s differentiation.",
+    "summary": "Validation approach favors competitor strengths or avoids your differentiation",
+    "trigger_signals": [
+      "validation_process_misalignment",
+      "no_differentiated_decision_criteria",
+      "competition_gaining_mindshare"
+    ],
+    "diagnostic_questions": [
+      "Is the validation plan misaligned with our differentiated strengths, Are test criteria favoring competitor or incumbent capabilities, Are we being evaluated on commodity requirements?"
+    ],
+    "root_cause_themes": [
+      "Validation criteria were defined around competitor or incumbent capabilities",
+      "No champion-led alignment shaped evaluation around differentiated outcomes",
+      "Sales engagement began after validation structure was already defined",
+      "Seller followed buyer validation path without reframing around differentiated outcomes"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "differentiation_leverage",
+      "decision_process_alignment",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Build_Champion",
+      "Test_Champion",
+      "Empower_Champion",
+      "Selling_to_Consensus"
+    ]
+  },
+  {
+    "key": "late_stakeholder_risk",
+    "name": "Late Stakeholder Risk",
+    "description": "A new persona appears late and disrupts scope, criteria, or priorities.",
+    "summary": "New stakeholders are entering late and introducing new requirements or objections",
+    "trigger_signals": [
+      "new_stakeholder_appears_late"
+    ],
+    "diagnostic_questions": [
+      "Has a late stakeholder introduced new friction, Does this stakeholder have influence or veto power, Is the champion unable to align or neutralize this stakeholder?"
+    ],
+    "root_cause_themes": [
+      "Decision process stakeholders were not identified or engaged early",
+      "Stakeholder decision criteria were not validated through a champion",
+      "Late stakeholder introduced new priorities or risks"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "MEDIUM",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "buyer_consensus",
+      "decision_process_alignment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Position_Outcomes_Vision",
+      "Activate_Consensus"
+    ]
+  },
+  {
+    "key": "commercial_misalignment",
+    "name": "Commercial Misalignment",
+    "description": "Pricing or terms conflict emerges due to missing metrics, weak value, or lack of EB alignment.",
+    "summary": "Commercial discussions are misaligned on value, pricing, or terms",
+    "trigger_signals": [
+      "conflict_in_pricing_or_terms"
+    ],
+    "diagnostic_questions": [
+      "Is there friction between pricing or terms and buyer expectations, Is value perception misaligned with the proposal, Has procurement escalated issues unrelated to impact or value?"
+    ],
+    "root_cause_themes": [
+      "Commercial expectations were not aligned to buyer value and success criteria",
+      "Investment justification was not champion-sponsored before commercial discussion",
+      "Conflicting stakeholders introduced commercial risk",
+      "Seller and champion did not align on negotiation interests and boundaries",
+      "Value thresholds and anchor points were not aligned",
+      "Seller reacted to positional demands instead of interest-based options"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "economic_buyer_commitment",
+      "differentiation_leverage"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Champion_Negotiation",
+      "Secure_EB_Alignment"
+    ]
+  },
+  {
+    "key": "adoption_without_conversion",
+    "name": "Adoption Without Conversion",
+    "description": "Product usage is present but has not translated into ownership, decision process, or commercial intent.",
+    "summary": "Usage exists, but no structured buying motion or ownership is forming.",
+    "trigger_signals": [
+      "adoption_without_internal_ownership",
+      "adoption_without_decision_formation"
+    ],
+    "diagnostic_questions": [
+      "Is anyone responsible for driving this internally, Has usage triggered a formal evaluation or buying process, Are stakeholders or commercial steps forming around this usage?"
+    ],
+    "root_cause_themes": [
+      "Usage is not tied to a compelling business problem",
+      "No internal owner has taken responsibility",
+      "Usage has not created urgency or visibility"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "HIGH",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "champion_strength",
+      "decision_process_alignment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Identify_Champion_Targets",
+      "Build_Champion",
+      "Qualify_CaseForChange"
+    ]
+  },
+  {
+    "key": "unqualified_deal",
+    "name": "Unqualified Deal",
+    "description": "No structural foundation exists to justify continued pursuit of the opportunity.",
+    "summary": "A deal is active but lacks the core structural conditions required for a viable decision path.",
+    "trigger_signals": [
+      "problem_not_validated",
+      "no_named_or_active_champion",
+      "no_eb_validation",
+      "activity_without_progress"
+    ],
+    "diagnostic_questions": [
+      "Has a buyer of authority confirmed a compelling problem worth solving?",
+      "Is there a stakeholder willing to sponsor and drive the initiative internally?",
+      "Is there a credible path to Economic Buyer alignment or support?"
+    ],
+    "root_cause_themes": [
+      "No sponsor-backed case for change",
+      "No Champion ownership",
+      "No Economic Buyer alignment or access"
+    ],
+    "polarity": "negative",
+    "type": "structural_risk",
+    "severity": "CRITICAL",
+    "resolution_type": "RECOVER",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "champion_strength",
+      "economic_buyer_commitment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Disqualify_or_Deprioritize"
+    ]
+  },
+  {
+    "key": "high_champion_advocacy",
+    "name": "High Champion Advocacy",
+    "description": "Champion is actively coaching, influencing, and guiding the internal process.",
+    "summary": "Champion is actively advocating, coaching, and driving the deal internally",
+    "trigger_signals": [
+      "champion_coaching_influence"
+    ],
+    "diagnostic_questions": [
+      "Is a buyer proactively selling internally on our behalf, Is the champion creating access and insight beyond seller requests, Is the champion taking unprompted actions demonstrating deal ownership?"
+    ],
+    "root_cause_themes": [
+      "Champion owns an outcome-driven case for change aligned to personal priorities",
+      "A trusted champion with credibility and influence is positioned to sponsor the solution internally"
+    ],
+    "polarity": "positive",
+    "type": "structural_strength",
+    "severity": "HIGH",
+    "resolution_type": "EXIT",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Selling_to_Consensus",
+      "Secure_EB_Alignment"
+    ]
+  },
+  {
+    "key": "eb_sponsorship_motion",
+    "name": "EB Sponsorship Motion",
+    "description": "EB leans in, validating direction and impact.",
+    "summary": "Economic Buyer is engaged and sponsoring the initiative",
+    "trigger_signals": [
+      "economic_buyer_engagement"
+    ],
+    "diagnostic_questions": [
+      "Is the economic buyer directly engaged and supportive, Has the economic buyer validated the problem, outcomes, and investment, Is the economic buyer creating urgency or alignment across stakeholders?"
+    ],
+    "root_cause_themes": [
+      "Economic buyer has validated the problem",
+      "outcomes",
+      "and investment as business priorities",
+      "Champion has influenced the economic buyer to engage as sponsor",
+      "Economic buyer supports the purchase but lacks consensus-backed execution confidence"
+    ],
+    "polarity": "positive",
+    "type": "structural_strength",
+    "severity": "HIGH",
+    "resolution_type": "ADVANCE",
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "case_for_change_strength",
+      "economic_buyer_commitment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Activate_Consensus",
+      "Champion_Negotiation"
+    ]
+  },
+  {
+    "key": "consensus_expansion_momentum",
+    "name": "Consensus Expansion Momentum",
+    "description": "New stakeholders are proactively added to expand and strengthen support.",
+    "summary": "Stakeholder engagement is expanding and consensus is forming",
+    "trigger_signals": [
+      "multi_threading_momentum"
+    ],
+    "diagnostic_questions": [
+      "Are stakeholders being added proactively with positive context, Is access expanding across functions tied to our differentiated outcomes, Are buyers accelerating multi-threading toward selection?"
+    ],
+    "root_cause_themes": [
+      "Stakeholder engagement is driven by an internal sponsor",
+      "Additional stakeholders are engaging as value is recognized",
+      "Consensus expansion is limited by unaddressed stakeholder trust criteria"
+    ],
+    "polarity": "positive",
+    "type": "momentum_strength",
+    "severity": "MEDIUM",
+    "resolution_type": "ADVANCE",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "buyer_consensus",
+      "champion_strength"
+    ],
+    "candidate_strategy_path_keys": [
+      "Activate_Consensus",
+      "Secure_EB_Alignment"
+    ]
+  },
+  {
+    "key": "high_responsiveness_momentum",
+    "name": "High Responsiveness Momentum",
+    "description": "Communication accelerates, indicating internal urgency and strong fit.",
+    "summary": "Buyer engagement is accelerating with faster responses and next steps",
+    "trigger_signals": [
+      "responsiveness_velocity"
+    ],
+    "diagnostic_questions": [
+      "Is the buyer consistently responsive in communication, Are tasks or data returned with urgency, Is responsiveness increasing as the decision approaches?"
+    ],
+    "root_cause_themes": [
+      "Champion-sponsored case for change is prioritized as urgent",
+      "Decision timing is aligned across stakeholders",
+      "Stakeholder communication is accelerating internal alignment"
+    ],
+    "polarity": "positive",
+    "type": "momentum_strength",
+    "severity": "MEDIUM",
+    "resolution_type": "ADVANCE",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "affected_levers": [
+      "buyer_urgency",
+      "champion_strength"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Activate_Consensus"
+    ]
+  },
+  {
+    "key": "validation_advantage",
+    "name": "Validation Advantage",
+    "description": "Buyer structures validation around your solution’s strengths.",
+    "summary": "Validation steps are aligned to your differentiated capabilities",
+    "trigger_signals": [
+      "differentiated_validation_momentum"
+    ],
+    "diagnostic_questions": [
+      "Is the validation plan aligned to our strengths, Are evaluation criteria being shaped in our favor, Are competitors struggling to meet the criteria?"
+    ],
+    "root_cause_themes": [
+      "Validation is co-designed with a champion aligned to success criteria",
+      "Evaluation criteria favor differentiated outcomes",
+      "Stakeholders collaborate on validation aligned to solution strengths",
+      "Validation confirms preferred solution but commercial alignment is incomplete"
+    ],
+    "polarity": "positive",
+    "type": "structural_strength",
+    "severity": "HIGH",
+    "resolution_type": "ADVANCE",
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "affected_levers": [
+      "differentiation_leverage",
+      "case_for_change_strength"
+    ],
+    "candidate_strategy_path_keys": [
+      "Empower_Champion",
+      "Activate_Consensus",
+      "Champion_Negotiation"
+    ]
+  },
+  {
+    "key": "adoption_converting_to_decision",
+    "name": "Adoption Converting to Decision",
+    "description": "Product usage is delivering meaningful value and converting into ownership, stakeholder alignment, and a structured buying process",
+    "summary": "Usage is delivering value and expanding into a defined decision path with internal ownership and commercial awareness",
+    "trigger_signals": [
+      "adoption_conversion_momentum",
+      "usage_demonstrates_material_value",
+      "multi_threading_momentum"
+    ],
+    "diagnostic_questions": [
+      "Is the product delivering meaningful value to the business, Is there a clear internal owner driving this forward, Has usage converted into a defined buying process?"
+    ],
+    "root_cause_themes": [
+      "Product value is experienced directly through usage",
+      "An internal owner has taken responsibility for advancing the initiative",
+      "Stakeholders are aligning around outcomes and commercial progression"
+    ],
+    "polarity": "positive",
+    "type": "structural_strength",
+    "severity": "HIGH",
+    "resolution_type": "ADVANCE",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus",
+      "decision_process_alignment"
+    ],
+    "candidate_strategy_path_keys": [
+      "Identify_Champion_Targets",
+      "Build_Champion",
+      "Selling_to_Consensus",
+      "Secure_EB_Alignment"
+    ]
+  }
+]

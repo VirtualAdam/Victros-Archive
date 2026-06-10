@@ -1,0 +1,392 @@
+[
+  {
+    "decision_result": {
+      "primary_pattern": "singlethreaded_risk",
+      "secondary_patterns": ["competitive_mindshare"],
+      "strategy_path": "Selling_to_Consensus",
+      "representative_actions": ["map_the_full_consensus_group_with_the_champion_and", "engage_each_stakeholder_in_persona_specific_outcom", "connect_the_solution_to_the_problems_and_outcomes"],
+      "active_signals": ["single_threaded_contact", "competition_gaining_mindshare"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": true
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "competitive_mindshare",
+      "secondary_patterns": [],
+      "strategy_path": "Decision_Process_Alignment",
+      "representative_actions": ["map_decision_steps_timelines_and_owners", "validate_the_process_with_the_champion", "identify_the_eb_approval_step"],
+      "active_signals": ["competition_gaining_mindshare"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_3_late_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": true
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "unqualified_deal",
+      "secondary_patterns": [],
+      "strategy_path": "Disqualify_or_Deprioritize",
+      "representative_actions": ["ask_a_buyer_of_authority_to_confirm_whether_the_pr"],
+      "active_signals": ["activity_without_progress", "slowdowns_or_silence"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_3_late_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "singlethreaded_risk",
+      "secondary_patterns": ["competitive_mindshare"],
+      "strategy_path": "Selling_to_Consensus",
+      "representative_actions": ["map_the_full_consensus_group_with_the_champion_and", "engage_each_stakeholder_in_persona_specific_outcom", "connect_the_solution_to_the_problems_and_outcomes"],
+      "active_signals": ["single_threaded_contact", "competition_gaining_mindshare"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "tradeoff",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": false,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "champion_absence",
+      "secondary_patterns": [],
+      "strategy_path": "Identify_Champion_Targets",
+      "representative_actions": ["map_stakeholders_and_assess_power_influence_and_ad", "identify_at_least_one_champion_target"],
+      "active_signals": ["no_named_or_active_champion"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "monitoring",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": false,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "singlethreaded_risk",
+      "secondary_patterns": [],
+      "strategy_path": "Selling_to_Consensus",
+      "representative_actions": ["map_the_full_consensus_group_with_the_champion_and"],
+      "active_signals": ["single_threaded_contact"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "monitoring",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": false,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": null,
+      "secondary_patterns": [],
+      "strategy_path": null,
+      "representative_actions": [],
+      "active_signals": ["champion_coaching_influence", "economic_buyer_engagement", "multi_threading_momentum", "responsiveness_velocity"],
+      "lever_states": {
+        "case_for_change_strength": "CONNECTED",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "CONNECTED",
+        "buyer_consensus": "CONNECTED",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "CONNECTED"
+      },
+      "zone": "zone_4_closing"
+    },
+    "context": "summary",
+    "checks": {
+      "mentions_primary_pattern": false,
+      "mentions_strategy_path": false,
+      "follows_rendering_order": false,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "competitive_mindshare",
+      "secondary_patterns": [],
+      "strategy_path": "Decision_Process_Alignment",
+      "representative_actions": ["map_decision_steps_timelines_and_owners", "validate_the_process_with_the_champion", "identify_the_eb_approval_step"],
+      "active_signals": ["competition_gaining_mindshare", "champion_coaching_influence"],
+      "lever_states": {
+        "case_for_change_strength": "CONNECTED",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_3_late_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "process_misalignment",
+      "secondary_patterns": [],
+      "strategy_path": "Decision_Process_Alignment",
+      "representative_actions": ["map_decision_steps_timelines_and_owners", "validate_the_process_with_the_champion"],
+      "active_signals": ["validation_process_misalignment"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "singlethreaded_risk",
+      "secondary_patterns": ["competitive_mindshare", "process_misalignment"],
+      "strategy_path": "Selling_to_Consensus",
+      "representative_actions": ["map_the_full_consensus_group_with_the_champion_and", "engage_each_stakeholder_in_persona_specific_outcom", "connect_the_solution_to_the_problems_and_outcomes"],
+      "active_signals": ["single_threaded_contact", "competition_gaining_mindshare", "validation_process_misalignment"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_2_mid_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "eb_alignment_gap",
+      "secondary_patterns": [],
+      "strategy_path": "Secure_EB_Alignment",
+      "representative_actions": ["explain_why_alignment_with_the_funding_authority_i", "identify_the_economic_buyer_by_mapping_decision_st"],
+      "active_signals": ["no_eb_validation"],
+      "lever_states": {
+        "case_for_change_strength": "CONNECTED",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "CONNECTED",
+        "decision_process_alignment": "CONNECTED",
+        "differentiation_leverage": "CONNECTED",
+        "buyer_urgency": "CONNECTED"
+      },
+      "zone": "zone_3_late_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "weak_problem_definition",
+      "secondary_patterns": ["outcome_misalignment"],
+      "strategy_path": "Qualify_CaseForChange",
+      "representative_actions": ["ask_why_the_current_approach_is_no_longer_sufficie", "ask_what_happens_if_nothing_changes", "explore_the_operational_or_financial_impact_of_the"],
+      "active_signals": ["problem_not_validated", "outcomes_unclear_or_misaligned"],
+      "lever_states": {
+        "case_for_change_strength": "WEAK",
+        "champion_strength": "WEAK",
+        "economic_buyer_commitment": "WEAK",
+        "buyer_consensus": "WEAK",
+        "decision_process_alignment": "WEAK",
+        "differentiation_leverage": "WEAK",
+        "buyer_urgency": "WEAK"
+      },
+      "zone": "zone_1_early_stage"
+    },
+    "context": "diagnosis",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": true,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  },
+  {
+    "decision_result": {
+      "primary_pattern": "commercial_misalignment",
+      "secondary_patterns": ["eb_alignment_gap"],
+      "strategy_path": "Champion_Negotiation",
+      "representative_actions": ["identify_the_champion_partner_for_negotiation", "map_all_parties_involved_on_both_sides"],
+      "active_signals": ["conflict_in_pricing_or_terms", "no_eb_validation"],
+      "lever_states": {
+        "case_for_change_strength": "CONNECTED",
+        "champion_strength": "CONNECTED",
+        "economic_buyer_commitment": "CONNECTED",
+        "buyer_consensus": "CONNECTED",
+        "decision_process_alignment": "CONNECTED",
+        "differentiation_leverage": "CONNECTED",
+        "buyer_urgency": "CONNECTED"
+      },
+      "zone": "zone_4_closing"
+    },
+    "context": "tradeoff",
+    "checks": {
+      "mentions_primary_pattern": true,
+      "mentions_strategy_path": true,
+      "follows_rendering_order": false,
+      "uses_persona_voice": true,
+      "no_first_person_opinion": true,
+      "mentions_victros_identified": true,
+      "observable_verbs_only": true,
+      "references_all_actions": false
+    }
+  }
+]

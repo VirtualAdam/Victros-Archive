@@ -1,0 +1,71 @@
+[
+  {
+    "key": "zone1",
+    "display_name": "Early Stage - Discovery / Pre-Qualification",
+    "buyer_type": "Prospect",
+    "purpose": "Qualify a winnable deal with a compelling, fundable problem and a buyer of power and influence willing to advocate for change.",
+    "core_objectives": "1. Compelling Case for Change\n2. Champion Conneciton: Champion Targets have emotionally and intellectually connected your solution to what's relatable and relevant for them",
+    "core_strategies": "1. Qualify a compelling case for change\n2. Identify qualified Champion Targets\n3. Gain connection with Champion Targets",
+    "strategy_method": "Case_Qualification\nChampion_Identification\nChampion_Connection",
+    "core_actions": "- Ask for partner and channel meetings to learn and align on relatable problems and relevant outcomes for connecting buyers.\n- Build Vision (emotional connection) to Value (intellectual connection) Agendas in order to emotionally connect before intellectual. \n- Sequence discovery and presentations from emotional (problems, outcomes, customer proof stories) before intellectual connection (differentiation to desired outcomes) to surface a compelling problem and disarm and motivate buyer willingness to change.\n- Lead buyer vision via outcomes-based messaging and demo plans – limiting to only what enables a buyer to visualize themselves acheiving a unique vision you can deliver.\n- Ask for 1:1 preliminary dual-value qualification conversations with Champion targets to both test them and their willignness to partner.",
+    "minimum_required_lever_states": "Case for Change Strength=CONNECTED, Champion Strength=CONNECTED, Differentiation Leverage=CONNECTED, Decision Process Alignment=CONNECTED",
+    "zone_risk_lever_triggers": "Champion Strength=WEAK, Case for Change Strength=WEAK",
+    "qualification_requirements": [
+      "Identify_Problems",
+      "Metrics"
+    ],
+    "qualification_guidance": "Problem and measurable impact should be clearly understood and validated.\nIf either remains unclear, the deal carries structural risk that must be addressed or consciously managed."
+  },
+  {
+    "key": "zone2",
+    "display_name": "Early Stage - Evaluation / Qualification",
+    "buyer_type": "Prospect",
+    "purpose": "Secure Champion and Economic Buyer commitment to you and the case for change.",
+    "core_objectives": "1. Champions Committed\n2. EB Aligned and Supportive",
+    "core_strategies": "1. Qualify and Fill Champion Commitment Gaps \n2. Build connection across the Consensus - to their individual decision criteria\n3. Formalize a Champion-sponsored Case for Change\n4. Champion-partnered EB Go / No-Go",
+    "strategy_method": "Commitment_Qualification\nConsensus_Connection\nCase_For_Change\nEB_Go_No_Go",
+    "core_actions": "- Curiously uncover the personal decision criteria across the consensus to avoid objections, enable multiple Champion emotional connection, and out-leverager competition\n- Engage all aligned personas to both the case for change and your solution to expand and strengthen decision criteria and Champion\n- Lead solution workshops across the consensus that intellectually connect differentiation to desired outcomes - connecting the mental puzzle of differentiation to desired outcomes for the buyer\n- Partner with a Champion to build a formal Case for Change - enabling them to confidently sell internally with conviction\n- Equip the Champion with a justification narrative before providing a proposal to create value context and emotional connection of solution and pricing.\n- Ask for a 1:1 Champion commitment meeting that qualifies their commitment path triad of Purpose–Plan–Proof  to confirm and address true commitment before progressing.\n- Ask Champion for an EB and decision process alignment meeting to both test them and ensure that you are both set up for success with minimal surprises.\n- Either co-lead or have Champion proxy-execute a partnered EB Go/No-Go  meeting with an agenda that delivers value for EB and qualification for you and your Champion",
+    "minimum_required_lever_states": "Case for Change Strength=COMMITTED, Champion Strength=COMMITTED, Buyer Consensus=CONNECTED, Differentiation Leverage=COMMITTED, Decision Process Alignment=COMMITTED, Economic Buyer Commitment=CONNECTED, Buyer Urgency=CONNECTED",
+    "zone_risk_lever_triggers": "Champion Strength=WEAK, Case for Change Strength=WEAK, Decision Process Alignment=WEAK",
+    "qualification_requirements": [
+      "Decision_Criteria",
+      "Champions",
+      "Competition",
+      "Decision_Process",
+      "Economic_Buyer"
+    ],
+    "qualification_guidance": "Decision criteria, process, champion, and economic buyer should be confirmed or actively being aligned.\nAny missing elements represent structural qualification risk that must be mitigated through strategy or reflected in the forecast."
+  },
+  {
+    "key": "zone3",
+    "display_name": "Mid-Stage - Consensus Validation",
+    "buyer_type": "Prospect",
+    "purpose": "Earn trust validation across the Champions and the consensus in what you sell, your company, and yourself",
+    "core_objectives": "1. Champion and consensus Trust Validated\n2. Case for Change validated\n3. EB re-qualified\n4. Competition Eliminated",
+    "core_strategies": "1. Qualify and Fill Champion Trust Gaps\n2. Prove validation to the individual Trust Criteria across the Consensus \n3. Prove validation for the Case for Change \n4. Qualify validation of EB alignment and support to the Case for Change",
+    "strategy_method": "Trust_Qualification\nTrust_Validation\nCase_Validation\nEB_Validation",
+    "core_actions": "- Test Champions when you think they are a Champion but lack evidence - through strategic asks that fill your qualification gaps\n- Qualify the trust criteria of the Trust Path triad of Character, Credibility, and Competencies of all buyers in the consensus to ensure a validation event fills any of their trust gaps.\n- Co-design trust validation events - from technical POC's to reference calls - around the trust criteria of the buying consensus - not just your strengths and differentiation.",
+    "minimum_required_lever_states": "Case for Change Strength=EXECUTING, Differentiation Leverage=COMMITTED, Champion Strength=EXECUTING, Economic Buyer Commitment=COMMITTED, Buyer Consensus=COMMITTED, Decision Process Alignment=EXECUTING, Buyer Urgency=COMMITTED",
+    "zone_risk_lever_triggers": "Champion Strength=COMMITTED, Case for Change Strength=COMMITTED, Decision Process Alignment=COMMITTED, Buyer Consensus=CONNECTED",
+    "qualification_requirements": [
+      "Paper_Process"
+    ],
+    "qualification_guidance": "Procurement and legal paths should be understood and aligned before moving toward final decision.\nUnclear or undefined paper process introduces close risk that must be resolved or strategically mitigated."
+  },
+  {
+    "key": "zone4",
+    "display_name": "Late Stage - Negotiation / Close",
+    "buyer_type": "Prospect",
+    "purpose": "To win the business with predictability and control",
+    "core_objectives": "1. Champion empowered to overcome internal challenges and close the agreement.\n2. Champion-partnered Negotiation",
+    "core_strategies": "1. Empowering a Champion for the Justification\n2. Empowering a Champion across the Consensus\n3. Empowering a Champion through a Champion-based Negotiation",
+    "strategy_method": "Justification_Empowerment\nConsensus_Empowerment\nNegotiation_Empowerment",
+    "core_actions": "- Finalize your business justification ensuring it answers the \"5 Essential Justification Questions\" of Purpose, Solution, Differentiation, and Risk - empowering your Champion to net out the reasons to move forward in the buyer's executive language.  \n- Reinforce alignment across the consensus on the Prioritization of the Purpose of your solution, each member's Personal Decision Criteria, and on Ownership of the Decision Process across Steps, Timelines, and People - empowering your Champion to overcome internal conflicts and push-back.\n- Gain agreement with your Champion to partner in a Champion-based Negotiation - aligning on your Communication plan, the Messaging and Information they will need, and the Negotiation Guides that matter to both parties - empowering your Champion to overcome internal concerns, threats, and obstacles.",
+    "minimum_required_lever_states": "Case for Change Strength=EXECUTING, Differentiation Leverage=COMMITTED, Champion Strength=EXECUTING, Economic Buyer Commitment=EXECUTING, Buyer Consensus=EXECUTING, Decision Process Alignment=EXECUTING, Buyer Urgency=COMMITTED",
+    "zone_risk_lever_triggers": "Economic Buyer Commitment=COMMITTED, Buyer Consensus=COMMITTED, Decision Process Alignment=COMMITTED, Champion Strength=COMMITTED",
+    "qualification_requirements": [
+      "None"
+    ],
+    "qualification_guidance": "By this stage, the deal should be broadly qualified, and the customer should be actively working through final approvals or negotiation.\n\nThe Champion is the north star here. A strong Champion can carry the deal through gaps, resistance, or imperfect qualification by aligning stakeholders and driving the decision forward.\n\nAny remaining gaps represent close risk. Focus on intentions, not just positions, and partner with the Champion to overcome obstacles and reach commitment."
+  }
+]

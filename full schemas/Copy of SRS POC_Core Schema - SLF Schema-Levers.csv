@@ -1,0 +1,29 @@
+,,,,
+SCHEMA LEVERS: ,Key forces that push a deal forward or stall it,,,
+Lever,Qualifiers,Score Model,Lever Scoring,Why This Lever Matters
+Core structural condition required for deal success; evaluated independently and used to guide strategy,"Observable, verifiable conditions that indicate the presence, absence, or strength of the lever",Deterministic scoring using -1 / 0 / +1 applied consistently across all levers,"-1 = Weak/Missing (insufficient or absent)
+0 = Emerging/Partial (forming but incomplete)
++1 = Strong/Validated (sufficient to support progression)","Why This Lever Matters = Explanation of how this lever impacts deal progression, prioritization, and likelihood of a successful decision"
+Case for Change Strength,"Strength of the business need, evidenced by either:
+1) articulated problem and measurable impact, or
+2) demonstrated value through product usage, workflow dependency, or operational reliance",-1/0/+1,"-1: No clear problem or impact; optional priority
+ 0: Problem acknowledged, impact unclear or forming
+ +1: Clear problem, impact, and consequence of inaction","The foundation for buyer prioritization, resourcing, and investment. If any component — problem, outcomes, impact, or differentiated solution — is missing, the deal becomes low-priority, stalls late, or defaults to the safest competitor or no-decision."
+Differentiation Leverage,"Criteria Differentiation (are our capabilities stronger for buyer's desired outcomes?), Commercial Differentiation (are our pricing, structure, or terms, better for the buyer?), Trust Differentation (do we have stronger credibility and belief with the buyer?), Competitive Access (do we have better or privileged access?).",-1/0/+1,"-1: No meaningful differentiation vs alternatives
+ 0: Partial or unclear differentiation
+ +1: Clear, valued differentiation across key areas","Protects price, priority, and narrative against competitors."
+Champion Strength,"Power (authority), Influence (credibility), Access to EB (economic authority), Active Advocacy (observable evidence of selling internally).",-1/0/+1,"-1: No active internal advocate or influence
+ 0: Supportive but not driving internally
+ +1: Active internal advocate with influence and EB access",Primary engine of deal momentum and internal selling.
+Economic Buyer Commitment,"Discretionary authority over the spend, Alignment to spend amount and timing, as well as Support of your solution. Visibility (direct EB engagement vs. second-hand updates).",-1/0/+1,"-1: No EB identified or engaged
+ 0: EB identified but not committed
+ +1: EB engaged and aligned on spend and timing","Only the EB has discretionary authority to approve the spend, prioritization, and timeline of a purchase. (Do not confuse ""spend authorioty"" with owning the budget or being the one who signs the contract.)"
+Buyer Consensus,"Stakeholder Alignment (agreement on problem and value), Role Coverage (all required personas engaged), Decision-Process Participation (stakeholders involved at the right steps).",-1/0/+1,"-1: Stakeholders misaligned or missing
+ 0: Partial alignment, gaps remain
+ +1: Stakeholders aligned and engaged",Multiple stakeholders will need to align and commit
+Decision Process Alignment,"Process Visibility (do we know the steps?), Timeline Awareness (do we know how long each step takes?), People Identification (do we know which people are engaged at each step?)",-1/0/+1,"-1: Process unclear or unknown
+ 0: Partial visibility into process
+ +1: Clear, validated process with known steps and stakeholders",Clarity of strategy and predictability of execution.
+Buyer Urgency,"Internal motivation strength (is the buyer intrinsically committed or externally pressured with a compelling event, timeline requirement, negative consequences, or internal threat?)",-1/0/+1,"-1: No urgency or pressure to act
+ 0: Some urgency but not decisive
+ +1: Clear urgency driving action",Indicator of purchase prioritization and timeline

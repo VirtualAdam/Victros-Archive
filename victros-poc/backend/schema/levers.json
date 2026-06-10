@@ -1,0 +1,100 @@
+[
+  {
+    "key": "case_for_change_strength",
+    "name": "Case for Change Strength",
+    "qualifiers": "Strength of the business need, evidenced by either:\n1) articulated problem and measurable impact, or\n2) demonstrated value through product usage, workflow dependency, or operational reliance",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: No clear problem or impact; optional priority\n 0: Problem acknowledged, impact unclear or forming\n +1: Clear problem, impact, and consequence of inaction",
+    "why_it_matters": "The foundation for buyer prioritization, resourcing, and investment. If any component — problem, outcomes, impact, or differentiated solution — is missing, the deal becomes low-priority, stalls late, or defaults to the safest competitor or no-decision.",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "differentiation_leverage",
+    "name": "Differentiation Leverage",
+    "qualifiers": "Criteria Differentiation (are our capabilities stronger for buyer's desired outcomes?), Commercial Differentiation (are our pricing, structure, or terms, better for the buyer?), Trust Differentation (do we have stronger credibility and belief with the buyer?), Competitive Access (do we have better or privileged access?).",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: No meaningful differentiation vs alternatives\n 0: Partial or unclear differentiation\n +1: Clear, valued differentiation across key areas",
+    "why_it_matters": "Protects price, priority, and narrative against competitors.",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "champion_strength",
+    "name": "Champion Strength",
+    "qualifiers": "Power (authority), Influence (credibility), Access to EB (economic authority), Active Advocacy (observable evidence of selling internally).",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: No active internal advocate or influence\n 0: Supportive but not driving internally\n +1: Active internal advocate with influence and EB access",
+    "why_it_matters": "Primary engine of deal momentum and internal selling.",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "economic_buyer_commitment",
+    "name": "Economic Buyer Commitment",
+    "qualifiers": "Discretionary authority over the spend, Alignment to spend amount and timing, as well as Support of your solution. Visibility (direct EB engagement vs. second-hand updates).",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: No EB identified or engaged\n 0: EB identified but not committed\n +1: EB engaged and aligned on spend and timing",
+    "why_it_matters": "Only the EB has discretionary authority to approve the spend, prioritization, and timeline of a purchase. (Do not confuse \"spend authorioty\" with owning the budget or being the one who signs the contract.)",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "buyer_consensus",
+    "name": "Buyer Consensus",
+    "qualifiers": "Stakeholder Alignment (agreement on problem and value), Role Coverage (all required personas engaged), Decision-Process Participation (stakeholders involved at the right steps).",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: Stakeholders misaligned or missing\n 0: Partial alignment, gaps remain\n +1: Stakeholders aligned and engaged",
+    "why_it_matters": "Multiple stakeholders will need to align and commit",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "decision_process_alignment",
+    "name": "Decision Process Alignment",
+    "qualifiers": "Process Visibility (do we know the steps?), Timeline Awareness (do we know how long each step takes?), People Identification (do we know which people are engaged at each step?)",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: Process unclear or unknown\n 0: Partial visibility into process\n +1: Clear, validated process with known steps and stakeholders",
+    "why_it_matters": "Clarity of strategy and predictability of execution.",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  },
+  {
+    "key": "buyer_urgency",
+    "name": "Buyer Urgency",
+    "qualifiers": "Internal motivation strength (is the buyer intrinsically committed or externally pressured with a compelling event, timeline requirement, negative consequences, or internal threat?)",
+    "score_model": "-1/0/+1",
+    "lever_scoring": "-1: No urgency or pressure to act\n 0: Some urgency but not decisive\n +1: Clear urgency driving action",
+    "why_it_matters": "Indicator of purchase prioritization and timeline",
+    "states": [
+      "WEAK",
+      "CONNECTED",
+      "COMMITTED",
+      "EXECUTING"
+    ]
+  }
+]

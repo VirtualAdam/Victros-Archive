@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VICTROS — POC Demo V1 (Animated)</title>
+<style>
+  /* ========== RESET & BASE ========== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #222;
+    --bg-input: #1e1e1e;
+    --border: #2a2a2a;
+    --border-active: #4a90d9;
+    --text-primary: #e8e8e8;
+    --text-secondary: #999;
+    --text-muted: #666;
+    --accent: #4a90d9;
+    --accent-hover: #5ba0e9;
+    --accent-dim: rgba(74,144,217,0.15);
+    --green: #2ecc71;
+    --green-dim: rgba(46,204,113,0.15);
+    --yellow: #f39c12;
+    --yellow-dim: rgba(243,156,18,0.15);
+    --red: #e74c3c;
+    --red-dim: rgba(231,76,60,0.15);
+    --orange: #e67e22;
+    --orange-dim: rgba(230,126,34,0.15);
+    --purple: #9b59b6;
+    --purple-dim: rgba(155,89,182,0.15);
+    --cyan: #1abc9c;
+    --cyan-dim: rgba(26,188,156,0.15);
+    --radius: 8px;
+    --radius-lg: 12px;
+    --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    --shadow: 0 2px 12px rgba(0,0,0,0.4);
+    --transition: 0.2s ease;
+  }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--font);
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: 3px; color: var(--text-primary); }
+  .logo span { color: var(--accent); }
+
+  /* ========== TAB BAR ========== */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: #111;
+    flex-shrink: 0;
+    padding: 0 24px;
+  }
+  .tab-btn {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn.active { color: var(--text-primary); border-bottom-color: var(--accent); }
+  .tab-btn .badge { font-size: 9px; padding: 2px 6px; border-radius: 10px; margin-left: 8px; font-weight: 600; letter-spacing: 0.5px; vertical-align: middle; }
+  .badge-v2 { background: var(--purple-dim); color: var(--purple); }
+
+  /* ========== MAIN ========== */
+  .main { flex: 1; overflow: hidden; display: flex; }
+  .tab-panel { display: none; flex: 1; overflow: hidden; }
+  .tab-panel.active { display: flex; }
+
+  /* ========== CHAT LAYOUT (3-column) ========== */
+  .chat-layout { display: flex; flex: 1; overflow: hidden; }
+
+  /* -- LEFT: Conversation -- */
+  .chat-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Step Navigator */
+  .step-nav {
+    padding: 12px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    flex-shrink: 0;
+  }
+  .step-nav-buttons { display: flex; gap: 8px; }
+  .nav-btn {
+    padding: 8px 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .nav-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn:disabled:hover { border-color: var(--border); background: var(--bg-card); }
+  .nav-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .nav-btn.primary:hover { background: var(--accent-hover); }
+  .step-indicator {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .step-progress {
+    width: 200px;
+    height: 4px;
+    background: var(--bg-dark);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .step-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* Messages */
+  .message { max-width: 680px; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .msg-animate { animation: fadeIn 0.4s ease forwards; }
+  .msg-system {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+  }
+  .msg-system .msg-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .msg-system .msg-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .msg-system .msg-body { font-size: 14px; line-height: 1.7; color: var(--text-primary); }
+  .msg-system .msg-body p { margin-bottom: 12px; }
+  .msg-system .msg-body p:last-child { margin-bottom: 0; }
+  .msg-system .msg-body strong { color: #fff; }
+  .msg-system .msg-body ul { list-style: none; padding: 0; margin: 8px 0; }
+  .msg-system .msg-body ul li { padding: 8px 0 8px 16px; position: relative; font-size: 13px; line-height: 1.6; }
+  .msg-system .msg-body ul li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .msg-user {
+    align-self: flex-end;
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 520px;
+  }
+  .msg-options { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  .opt-btn {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-size: 13px;
+    cursor: default;
+    text-align: left;
+    transition: var(--transition);
+    line-height: 1.5;
+  }
+  .opt-btn.selected { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); font-weight: 600; }
+  .opt-btn-title { font-weight: 600; }
+
+  /* Signal grid */
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .signal-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .signal-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+  .signal-card .check {
+    float: right;
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .signal-card.selected .check { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Attachment pill */
+  .attachment-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 12px;
+  }
+
+  /* Deal snapshot */
+  .snapshot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+  .snapshot-item { background: var(--bg-dark); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+  .snapshot-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .snapshot-value { font-size: 16px; font-weight: 700; margin-top: 4px; }
+
+  /* Pattern cards */
+  .pattern-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+  }
+  .pattern-card .pattern-name { font-weight: 700; font-size: 13px; color: var(--yellow); }
+  .pattern-card .pattern-desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+
+  /* ========== RIGHT: System Activity Panel ========== */
+  .system-panel {
+    width: 380px;
+    border-left: 1px solid var(--border);
+    background: #0a0a0a;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .system-panel-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .system-panel-header h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .system-panel-header .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .system-panel-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+  }
+
+  /* State badge */
+  .state-display {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .state-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 6px; }
+  .state-value {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--mono);
+    color: var(--cyan);
+  }
+  .state-desc { font-size: 11px; color: var(--text-secondary); margin-top: 6px; line-height: 1.5; }
+
+  /* Activity log */
+  .activity-section { margin-bottom: 20px; }
+  .activity-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .activity-entry {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    animation: slideInRight 0.3s ease forwards;
+    opacity: 0;
+  }
+  .activity-entry.visible { opacity: 1; }
+  .activity-entry .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 24px;
+  }
+  .activity-entry .timeline .icon-circle {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .activity-entry .timeline .line {
+    width: 2px;
+    flex: 1;
+    margin-top: 4px;
+  }
+  .activity-entry .activity-body { flex: 1; min-width: 0; }
+  .activity-entry .activity-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .activity-entry .activity-detail {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+  .activity-entry .activity-detail code {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: var(--bg-dark);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--accent);
+  }
+
+  /* Component type colors */
+  .comp-llm .icon-circle { background: var(--purple-dim); color: var(--purple); border: 1px solid var(--purple); }
+  .comp-llm .line { background: var(--purple-dim); }
+  .comp-llm .activity-label { color: var(--purple); }
+
+  .comp-engine .icon-circle { background: var(--orange-dim); color: var(--orange); border: 1px solid var(--orange); }
+  .comp-engine .line { background: var(--orange-dim); }
+  .comp-engine .activity-label { color: var(--orange); }
+
+  .comp-gate .icon-circle { background: var(--cyan-dim); color: var(--cyan); border: 1px solid var(--cyan); }
+  .comp-gate .line { background: var(--cyan-dim); }
+  .comp-gate .activity-label { color: var(--cyan); }
+
+  .comp-session .icon-circle { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); }
+  .comp-session .line { background: var(--accent-dim); }
+  .comp-session .activity-label { color: var(--accent); }
+
+  .comp-ui .icon-circle { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
+  .comp-ui .line { background: var(--green-dim); }
+  .comp-ui .activity-label { color: var(--green); }
+
+  .comp-state .icon-circle { background: var(--yellow-dim); color: var(--yellow); border: 1px solid var(--yellow); }
+  .comp-state .line { background: var(--yellow-dim); }
+  .comp-state .activity-label { color: var(--yellow); }
+
+  /* JSON viewer mini */
+  .json-mini {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    overflow-x: auto;
+  }
+  .json-mini .key { color: var(--accent); }
+  .json-mini .str { color: var(--green); }
+  .json-mini .val { color: var(--yellow); }
+  .json-mini .null { color: var(--text-muted); }
+  .json-mini .changed { background: rgba(243,156,18,0.15); display: inline; padding: 0 2px; border-radius: 2px; }
+
+  /* Component legend */
+  .legend {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Lever bars in system panel */
+  .lever-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .lever-name { font-size: 10px; color: var(--text-secondary); width: 100px; flex-shrink: 0; }
+  .lever-track { flex: 1; height: 5px; background: var(--bg-dark); border-radius: 3px; overflow: hidden; }
+  .lever-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease, background 0.6s ease; }
+  .lever-fill.weak { width: 15%; background: var(--red); }
+  .lever-fill.connected { width: 50%; background: var(--yellow); }
+  .lever-fill.committed { width: 75%; background: var(--accent); }
+  .lever-fill.executing { width: 100%; background: var(--green); }
+  .lever-state { font-size: 9px; font-weight: 700; width: 70px; text-align: right; transition: color 0.6s ease; }
+  .lever-state.weak { color: var(--red); }
+  .lever-state.connected { color: var(--yellow); }
+  .lever-state.committed { color: var(--accent); }
+  .lever-state.executing { color: var(--green); }
+  .lever-changed { animation: leverFlash 1s ease; }
+  @keyframes leverFlash {
+    0%, 100% { background: transparent; }
+    30% { background: rgba(243,156,18,0.2); }
+  }
+
+  /* ========== ADMIN TAB ========== */
+  .admin-layout { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .admin-header { padding: 24px; border-bottom: 1px solid var(--border); }
+  .admin-header h2 { font-size: 20px; margin-bottom: 4px; }
+  .admin-header p { font-size: 13px; color: var(--text-secondary); }
+  .admin-tabs { display: flex; gap: 0; padding: 0 24px; border-bottom: 1px solid var(--border); background: #111; }
+  .admin-tab { padding: 10px 20px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); font-family: var(--font); font-size: 12px; font-weight: 500; cursor: pointer; transition: var(--transition); }
+  .admin-tab:hover { color: var(--text-primary); }
+  .admin-tab.active { color: var(--text-primary); border-bottom-color: var(--accent); }
+  .admin-content { flex: 1; overflow-y: auto; padding: 24px; }
+  .schema-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .schema-table th { text-align: left; padding: 10px 14px; background: var(--bg-card); border-bottom: 1px solid var(--border); color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; position: sticky; top: 0; z-index: 1; }
+  .schema-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-primary); vertical-align: top; line-height: 1.5; }
+  .schema-table tr:hover td { background: var(--bg-card); }
+  .severity-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; }
+  .severity-critical { background: var(--red-dim); color: var(--red); }
+  .severity-high { background: var(--yellow-dim); color: var(--yellow); }
+  .severity-medium { background: var(--accent-dim); color: var(--accent); }
+  .polarity-neg { color: var(--red); }
+  .polarity-pos { color: var(--green); }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; margin: 2px 2px 2px 0; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-secondary); }
+  .mode-recover { background: var(--yellow-dim); color: var(--yellow); border-color: var(--yellow); }
+  .mode-advance { background: var(--green-dim); color: var(--green); border-color: var(--green); }
+  .mode-exit { background: var(--red-dim); color: var(--red); border-color: var(--red); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .stat-card .stat-value { font-size: 28px; font-weight: 700; }
+  .stat-card .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  /* ========== REPORTING TAB ========== */
+  .report-layout { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .report-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .report-header h2 { font-size: 20px; }
+  .report-header p { font-size: 13px; color: var(--text-secondary); }
+  .report-content { flex: 1; overflow-y: auto; padding: 24px; }
+  .v2-banner { background: var(--purple-dim); border: 1px solid var(--purple); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+  .v2-banner .icon { font-size: 24px; }
+  .v2-banner .text { font-size: 13px; color: var(--text-primary); line-height: 1.5; }
+  .v2-banner .text strong { color: var(--purple); }
+  .pipeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .pipeline-col { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .pipeline-col-header { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+  .pipeline-col-header .count { background: var(--bg-dark); padding: 2px 8px; border-radius: 10px; font-size: 11px; color: var(--text-secondary); }
+  .pipeline-deals { padding: 8px; }
+  .pipeline-deal { background: var(--bg-dark); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 8px; cursor: pointer; transition: var(--transition); }
+  .pipeline-deal:hover { border-color: var(--accent); }
+  .pipeline-deal-name { font-size: 13px; font-weight: 600; }
+  .pipeline-deal-amount { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+  .pipeline-deal-risk { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; margin-top: 8px; padding: 3px 8px; border-radius: 10px; }
+  .risk-high { background: var(--red-dim); color: var(--red); }
+  .risk-medium { background: var(--yellow-dim); color: var(--yellow); }
+  .risk-low { background: var(--green-dim); color: var(--green); }
+  .metric-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 32px; }
+  .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-align: center; }
+  .metric-card .metric-value { font-size: 28px; font-weight: 700; }
+  .metric-card .metric-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  .metric-card .metric-delta { font-size: 11px; margin-top: 6px; }
+  .metric-card .metric-delta.up { color: var(--green); }
+  .metric-card .metric-delta.down { color: var(--red); }
+  .risk-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .risk-table th { text-align: left; padding: 10px 14px; background: var(--bg-card); border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .risk-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+  .risk-table tr:hover td { background: var(--bg-card); }
+  .health-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
+  .health-dot.red { background: var(--red); }
+  .health-dot.yellow { background: var(--yellow); }
+  .health-dot.green { background: var(--green); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #444; }
+
+  @media (max-width: 1100px) { .system-panel { width: 300px; } }
+  @media (max-width: 800px) { .system-panel { display: none; } .pipeline-grid { grid-template-columns: repeat(2, 1fr); } .stat-grid { grid-template-columns: repeat(2, 1fr); } .metric-row { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo"><span>✦</span> VICTROS</div>
+  </div>
+  <div style="font-size: 12px; color: var(--text-muted);">POC Demo v1 &nbsp;·&nbsp; Interactive Walkthrough</div>
+</div>
+
+<!-- ========== TAB BAR ========== -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('chat')">Deal Strategy</button>
+  <button class="tab-btn" onclick="switchTab('admin')">Schema Admin</button>
+  <button class="tab-btn" onclick="switchTab('report')">Pipeline Command <span class="badge badge-v2">V2 PREVIEW</span></button>
+</div>
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ============================================================ -->
+  <!--              CHAT TAB — STEP-THROUGH WALKTHROUGH              -->
+  <!-- ============================================================ -->
+  <div class="tab-panel active" id="panel-chat">
+    <div class="chat-layout">
+
+      <!-- CENTER: Conversation -->
+      <div class="chat-center">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="step-nav">
+          <div class="step-indicator">
+            <span id="stepLabel">Step 1 of 16</span>
+            <div class="step-progress">
+              <div class="step-progress-fill" id="stepProgressFill" style="width: 6.25%"></div>
+            </div>
+          </div>
+          <div class="step-nav-buttons">
+            <button class="nav-btn" id="btnPrev" onclick="prevStep()" disabled>← Back</button>
+            <button class="nav-btn primary" id="btnNext" onclick="nextStep()">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: System Activity Panel -->
+      <div class="system-panel">
+        <div class="system-panel-header">
+          <div class="pulse"></div>
+          <h3>System Activity</h3>
+        </div>
+        <div class="system-panel-content" id="systemContent"></div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div> LLM Call</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> Decision Engine</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div> Confirmation Gate</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div> Session Manager</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div> State Change</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> UI Render</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!--                     ADMIN / SCHEMA TAB                        -->
+  <!-- ============================================================ -->
+  <div class="tab-panel" id="panel-admin">
+    <div class="admin-layout">
+      <div class="admin-header">
+        <h2>Schema Administration</h2>
+        <p>Read-only view of the Strategic Reasoning Schema (SRS) — the deterministic decision logic that governs all strategy recommendations.</p>
+      </div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchAdminTab('signals')">Signals (18)</button>
+        <button class="admin-tab" onclick="switchAdminTab('patterns')">Patterns (20)</button>
+        <button class="admin-tab" onclick="switchAdminTab('strategies')">Strategy Paths (12)</button>
+        <button class="admin-tab" onclick="switchAdminTab('levers')">Levers (7)</button>
+        <button class="admin-tab" onclick="switchAdminTab('zones')">Sales Zones (4)</button>
+      </div>
+      <div class="admin-content">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-value">18</div><div class="stat-label">Signals</div></div>
+          <div class="stat-card"><div class="stat-value">20</div><div class="stat-label">Patterns</div></div>
+          <div class="stat-card"><div class="stat-value">12</div><div class="stat-label">Strategy Paths</div></div>
+          <div class="stat-card"><div class="stat-value">7</div><div class="stat-label">Levers</div></div>
+        </div>
+
+        <!-- Signals -->
+        <div id="admin-signals">
+          <table class="schema-table"><thead><tr><th>Signal Name</th><th>Description</th><th>Observable Condition</th><th>Polarity</th><th>Severity</th><th>Type</th><th>Affected Levers</th><th>Target Patterns</th></tr></thead><tbody>
+            <tr><td style="font-weight:600;">Problem Not Validated</td><td>Pain is mentioned, but no specific problem with measurable business impact has been established</td><td>Buyer confirms pain or interest but has not described a specific problem with measurable impact or consequence</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-critical">CRITICAL</span></td><td>Structural Risk</td><td><span class="tag">Case for Change</span><span class="tag">Buyer Urgency</span></td><td><span class="tag">Weak Problem Definition</span></td></tr>
+            <tr><td style="font-weight:600;">Outcomes Unclear or Misaligned</td><td>Buyer has not defined a clear future state or success outcome tied to the initiative</td><td>Buyer discusses features or capabilities but has not described desired future outcomes or success criteria</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-high">HIGH</span></td><td>Structural Risk</td><td><span class="tag">Case for Change</span><span class="tag">Buyer Urgency</span></td><td><span class="tag">Outcome Misalignment</span></td></tr>
+            <tr><td style="font-weight:600;">Single-Threaded Contact</td><td>Only one buyer-side stakeholder is engaged in the deal</td><td>Only one contact is active; no access to other decision-makers, influencers, or budget holders</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-critical">CRITICAL</span></td><td>Structural Risk</td><td><span class="tag">Champion</span><span class="tag">Consensus</span></td><td><span class="tag">Single-Threaded Risk</span></td></tr>
+            <tr><td style="font-weight:600;">Competition Gaining Mindshare</td><td>Competitor is shaping buyer's evaluation criteria or framing</td><td>Buyer references competitor terminology, frameworks, or evaluation criteria that favor a specific vendor's approach</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-high">HIGH</span></td><td>Structural Risk</td><td><span class="tag">Differentiation</span><span class="tag">Decision Process</span></td><td><span class="tag">Competitive Mindshare</span></td></tr>
+            <tr><td style="font-weight:600;">Validation Process Misalignment</td><td>POC or evaluation process does not align with seller's strengths</td><td>Buyer's proposed validation method, criteria, or timeline favors incumbent or commodity approach</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-high">HIGH</span></td><td>Structural Risk</td><td><span class="tag">Decision Process</span><span class="tag">Differentiation</span></td><td><span class="tag">Process Misalignment</span></td></tr>
+          </tbody></table>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:16px;text-align:center;">Showing 5 of 18 signals</p>
+        </div>
+
+        <div id="admin-patterns" style="display:none;">
+          <table class="schema-table"><thead><tr><th>Pattern Name</th><th>Description</th><th>Polarity</th><th>Severity</th><th>Resolution</th><th>Zone Bias</th><th>Candidate Strategy Paths</th></tr></thead><tbody>
+            <tr><td style="font-weight:600;">Weak Problem Definition</td><td>Buyer pain is not converted into a compelling problem with measurable consequences</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-critical">CRITICAL</span></td><td><span class="tag mode-recover">RECOVER</span></td><td>Zone1, Zone2</td><td><span class="tag">Quality_CaseForChange</span><span class="tag">Disqualify_or_Deprioritize</span></td></tr>
+            <tr><td style="font-weight:600;">Single-Threaded Risk</td><td>Deal depends on a single contact — consensus, advocacy, and internal momentum don't exist yet</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-critical">CRITICAL</span></td><td><span class="tag mode-recover">RECOVER</span></td><td>Zone1–Zone3</td><td><span class="tag">Selling_to_Consensus</span><span class="tag">Champion_Negotiation</span></td></tr>
+            <tr><td style="font-weight:600;">Competitive Mindshare</td><td>Buyer evaluation criteria and framing shaped by a competitor's narrative</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-high">HIGH</span></td><td><span class="tag mode-recover">RECOVER</span></td><td>Zone2, Zone3</td><td><span class="tag">Position_Outcomes_Vision</span><span class="tag">Champion_Negotiation</span></td></tr>
+            <tr><td style="font-weight:600;">Commodity Relegation</td><td>Buyer decision criteria reduce all solutions to interchangeable options</td><td class="polarity-neg">Negative</td><td><span class="severity-badge severity-high">HIGH</span></td><td><span class="tag mode-recover">RECOVER</span></td><td>Zone2–Zone4</td><td><span class="tag">Quality_CaseForChange</span><span class="tag">Position_Outcomes_Vision</span></td></tr>
+          </tbody></table>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:16px;text-align:center;">Showing 4 of 20 patterns</p>
+        </div>
+
+        <div id="admin-strategies" style="display:none;">
+          <table class="schema-table"><thead><tr><th>Strategy Path</th><th>Display Name</th><th>Mode</th><th>Description</th><th>Target Levers</th><th>Zone Bias</th></tr></thead><tbody>
+            <tr><td style="font-weight:600;font-family:var(--mono);font-size:11px;">Quality_CaseForChange</td><td>Case for Change Not Clearly Defined or Sponsored</td><td><span class="tag mode-recover">RECOVER</span></td><td>Case for change is not yet convincing or sponsor-backed</td><td><span class="tag">Case for Change</span><span class="tag">Buyer Urgency</span></td><td>Zone1, Zone2</td></tr>
+            <tr><td style="font-weight:600;font-family:var(--mono);font-size:11px;">Selling_to_Consensus</td><td>Internal Alignment Broken or Missing</td><td><span class="tag mode-recover">RECOVER</span></td><td>Key stakeholders are not aligned on the problem, outcomes, or approach</td><td><span class="tag">Consensus</span><span class="tag">Champion</span></td><td>Zone2, Zone3</td></tr>
+            <tr><td style="font-weight:600;font-family:var(--mono);font-size:11px;">Champion_Negotiation</td><td>Champion Influence Not Yet Validated</td><td><span class="tag mode-recover">RECOVER</span></td><td>Champion appears supportive but has not demonstrated ability to move the organization internally</td><td><span class="tag">Champion</span></td><td>Zone2, Zone3</td></tr>
+            <tr><td style="font-weight:600;font-family:var(--mono);font-size:11px;">Disqualify_or_Deprioritize</td><td>Deal Does Not Meet Minimum Structural Requirements</td><td><span class="tag mode-exit">EXIT</span></td><td>Multiple structural conditions indicate the deal lacks the foundation for a productive engagement</td><td><span class="tag">All Levers</span></td><td>Any Zone</td></tr>
+          </tbody></table>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:16px;text-align:center;">Showing 4 of 12 strategy paths</p>
+        </div>
+
+        <div id="admin-levers" style="display:none;">
+          <table class="schema-table"><thead><tr><th>Lever</th><th>Description</th><th style="width:140px;">WEAK</th><th style="width:140px;">CONNECTED</th><th style="width:140px;">COMMITTED</th><th style="width:140px;">EXECUTING</th></tr></thead><tbody>
+            <tr><td style="font-weight:600;">Case for Change Strength</td><td>How compelling and validated the business case for the initiative is</td><td style="color:var(--red)">No validated problem or measurable impact</td><td style="color:var(--yellow)">Problem identified with interest but not quantified</td><td style="color:var(--accent)">Sponsor-backed with measurable impact defined</td><td style="color:var(--green)">Actively driving internal change with budget allocated</td></tr>
+            <tr><td style="font-weight:600;">Champion Strength</td><td>Whether an internal advocate can move the organization</td><td style="color:var(--red)">No identified Champion or only passive interest</td><td style="color:var(--yellow)">Contact shows interest but hasn't taken internal action</td><td style="color:var(--accent)">Champion has successfully completed internal advocacy actions</td><td style="color:var(--green)">Champion is actively driving the decision with authority</td></tr>
+            <tr><td style="font-weight:600;">Economic Buyer Commitment</td><td>Whether the budget holder is engaged and committed</td><td style="color:var(--red)">No access to or engagement from economic buyer</td><td style="color:var(--yellow)">EB aware of initiative but not engaged in evaluation</td><td style="color:var(--accent)">EB has confirmed priority and is committed to decision timeline</td><td style="color:var(--green)">EB actively sponsoring and removing obstacles</td></tr>
+            <tr><td style="font-weight:600;">Buyer Consensus</td><td>Degree of stakeholder alignment on problem and approach</td><td style="color:var(--red)">Single-threaded or conflicting stakeholder views</td><td style="color:var(--yellow)">Multiple stakeholders aware but not aligned</td><td style="color:var(--accent)">Stakeholders aligned on problem and evaluation criteria</td><td style="color:var(--green)">Full decision group aligned and executing together</td></tr>
+            <tr><td style="font-weight:600;">Decision Process Alignment</td><td>Whether the evaluation and decision process favors your approach</td><td style="color:var(--red)">Process unknown, misaligned, or competitor-defined</td><td style="color:var(--yellow)">Process visible but not influenced</td><td style="color:var(--accent)">Process criteria aligned with differentiated strengths</td><td style="color:var(--green)">Decision process designed around your approach</td></tr>
+            <tr><td style="font-weight:600;">Differentiation Leverage</td><td>Whether your unique advantages are recognized and valued</td><td style="color:var(--red)">Solution treated as interchangeable</td><td style="color:var(--yellow)">Buyer sees some differences but not connected to outcomes</td><td style="color:var(--accent)">Differentiation clearly linked to buyer success criteria</td><td style="color:var(--green)">Buyer actively advocating for your unique approach</td></tr>
+            <tr><td style="font-weight:600;">Buyer Urgency</td><td>Whether inaction has real consequences driving timeline</td><td style="color:var(--red)">No compelling event or consequence of inaction</td><td style="color:var(--yellow)">General awareness of need but no deadline pressure</td><td style="color:var(--accent)">Clear timeline tied to business event or consequence</td><td style="color:var(--green)">Urgent action with executive sponsorship on timeline</td></tr>
+          </tbody></table>
+        </div>
+
+        <div id="admin-zones" style="display:none;">
+          <table class="schema-table"><thead><tr><th>Zone</th><th>Display Name</th><th>Buyer Type</th><th>Purpose</th><th>Core Objectives</th></tr></thead><tbody>
+            <tr><td style="font-weight:600;">Zone 1</td><td>Early Stage — Discovery / Pre-Qualification</td><td>Prospect</td><td>Qualify a winnable deal with a compelling case for change</td><td>Compelling Case for Change, Identify qualified Champion Targets, Gain connection with Champion Targets</td></tr>
+            <tr><td style="font-weight:600;">Zone 2</td><td>Mid Stage — Solution Alignment</td><td>Active Evaluator</td><td>Align solution to validated outcomes and build stakeholder consensus</td><td>Connect solution to stakeholder priorities, Build internal alignment, Differentiate from alternatives</td></tr>
+            <tr><td style="font-weight:600;">Zone 3</td><td>Late Stage — Validation / POC</td><td>Committed Evaluator</td><td>Validate solution fit through structured evaluation aligned to strengths</td><td>Win the POC on your terms, Confirm Economic Buyer commitment, Solidify decision criteria</td></tr>
+            <tr><td style="font-weight:600;">Zone 4</td><td>Close Stage — Commercial / Decision</td><td>Decision Maker</td><td>Convert validated solution into signed agreement</td><td>Secure commercial terms, Finalize decision with full stakeholder alignment, Close the deal</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!--                   REPORTING / PIPELINE TAB                    -->
+  <!-- ============================================================ -->
+  <div class="tab-panel" id="panel-report">
+    <div class="report-layout">
+      <div class="report-header">
+        <div><h2>Pipeline Command Center</h2><p>Manager's top-down view of active deals, structural health, and strategy coverage</p></div>
+        <div style="font-size:12px;color:var(--text-muted);">Team: West Enterprise · Q2 2026</div>
+      </div>
+      <div class="report-content">
+        <div class="v2-banner">
+          <div class="icon">🔮</div>
+          <div class="text"><strong>V2 Preview.</strong> This view represents future manager/leader capabilities. The V1 POC focuses on individual seller deal strategy. Cross-session aggregation and team views are planned for the next phase.</div>
+        </div>
+        <div class="metric-row">
+          <div class="metric-card"><div class="metric-value">$4.8M</div><div class="metric-label">Pipeline Value</div><div class="metric-delta up">↑ 12% vs. Q1</div></div>
+          <div class="metric-card"><div class="metric-value">14</div><div class="metric-label">Active Deals</div><div class="metric-delta up">↑ 3 new this month</div></div>
+          <div class="metric-card"><div class="metric-value">6</div><div class="metric-label">Structural Risks</div><div class="metric-delta down">↓ 2 unresolved</div></div>
+          <div class="metric-card"><div class="metric-value">71%</div><div class="metric-label">Strategy Coverage</div><div class="metric-delta up">↑ 10 of 14 deals have active strategy</div></div>
+          <div class="metric-card"><div class="metric-value">43%</div><div class="metric-label">Win Rate (Forecast)</div><div class="metric-delta up">↑ 5pts vs. prior quarter</div></div>
+        </div>
+        <h3 style="font-size:14px;margin-bottom:16px;color:var(--text-secondary);">PIPELINE BY STAGE</h3>
+        <div class="pipeline-grid">
+          <div class="pipeline-col"><div class="pipeline-col-header"><span>Zone 1: Discovery</span><span class="count">3</span></div><div class="pipeline-deals">
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Initech — Cloud Security</div><div class="pipeline-deal-amount">$340K · Close Sep 15</div><div class="pipeline-deal-risk risk-medium">⚠ Champion Not Tested</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Umbrella Corp — DSPM</div><div class="pipeline-deal-amount">$180K · Close Oct 1</div><div class="pipeline-deal-risk risk-low">✓ On Track</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Wayne Ent. — Compliance</div><div class="pipeline-deal-amount">$420K · Close Aug 30</div><div class="pipeline-deal-risk risk-high">⚠ Problem Not Validated</div></div>
+          </div></div>
+          <div class="pipeline-col"><div class="pipeline-col-header"><span>Zone 2: Solution</span><span class="count">4</span></div><div class="pipeline-deals">
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Stark Ind. — Data Platform</div><div class="pipeline-deal-amount">$890K · Close Jul 30</div><div class="pipeline-deal-risk risk-medium">⚠ Single-Threaded</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Oscorp — Risk Analytics</div><div class="pipeline-deal-amount">$560K · Close Aug 15</div><div class="pipeline-deal-risk risk-low">✓ Consensus Building</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">LexCorp — Security Audit</div><div class="pipeline-deal-amount">$310K · Close Sep 1</div><div class="pipeline-deal-risk risk-high">⚠ Competitive Mindshare</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Cyberdyne — AI Governance</div><div class="pipeline-deal-amount">$240K · Close Oct 15</div><div class="pipeline-deal-risk risk-low">✓ On Track</div></div>
+          </div></div>
+          <div class="pipeline-col"><div class="pipeline-col-header"><span>Zone 3: Validation</span><span class="count">4</span></div><div class="pipeline-deals">
+            <div class="pipeline-deal" style="border-color:var(--accent);"><div class="pipeline-deal-name" style="color:var(--accent);">Acme Corp — Cyera POC</div><div class="pipeline-deal-amount">$1.2M · Close Jun 30</div><div class="pipeline-deal-risk risk-high">⚠ 3 Active Risks</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Globex — Platform Security</div><div class="pipeline-deal-amount">$820K · Close Aug 15</div><div class="pipeline-deal-risk risk-medium">⚠ Process Misaligned</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Soylent — Data Protection</div><div class="pipeline-deal-amount">$290K · Close Jul 15</div><div class="pipeline-deal-risk risk-low">✓ POC Running</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Weyland — Enterprise DSPM</div><div class="pipeline-deal-amount">$1.5M · Close Jul 30</div><div class="pipeline-deal-risk risk-medium">⚠ EB Not Engaged</div></div>
+          </div></div>
+          <div class="pipeline-col"><div class="pipeline-col-header"><span>Zone 4: Close</span><span class="count">3</span></div><div class="pipeline-deals">
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Aperture — Full Deploy</div><div class="pipeline-deal-amount">$680K · Close Jun 15</div><div class="pipeline-deal-risk risk-low">✓ Commercial Terms</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Black Mesa — Security</div><div class="pipeline-deal-amount">$450K · Close Jun 30</div><div class="pipeline-deal-risk risk-medium">⚠ Procurement Stall</div></div>
+            <div class="pipeline-deal"><div class="pipeline-deal-name">Tyrell — AI Compliance</div><div class="pipeline-deal-amount">$920K · Close Jul 1</div><div class="pipeline-deal-risk risk-low">✓ Legal Review</div></div>
+          </div></div>
+        </div>
+        <h3 style="font-size:14px;margin-bottom:16px;color:var(--text-secondary);">STRUCTURAL HEALTH SUMMARY</h3>
+        <table class="risk-table"><thead><tr><th>Deal</th><th>Stage</th><th>Amount</th><th>Health</th><th>Primary Pattern</th><th>Strategy Path</th><th>Champion</th><th>EB Status</th></tr></thead><tbody>
+          <tr><td style="font-weight:600;">Acme Corp — Cyera POC</td><td>3_Validation</td><td>$1.2M</td><td><span class="health-dot red"></span>At Risk</td><td><span class="severity-badge severity-critical">Single-Threaded Risk</span></td><td>Selling to Consensus</td><td style="color:var(--yellow);">Testing</td><td style="color:var(--red);">Not Engaged</td></tr>
+          <tr><td style="font-weight:600;">Weyland — Enterprise DSPM</td><td>3_Validation</td><td>$1.5M</td><td><span class="health-dot yellow"></span>Caution</td><td><span class="severity-badge severity-high">Champion Gap</span></td><td>Champion Negotiation</td><td style="color:var(--yellow);">Identified</td><td style="color:var(--yellow);">Aware</td></tr>
+          <tr><td style="font-weight:600;">Stark Ind. — Data Platform</td><td>2_Solution</td><td>$890K</td><td><span class="health-dot yellow"></span>Caution</td><td><span class="severity-badge severity-critical">Single-Threaded Risk</span></td><td>Selling to Consensus</td><td style="color:var(--green);">Validated</td><td style="color:var(--red);">Not Engaged</td></tr>
+          <tr><td style="font-weight:600;">Wayne Ent. — Compliance</td><td>1_Discovery</td><td>$420K</td><td><span class="health-dot red"></span>At Risk</td><td><span class="severity-badge severity-critical">Weak Problem Def.</span></td><td>Quality Case for Change</td><td style="color:var(--red);">None</td><td style="color:var(--text-muted);">Unknown</td></tr>
+          <tr><td style="font-weight:600;">Aperture — Full Deploy</td><td>4_Close</td><td>$680K</td><td><span class="health-dot green"></span>Strong</td><td><span style="color:var(--green);font-size:12px;">No active risks</span></td><td>—</td><td style="color:var(--green);">Executing</td><td style="color:var(--green);">Committed</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+//     STEP DEFINITIONS — Each step = conversation + system activity
+// ============================================================
+const STEPS = [
+  // --- Step 1: Welcome ---
+  {
+    state: 'NEW_SESSION',
+    stateDesc: 'Session initialized. Persona greeting only. No strategic reasoning.',
+    messages: [
+      { type: 'system', html: `<p>Hi Sara</p><p>How can I help you win today?</p>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '⊕', label: 'Session Manager', detail: 'New session created<div class="json-mini">{\n  <span class="key">"session_id"</span>: <span class="str">"a3f7…c219"</span>,\n  <span class="key">"state"</span>: <span class="str">"NEW_SESSION"</span>,\n  <span class="key">"active_signals"</span>: <span class="null">[]</span>,\n  <span class="key">"deal_snapshot"</span>: <span class="null">null</span>\n}</div>' },
+      { comp: 'llm', icon: '⚡', label: 'LLM: Persona Voice', detail: 'Greeting generated from <code>persona.txt</code> prompt. No strategic reasoning authority.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Welcome screen with chat input + attachment button.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 2: User input (free text) ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'User provides deal context. System must extract structured data from free text.',
+    messages: [
+      { type: 'user', html: 'I have a compliance director who really likes Cyera and wants to move fast into a POC. Security and data teams aren\'t really involved yet. Varonis is strong there and trusted. I think I\'ll get crushed in the POC without stronger use cases.' }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Intent Router', detail: 'Classified as <strong>Strategic Reasoning</strong> — input references deal signals, competition, and stakeholder dynamics. Route to schema-constrained pipeline.' },
+      { comp: 'llm', icon: '⚡', label: 'LLM: Extraction Service', detail: 'Extracts candidate signals and deal attributes from free text using <code>extraction.txt</code> prompt.<div class="json-mini">{\n  <span class="key">"candidate_signals"</span>: [\n    <span class="str">"single_threaded_contact"</span>,\n    <span class="str">"competition_gaining_mindshare"</span>,\n    <span class="str">"validation_process_misalignment"</span>\n  ],\n  <span class="key">"deal_attributes"</span>: {\n    <span class="key">"stakeholder"</span>: <span class="str">"Compliance Director"</span>,\n    <span class="key">"competitor"</span>: <span class="str">"Varonis"</span>\n  }\n}</div>' },
+      { comp: 'gate', icon: '◈', label: 'Confirmation Gate', detail: 'Proposals queued for user confirmation. <strong>No signals activated yet.</strong> Extraction cannot modify schema state.' },
+      { comp: 'state', icon: '→', label: 'State: INTAKE → AWAITING_CONFIRMATION', detail: 'System has candidate proposals. Waiting for user to confirm or reject.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 3: Situation summary + confirmation ---
+  {
+    state: 'AWAITING_CONFIRMATION',
+    stateDesc: 'Present extracted understanding to user. No schema changes until confirmed.',
+    messages: [
+      { type: 'system', html: `<p>Here's how I'm understanding the situation. Tell me if this sounds right.</p>
+        <p><strong>Situation summary:</strong></p>
+        <ul>
+          <li>You have a Compliance Director who wants to move quickly into a POC</li>
+          <li>Security and Data teams are not aligned yet</li>
+          <li>Varonis is the trusted incumbent</li>
+          <li>You're concerned the POC will fail without stronger use cases and consensus</li>
+        </ul>
+        <p>Which of these best describes the situation?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes, that's accurate</button>
+          <button class="opt-btn">Mostly right — adjust</button>
+          <button class="opt-btn">Not quite — restate</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Renders extracted understanding in coaching voice. Cannot alter proposed signals — only explains them.' },
+      { comp: 'gate', icon: '◈', label: 'Confirmation Gate', detail: '<strong>This is the gate.</strong> Pure UI interaction, zero LLM. User must explicitly confirm before any signal is activated.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Confirmation card with 3 options. System is paused until user responds.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 4: User confirms → readiness check (stage missing) ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'User confirmed understanding. Readiness check: stage is missing — cannot determine Sales Zone.',
+    messages: [
+      { type: 'system', html: `<p>Let's ground this in where the deal actually is — not where it feels like it's going.</p>
+        <p><strong>What buying stage would you place this deal today?</strong></p>
+        <div class="msg-options">
+          <button class="opt-btn">Problem alignment</button>
+          <button class="opt-btn">Solution alignment</button>
+          <button class="opt-btn selected">Validation or POC</button>
+          <button class="opt-btn">Commercial or close</button>
+          <button class="opt-btn">Not sure</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: 'User confirmed situation summary. Stakeholder and competitor attributes written to session.<div class="json-mini"><span class="key">"deal_snapshot"</span>: {\n  <span class="key">"stakeholder"</span>: <span class="str">"Compliance Director"</span>,\n  <span class="key">"competitor"</span>: <span class="str">"Varonis"</span>\n}</div>' },
+      { comp: 'engine', icon: '⊘', label: 'Readiness Check', detail: '<div class="json-mini"><span class="key">"intake_readiness"</span>: {\n  <span class="key">"deal_stage"</span>: <span class="changed"><span class="val">"missing"</span></span> ← blocks engine,\n  <span class="key">"deal_close_date"</span>: <span class="val">"missing"</span>,\n  <span class="key">"deal_amount"</span>: <span class="val">"missing"</span>,\n  <span class="key">"signals_confirmed"</span>: <span class="val">false</span>\n}</div>' },
+      { comp: 'state', icon: '→', label: 'Stays in INTAKE', detail: 'Cannot run Decision Engine without the deal stage (determines Sales Zone). System asks for the specific missing field.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Stage selection buttons. <strong>No LLM call</strong> — this is a structured question from the readiness logic.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 5: Consensus check ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'Stage captured. System continues intake — probing for structural gaps.',
+    messages: [
+      { type: 'system', html: `<p>Quick sanity check.</p>
+        <p>Before a POC works, the core stakeholders need to agree on why this change actually matters.</p>
+        <p><strong>Are the security and data teams aligned on the problem yet?</strong></p>
+        <div class="msg-options">
+          <button class="opt-btn">Yes, they are</button>
+          <button class="opt-btn selected">Not really</button>
+          <button class="opt-btn">I'm not sure</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: 'Stage written to session. Zone determined.<div class="json-mini"><span class="key">"deal_snapshot"</span>: {\n  <span class="key">"stage"</span>: <span class="changed"><span class="str">"3_Validation"</span></span>\n}\n<span class="key">"intake_readiness"</span>: {\n  <span class="key">"deal_stage"</span>: <span class="changed"><span class="str">"present"</span></span>\n}</div>' },
+      { comp: 'engine', icon: '⊘', label: 'Zone Mapping (No LLM)', detail: 'Stage <code>3_Validation</code> → <strong>Zone 3: Late Stage — Validation / POC</strong>. Pure deterministic lookup.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Structured diagnostic question — button selection. <strong>No LLM call.</strong> This is a schema-driven intake question.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 6: Structure fix ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'Answer captured. System offers strategic framing from the coaching persona.',
+    messages: [
+      { type: 'system', html: `<p>That helps.</p>
+        <p>Right now, you're being pulled into a validation step without full consensus on the case for change.</p>
+        <p><strong>That's one of the most common ways strong deals quietly collapse.</strong></p>
+        <p>We can slow this down, fix the structure, and give you a much stronger POC.</p>
+        <p>Would you like to do that?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes, fix the structure</button>
+          <button class="opt-btn">No, keep pushing forward</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Coaching voice frames the structural risk. Uses <code>explanation.txt</code> + <code>persona.txt</code> prompts. Must say "Victros identified" not "I think."' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Direction choice. User decides whether to proceed with structural repair or push forward.' },
+      { comp: 'state', icon: '→', label: 'Still in INTAKE', detail: 'Signals not yet confirmed. Still gathering. Readiness check: stage ✓, signals ✗.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 7: Deal snapshot request + attachment ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'User agreed to fix the structure. System requests deal snapshot via any input method.',
+    messages: [
+      { type: 'system', html: `<p>Before we map the strategy, I need a quick snapshot of the deal.</p>
+        <p>Please provide the following:</p>
+        <ul><li>Stage</li><li>Close date</li><li>Amount</li><li>Any other important detail I should know</li></ul>
+        <p>Type in the chat or just attach something like:</p>
+        <ul><li>A CRM opportunity screen</li><li>A pipeline or forecast report</li><li>A deal sheet or account plan</li><li>Meeting notes or an email thread</li></ul>
+        <p>I'll extract the details automatically.</p>
+        <div class="attachment-pill"><span>📎</span> Acme_Corp_Pipeline_Report.xlsx</div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Extraction Service', detail: 'Attachment received. LLM extracts structured deal attributes from the spreadsheet content.<div class="json-mini">Extracted from XLSX:\n<span class="key">"stage"</span>: <span class="str">"3_Validation"</span>\n<span class="key">"close_date"</span>: <span class="str">"June 30"</span>\n<span class="key">"amount"</span>: <span class="val">1200000</span>\n<span class="key">"notes"</span>: <span class="str">"Compliance-led initiative,\n  security not yet aligned"</span></div>' },
+      { comp: 'gate', icon: '◈', label: 'Confirmation Gate', detail: 'Extracted attributes queued for user confirmation. The LLM proposed values — but <strong>nothing is written to session until confirmed.</strong>' },
+      { comp: 'state', icon: '→', label: 'State: INTAKE → AWAITING_CONFIRMATION', detail: 'Proposed deal attributes ready for user review.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 8: Snapshot confirmation ---
+  {
+    state: 'AWAITING_CONFIRMATION',
+    stateDesc: 'Present extracted deal snapshot for user confirmation.',
+    messages: [
+      { type: 'system', html: `<p>Got it. Here's the deal snapshot I found.</p>
+        <div class="snapshot">
+          <div class="snapshot-item"><div class="snapshot-label">Stage</div><div class="snapshot-value">3_Validation</div></div>
+          <div class="snapshot-item"><div class="snapshot-label">Close Date</div><div class="snapshot-value">June 30</div></div>
+          <div class="snapshot-item"><div class="snapshot-label">Amount</div><div class="snapshot-value">$1.2M</div></div>
+        </div>
+        <p style="font-size:12px;color:var(--text-secondary);">Notes: Compliance-led initiative, security not yet aligned</p>
+        <p style="margin-top:12px;"><strong>Does this look accurate?</strong></p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes, looks right</button>
+          <button class="opt-btn">No, let me adjust</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'gate', icon: '◈', label: 'Confirmation Gate', detail: '<strong>Zero LLM.</strong> Pure UI rendering of extracted data. User must explicitly confirm before session is updated.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Deal snapshot card with confirm/adjust options.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 9: Signal detection (multi-select cards) ---
+  {
+    state: 'INTAKE',
+    stateDesc: 'Deal snapshot confirmed. Readiness check: stage ✓, signals still needed. System presents signal cards.',
+    messages: [
+      { type: 'system', html: `<p>I'm going to ask about a few quick signals you're seeing in the deal.</p>
+        <p>Just tap the ones that are true right now.</p>
+        <p style="color:var(--text-secondary);font-size:12px;">Don't overthink it — this is just to understand the structure.</p>
+        <div class="signal-grid">
+          <div class="signal-card selected"><span class="check">✓</span>Single-Threaded Contact</div>
+          <div class="signal-card selected"><span class="check">✓</span>Competition Gaining Mindshare</div>
+          <div class="signal-card selected"><span class="check">✓</span>Validation / Process Misalignment</div>
+          <div class="signal-card"><span class="check"></span>Slowdowns or Silence</div>
+          <div class="signal-card" style="grid-column:span 2;"><span class="check"></span>None of these</div>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: 'Deal snapshot confirmed and written to session.<div class="json-mini"><span class="key">"deal_snapshot"</span>: {\n  <span class="key">"stage"</span>: <span class="str">"3_Validation"</span>,\n  <span class="changed"><span class="key">"close_date"</span>: <span class="str">"2026-06-30"</span></span>,\n  <span class="changed"><span class="key">"amount"</span>: <span class="val">1200000</span></span>,\n  <span class="changed"><span class="key">"notes"</span>: <span class="str">"Compliance-led…"</span></span>\n}</div>' },
+      { comp: 'engine', icon: '⊘', label: 'Readiness Check', detail: '<div class="json-mini"><span class="key">"deal_stage"</span>: <span class="str">"present"</span> ✓\n<span class="key">"deal_close_date"</span>: <span class="changed"><span class="str">"present"</span></span> ✓\n<span class="key">"deal_amount"</span>: <span class="changed"><span class="str">"present"</span></span> ✓\n<span class="key">"signals_confirmed"</span>: <span class="changed"><span class="val">false</span></span> ← still needed</div>' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Signal selection cards. <strong>Button input — no LLM needed.</strong> Direct selection maps to signal keys.' }
+    ],
+    levers: { cfc: 'weak', ch: 'weak', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'weak' }
+  },
+
+  // --- Step 10: Signals confirmed → Decision Engine runs ---
+  {
+    state: 'EVALUATING',
+    stateDesc: 'Signals confirmed. Readiness met (stage ✓, signals ✓). Decision Engine executes — zero LLM.',
+    messages: [
+      { type: 'system', html: `<div style="text-align:center;padding:40px 0;">
+        <div style="font-size:24px;margin-bottom:12px;">⚙️</div>
+        <div style="font-size:14px;color:var(--accent);font-weight:600;">Decision Engine Running...</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">Pure deterministic evaluation — no LLM</div>
+      </div>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: 'Signals activated and written to session.<div class="json-mini"><span class="key">"active_signals"</span>: [\n  <span class="changed"><span class="str">"single_threaded_contact"</span></span>,\n  <span class="changed"><span class="str">"competition_gaining_mindshare"</span></span>,\n  <span class="changed"><span class="str">"validation_process_misalignment"</span></span>\n]\n<span class="key">"signals_confirmed"</span>: <span class="changed"><span class="val">true</span></span></div>' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Step 1: Signal Evaluation', detail: '3 active signals evaluated. Affected levers identified:\n<code>single_threaded</code> → Champion, Consensus\n<code>competition</code> → Differentiation, Decision Process\n<code>validation_misalign</code> → Decision Process, Differentiation' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Step 2: Pattern Activation', detail: 'Trigger signals matched against 20 patterns:\n• <strong>Single-Threaded Risk</strong> — ACTIVATED (CRITICAL)\n• <strong>Competitive Mindshare</strong> — ACTIVATED (HIGH)\n• <strong>Process Misalignment</strong> — ACTIVATED (HIGH)' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Step 3: Collision Resolution', detail: 'Multiple patterns active. Applying priority rules:\n1. All structural risks (no momentum) ✓\n2. Highest severity: CRITICAL (Single-Threaded) > HIGH\n3. <strong>Priority Pattern: Single-Threaded Risk</strong>\n4. Secondary: Competitive Mindshare, Process Misalignment' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Step 4: StrategyPath Selection', detail: 'Priority pattern <code>Single-Threaded Risk</code>\n→ CandidateStrategyPathKeys: [<code>Selling_to_Consensus</code>, <code>Champion_Negotiation</code>]\n→ Entry conditions checked for Zone 3\n→ <strong>Selected: Selling_to_Consensus</strong>' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Step 5: Action Surfacing', detail: 'Load RepresentativeActions for <code>Selling_to_Consensus</code>:\n• Introduction to CISO\n• Sponsor alignment session\n• Influence decision criteria\n• Stakeholder sequencing' },
+      { comp: 'state', icon: '→', label: 'State: EVALUATING → PRESENTING_DIAGNOSIS', detail: 'DecisionResult produced. Engine done. LLM Explanation Service next.' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 11: Diagnosis presented ---
+  {
+    state: 'PRESENTING_DIAGNOSIS',
+    stateDesc: 'Explanation Service translates DecisionResult into coaching narrative. LLM explains, but cannot alter strategy.',
+    messages: [
+      { type: 'system', html: `<p>Here's what those signals tell us about the structure of this deal.</p>
+        <p>Right now, <strong>three structural patterns</strong> are showing up.</p>
+        <div class="pattern-card"><div class="pattern-name">⚠ Single-Threaded Risk</div><div class="pattern-desc">Only one stakeholder is engaged, limiting consensus formation.</div></div>
+        <div class="pattern-card"><div class="pattern-name">⚠ Competitive Mindshare</div><div class="pattern-desc">Buyer language or evaluation steps are leaning toward a competitor's approach.</div></div>
+        <div class="pattern-card"><div class="pattern-name">⚠ Process Misalignment</div><div class="pattern-desc">Requested decision steps or validation approach do not align to your strengths.</div></div>
+        <p>When these three appear together, the deal usually has interest, but not enough internal alignment or structural support to win cleanly.</p>
+        <p><strong>The good news is this is a very common situation — and there's a clear strategy to fix it.</strong></p>
+        <p>Does that match what you're experiencing?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes, exactly</button>
+          <button class="opt-btn">Mostly</button>
+          <button class="opt-btn">Not really</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Receives <code>DecisionResult</code> and renders coaching narrative.\n\n<strong>Rendering order enforced:</strong>\n1. Structural implication\n2. Risk explanation\n3. Recommended strategic focus\n4. Pattern label (optional)\n\nMust use observable verbs (ask, map, align, validate).' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Pattern diagnosis cards + confirmation. LLM generated the text but <strong>the patterns and strategy were selected by the engine, not the LLM.</strong>' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 12: Champion test proposal ---
+  {
+    state: 'ACTION_SELECTION',
+    stateDesc: 'Diagnosis confirmed. StrategyPath active. System surfaces the highest-leverage next move.',
+    messages: [
+      { type: 'system', html: `<p>Given this structure, the highest-leverage move is simple.</p>
+        <p><strong>We need to confirm whether your Champion can actually open up the consensus.</strong></p>
+        <p>If they can, this deal becomes real. If they can't, we'll adjust the strategy.</p>
+        <p>Ready to test your Champion?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes, let's do it</button>
+          <button class="opt-btn">Not sure yet</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Frames the Champion test in coaching voice. The <em>action itself</em> comes from the schema — the LLM only explains why it matters.' },
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: '<div class="json-mini"><span class="key">"selected_strategy_path"</span>: <span class="changed"><span class="str">"Selling_to_Consensus"</span></span>\n<span class="key">"active_patterns"</span>: {\n  <span class="key">"primary"</span>: <span class="changed"><span class="str">"single_threaded_risk"</span></span>,\n  <span class="key">"secondary"</span>: [<span class="str">"competitive_mindshare"</span>,\n    <span class="str">"process_misalignment"</span>]\n}</div>' },
+      { comp: 'state', icon: '→', label: 'State: PRESENTING_DIAGNOSIS → ACTION_SELECTION', detail: 'User confirmed diagnosis. System ready to present RepresentativeActions.' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 13: Action selection ---
+  {
+    state: 'ACTION_SELECTION',
+    stateDesc: 'User picks concrete next move from RepresentativeActions for the active StrategyPath.',
+    messages: [
+      { type: 'system', html: `<p>Right now, your Champion looks promising, but we don't have proof yet that they can move the organization internally.</p>
+        <p><strong>The next step is to ask for one meaningful internal action that advances the deal.</strong> Their response will tell us whether they're truly a Champion.</p>
+        <p>Which of these actions would most move the deal forward right now?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected"><div class="opt-btn-title">Introduction to the CISO</div></button>
+          <button class="opt-btn"><div class="opt-btn-title">Introduction to the Head of Data Platform</div></button>
+          <button class="opt-btn"><div class="opt-btn-title">Sponsor a stakeholder alignment session</div></button>
+          <button class="opt-btn"><div class="opt-btn-title">Influence decision criteria internally</div></button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Renders each RepresentativeAction in natural language. <strong>Cannot invent actions outside the schema.</strong> The 4 options come from <code>representative_actions.json</code> for path <code>Selling_to_Consensus</code>.' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Action cards. When user selects one, session records the chosen action and transitions to MONITORING.' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 14: Monitoring ---
+  {
+    state: 'MONITORING',
+    stateDesc: 'User selected action. System waits for real-world outcome feedback.',
+    messages: [
+      { type: 'system', html: `<p>Now we watch what happens next. This is the moment where a Champion becomes real.</p>
+        <p><strong>Did your Champion complete the specific action we asked for?</strong></p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes — they completed it</button>
+          <button class="opt-btn">No — they didn't follow through</button>
+          <button class="opt-btn">Partially — they tried, but it didn't happen</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: 'Selected action recorded.<div class="json-mini"><span class="key">"selected_action"</span>: <span class="changed"><span class="str">"intro_to_ciso"</span></span>\n<span class="key">"action_started_at"</span>: <span class="changed"><span class="str">"2026-04-02T…"</span></span></div>' },
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Frames the monitoring question: what to watch for, what the outcome tells us. Cannot determine strategic meaning — that\'s the engine\'s job.' },
+      { comp: 'state', icon: '→', label: 'State: ACTION_SELECTION → MONITORING', detail: 'System paused. Waiting for real-world feedback. User outcome maps to new signal proposals.' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 15: Outcome maps to new signals → re-evaluation ---
+  {
+    state: 'RE_EVALUATING',
+    stateDesc: 'Positive outcome → new signals proposed → confirmed → Decision Engine re-runs.',
+    messages: [
+      { type: 'system', html: `<div style="text-align:center;padding:40px 0;">
+        <div style="font-size:24px;margin-bottom:12px;">⚙️</div>
+        <div style="font-size:14px;color:var(--accent);font-weight:600;">Decision Engine Re-evaluating...</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">Updated signal set — re-running full pipeline</div>
+      </div>` }
+    ],
+    activity: [
+      { comp: 'engine', icon: '⊘', label: 'Outcome → Signal Mapping (No LLM)', detail: '"Yes — completed" maps to PositiveProgressSignals from StrategyPath schema:\n→ <code>champion_action_completed</code> (positive signal)\n→ Reduces <code>single_threaded_contact</code> severity' },
+      { comp: 'gate', icon: '◈', label: 'Confirmation Gate (Auto)', detail: 'New signal proposals from outcome mapping queued. In the full system, user would confirm. For demo, auto-confirmed.' },
+      { comp: 'engine', icon: '⚙', label: 'Decision Engine — Re-evaluation', detail: 'Full pipeline re-run with updated signals:\n\n<strong>Pattern re-assessment:</strong>\n• Single-Threaded Risk → <span style="color:var(--green)">REDUCED</span> (CISO now engaged)\n• Competitive Mindshare → STILL ACTIVE\n• Process Misalignment → STILL ACTIVE\n\n<strong>Lever state changes:</strong>\n• Champion Strength: WEAK → CONNECTED\n• Buyer Consensus: still WEAK (need more)\n\n<strong>StrategyPath: Selling_to_Consensus</strong> — stays active. Exit conditions not yet met.' },
+      { comp: 'state', icon: '→', label: 'State: RE_EVALUATING → PRESENTING_DIAGNOSIS', detail: 'Same strategy path continues but risk profile has improved. New diagnosis presentation.' }
+    ],
+    levers: { cfc: 'connected', ch: 'connected', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  },
+
+  // --- Step 16: Updated diagnosis + next strategy ---
+  {
+    state: 'PRESENTING_DIAGNOSIS',
+    stateDesc: 'Re-evaluation complete. One risk reduced. System shows progression and next move.',
+    messages: [
+      { type: 'system', html: `<p>That's important.</p>
+        <p><strong>Your Champion just introduced you to the CISO.</strong> That's real internal advocacy — not just interest.</p>
+        <p>Earlier, we saw three structural risks:</p>
+        <div class="pattern-card"><div class="pattern-name" style="color:var(--green);">✓ Single-Threaded Risk — Reduced</div><div class="pattern-desc">CISO introduction directly reduces this risk.</div></div>
+        <div class="pattern-card"><div class="pattern-name">⚠ Competitive Mindshare</div><div class="pattern-desc">Technical teams still leaning toward the incumbent.</div></div>
+        <div class="pattern-card"><div class="pattern-name">⚠ Process Misalignment</div><div class="pattern-desc">Validation path doesn't yet support your strengths.</div></div>
+        <p>The next strategic move is to align the full stakeholder group around a shared case for change.</p>
+        <p>Does that direction make sense?</p>
+        <div class="msg-options">
+          <button class="opt-btn selected">Yes — expand to consensus</button>
+          <button class="opt-btn">Not yet</button>
+          <button class="opt-btn">I want to revisit the strategy</button>
+        </div>` }
+    ],
+    activity: [
+      { comp: 'llm', icon: '⚡', label: 'LLM: Explanation Service', detail: 'Renders updated diagnosis showing <strong>pattern progression</strong>. Explains what the Champion test proved and what structural gaps remain.\n\nThe engine determined the risk reduction — the LLM only communicates it.' },
+      { comp: 'session', icon: '✓', label: 'Session Manager', detail: '<div class="json-mini"><span class="key">"active_patterns"</span>: {\n  <span class="key">"primary"</span>: <span class="str">"competitive_mindshare"</span>,\n  <span class="key">"secondary"</span>: [<span class="str">"process_misalignment"</span>]\n}\n<span class="key">"lever_states"</span>: {\n  <span class="key">"champion_strength"</span>: <span class="changed"><span class="str">"CONNECTED"</span></span>\n}</div>' },
+      { comp: 'ui', icon: '◉', label: 'UI Render', detail: 'Updated pattern cards showing progression (green ✓ on resolved risk). Strategy continues — cycle repeats with remaining risks.' }
+    ],
+    levers: { cfc: 'connected', ch: 'committed', eb: 'weak', con: 'weak', dp: 'weak', diff: 'weak', urg: 'connected' }
+  }
+];
+
+// ============================================================
+//     RENDERING ENGINE
+// ============================================================
+let currentStep = 0;
+
+function renderStep(idx) {
+  const step = STEPS[idx];
+  const chat = document.getElementById('chatMessages');
+  const sys = document.getElementById('systemContent');
+
+  // Clear
+  chat.innerHTML = '';
+  sys.innerHTML = '';
+
+  // Render conversation messages (current + all previous)
+  for (let i = 0; i <= idx; i++) {
+    const s = STEPS[i];
+    s.messages.forEach(msg => {
+      const div = document.createElement('div');
+      div.className = 'message ' + (msg.type === 'user' ? 'msg-user' : 'msg-system');
+      if (i === idx) div.classList.add('msg-animate');
+      if (msg.type === 'system') {
+        div.innerHTML = `<div class="msg-header"><div class="dot"></div>VICTROS</div><div class="msg-body">${msg.html}</div>`;
+      } else {
+        div.innerHTML = msg.html;
+      }
+      chat.appendChild(div);
+    });
+  }
+
+  // Scroll chat to bottom
+  setTimeout(() => { chat.scrollTop = chat.scrollHeight; }, 50);
+
+  // State display
+  const stateHtml = `
+    <div class="state-display">
+      <div class="state-label">Current State</div>
+      <div class="state-value">${step.state}</div>
+      <div class="state-desc">${step.stateDesc}</div>
+    </div>
+  `;
+  sys.innerHTML += stateHtml;
+
+  // Activity entries
+  const actHtml = `<div class="activity-section">
+    <div class="activity-section-title">Components Invoked — Step ${idx + 1}</div>
+    ${step.activity.map((a, ai) => `
+      <div class="activity-entry comp-${a.comp}" style="animation-delay: ${ai * 0.15}s; animation-fill-mode: forwards;">
+        <div class="timeline">
+          <div class="icon-circle">${a.icon}</div>
+          ${ai < step.activity.length - 1 ? '<div class="line"></div>' : ''}
+        </div>
+        <div class="activity-body">
+          <div class="activity-label">${a.label}</div>
+          <div class="activity-detail">${a.detail}</div>
+        </div>
+      </div>
+    `).join('')}
+  </div>`;
+  sys.innerHTML += actHtml;
+
+  // Lever states
+  const leverNames = {
+    cfc: 'Case for Change', ch: 'Champion', eb: 'Econ. Buyer',
+    con: 'Consensus', dp: 'Decision Process', diff: 'Differentiation', urg: 'Urgency'
+  };
+  const prevLevers = idx > 0 ? STEPS[idx - 1].levers : null;
+  let leverHtml = `<div class="activity-section"><div class="activity-section-title">Lever States</div>`;
+  for (const [k, v] of Object.entries(step.levers)) {
+    const changed = prevLevers && prevLevers[k] !== v;
+    leverHtml += `
+      <div class="lever-bar ${changed ? 'lever-changed' : ''}">
+        <div class="lever-name">${leverNames[k]}</div>
+        <div class="lever-track"><div class="lever-fill ${v}"></div></div>
+        <div class="lever-state ${v}">${v.toUpperCase()}${changed ? ' ←' : ''}</div>
+      </div>`;
+  }
+  leverHtml += `</div>`;
+  sys.innerHTML += leverHtml;
+
+  // Update nav
+  document.getElementById('stepLabel').textContent = `Step ${idx + 1} of ${STEPS.length}`;
+  document.getElementById('stepProgressFill').style.width = ((idx + 1) / STEPS.length * 100) + '%';
+  document.getElementById('btnPrev').disabled = idx === 0;
+  document.getElementById('btnNext').disabled = idx === STEPS.length - 1;
+  document.getElementById('btnNext').textContent = idx === STEPS.length - 1 ? 'End of Demo' : 'Next →';
+}
+
+function nextStep() {
+  if (currentStep < STEPS.length - 1) { currentStep++; renderStep(currentStep); }
+}
+function prevStep() {
+  if (currentStep > 0) { currentStep--; renderStep(currentStep); }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prevStep(); }
+});
+
+// Tab switching
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+}
+
+function switchAdminTab(tab) {
+  const tabs = ['signals', 'patterns', 'strategies', 'levers', 'zones'];
+  tabs.forEach(t => { const el = document.getElementById('admin-' + t); if (el) el.style.display = t === tab ? 'block' : 'none'; });
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Init
+renderStep(0);
+</script>
+</body>
+</html>

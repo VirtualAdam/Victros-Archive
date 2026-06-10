@@ -1,0 +1,597 @@
+[
+  {
+    "action_key": "ask_why_the_current_approach_is_no_longer_sufficie",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Ask why the current approach is no longer sufficient",
+    "ux_text": "Ask why the current approach is no longer sufficient",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "ask_what_happens_if_nothing_changes",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Ask what happens if nothing changes",
+    "ux_text": "Ask what happens if nothing changes",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "ask_who_is_impacted_by_the_problem",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Ask who is impacted by the problem",
+    "ux_text": "Ask who is impacted by the problem",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "explore_the_operational_or_financial_impact_of_the",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Explore the operational or financial impact of the problem",
+    "ux_text": "Explore the operational or financial impact of the problem",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "co_create_a_draft_case_for_change_with_a_champion",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Co-create a draft case for change with a Champion Target",
+    "ux_text": "Co-create a draft case for change with a Champion Target",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "validate_and_expand_the_case_for_change_with_addit",
+    "parent_strategy_path": "Qualify_CaseForChange",
+    "description": "Validate and expand the case for change with additional stakeholders and personas",
+    "ux_text": "Validate and expand the case for change with additional stakeholders and personas",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "reframe_the_discussion_by_connecting_the_solution",
+    "parent_strategy_path": "Position_Outcomes_Vision",
+    "description": "Reframe the discussion by connecting the solution to the buyer\u2019s specific problems",
+    "ux_text": "Reframe the discussion by connecting the solution to the buyer\u2019s specific problems",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "validate_the_buyers_desired_future_outcomes_and_c",
+    "parent_strategy_path": "Position_Outcomes_Vision",
+    "description": "Validate the buyer\u2019s desired future outcomes and confirm why they matter personally",
+    "ux_text": "Validate the buyer\u2019s desired future outcomes and confirm why they matter personally",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "use_relevant_customer_stories_and_proof_points_to",
+    "parent_strategy_path": "Position_Outcomes_Vision",
+    "description": "Use relevant customer stories and proof points to help the buyer visualize those outcomes",
+    "ux_text": "Use relevant customer stories and proof points to help the buyer visualize those outcomes",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "map_solution_differentiation_directly_to_the_outco",
+    "parent_strategy_path": "Position_Outcomes_Vision",
+    "description": "Map solution differentiation directly to the outcomes the buyer cares about",
+    "ux_text": "Map solution differentiation directly to the outcomes the buyer cares about",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "challenge_feature_based_or_requirement_only_thinki",
+    "parent_strategy_path": "Position_Outcomes_Vision",
+    "description": "Challenge feature-based or requirement-only thinking by redirecting to outcome impact",
+    "ux_text": "Challenge feature-based or requirement-only thinking by redirecting to outcome impact",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "identify_which_individuals_or_teams_are_actively_u",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Identify which individuals or teams are actively using the product",
+    "ux_text": "Identify which individuals or teams are actively using the product",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "confirm_which_workflows_the_product_is_used_in_and",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Confirm which workflows the product is used in and how those workflows are being executed",
+    "ux_text": "Confirm which workflows the product is used in and how those workflows are being executed",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "assess_how_broadly_this_usage_exists_and_where_sim",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Assess how broadly this usage exists and where similar workflows are not yet using the product",
+    "ux_text": "Assess how broadly this usage exists and where similar workflows are not yet using the product",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "determine_how_critical_the_product_is_by_asking_wh",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Determine how critical the product is by asking what would happen if it were no longer available",
+    "ux_text": "Determine how critical the product is by asking what would happen if it were no longer available",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "identify_and_translate_where_usage_creates_time_sa",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Identify and translate where usage creates time savings risk reduction or performance improvement into one to two business outcomes",
+    "ux_text": "Identify and translate where usage creates time savings risk reduction or performance improvement into one to two business outcomes",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "identify_who_owns_or_is_accountable_for_the_busine",
+    "parent_strategy_path": "Discover_Value_From_Usage",
+    "description": "Identify who owns or is accountable for the business outcome enabled by this usage and confirm access to that individual",
+    "ux_text": "Identify who owns or is accountable for the business outcome enabled by this usage and confirm access to that individual",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "map_stakeholders_and_assess_power_influence_and_ad",
+    "parent_strategy_path": "Identify_Champion_Targets",
+    "description": "Map stakeholders and assess power influence and advocacy potential",
+    "ux_text": "Map stakeholders and assess power influence and advocacy potential",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_about_decision_ownership_and_internal_influenc",
+    "parent_strategy_path": "Identify_Champion_Targets",
+    "description": "Ask about decision ownership and internal influence",
+    "ux_text": "Ask about decision ownership and internal influence",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "test_ability_to_introduce_other_stakeholders_or_eb",
+    "parent_strategy_path": "Identify_Champion_Targets",
+    "description": "Test ability to introduce other stakeholders or EB",
+    "ux_text": "Test ability to introduce other stakeholders or EB",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "identify_at_least_one_champion_target",
+    "parent_strategy_path": "Identify_Champion_Targets",
+    "description": "Identify at least one Champion Target",
+    "ux_text": "Identify at least one Champion Target",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "reframe_deal_around_who_is_the_champion_target",
+    "parent_strategy_path": "Identify_Champion_Targets",
+    "description": "Reframe deal around who is the Champion Target",
+    "ux_text": "Reframe deal around who is the Champion Target",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "attach_the_solution_to_the_champion_targets_prior",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Attach the solution to the Champion Target\u2019s priority problems and desired outcomes",
+    "ux_text": "Attach the solution to the Champion Target\u2019s priority problems and desired outcomes",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "help_the_champion_visualize_a_future_state_where_t",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Help the Champion visualize a future state where those outcomes are achieved",
+    "ux_text": "Help the Champion visualize a future state where those outcomes are achieved",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "design_a_small_safe_action_that_lets_the_champion",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Design a small safe action that lets the Champion experience progress toward that outcome",
+    "ux_text": "Design a small safe action that lets the Champion experience progress toward that outcome",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "use_workshops_custom_demos_references_or_simulatio",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Use workshops custom demos references or simulations to create belief through experience",
+    "ux_text": "Use workshops custom demos references or simulations to create belief through experience",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "surface_and_address_commitment_gaps_directly_and_c",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Surface and address commitment gaps directly and collaboratively",
+    "ux_text": "Surface and address commitment gaps directly and collaboratively",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "agree_on_champion_owned_next_steps_that_reflect_pe",
+    "parent_strategy_path": "Build_Champion",
+    "description": "Agree on Champion-owned next steps that reflect personal ownership of the initiative",
+    "ux_text": "Agree on Champion-owned next steps that reflect personal ownership of the initiative",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "request_an_introduction_to_the_economic_buyer_or_k",
+    "parent_strategy_path": "Test_Champion",
+    "description": "Request an introduction to the Economic Buyer or key decision stakeholder",
+    "ux_text": "Request an introduction to the Economic Buyer or key decision stakeholder",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_the_champion_to_sponsor_an_internal_alignment",
+    "parent_strategy_path": "Test_Champion",
+    "description": "Ask the Champion to sponsor an internal alignment meeting",
+    "ux_text": "Ask the Champion to sponsor an internal alignment meeting",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "request_a_next_step_tied_to_a_qualification_gap",
+    "parent_strategy_path": "Test_Champion",
+    "description": "Request a next step tied to a qualification gap",
+    "ux_text": "Request a next step tied to a qualification gap",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "ask_the_champion_to_influence_decision_criteria",
+    "parent_strategy_path": "Test_Champion",
+    "description": "Ask the Champion to influence decision criteria",
+    "ux_text": "Ask the Champion to influence decision criteria",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_the_champion_to_position_the_solution_internal",
+    "parent_strategy_path": "Test_Champion",
+    "description": "Ask the Champion to position the solution internally",
+    "ux_text": "Ask the Champion to position the solution internally",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "explain_why_alignment_across_the_full_stakeholder",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Explain why alignment across the full stakeholder group is required for success",
+    "ux_text": "Explain why alignment across the full stakeholder group is required for success",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "map_the_full_consensus_group_with_the_champion_and",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Map the full consensus group with the Champion and identify each stakeholder\u2019s priorities",
+    "ux_text": "Map the full consensus group with the Champion and identify each stakeholder\u2019s priorities",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "engage_each_stakeholder_in_persona_specific_outcom",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Engage each stakeholder in persona-specific outcome discussions",
+    "ux_text": "Engage each stakeholder in persona-specific outcome discussions",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "connect_the_solution_to_the_problems_and_outcomes",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Connect the solution to the problems and outcomes that matter to each persona",
+    "ux_text": "Connect the solution to the problems and outcomes that matter to each persona",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "use_targeted_stories_workshops_or_proof_points_to",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Use targeted stories workshops or proof points to build outcome belief for each stakeholder",
+    "ux_text": "Use targeted stories workshops or proof points to build outcome belief for each stakeholder",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "sequence_engagement_so_stakeholders_individually_r",
+    "parent_strategy_path": "Selling_to_Consensus",
+    "description": "Sequence engagement so stakeholders individually reach alignment on the case for change and solution criteria",
+    "ux_text": "Sequence engagement so stakeholders individually reach alignment on the case for change and solution criteria",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "explain_why_alignment_with_the_funding_authority_i",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Explain why alignment with the funding authority is required for the initiative to succeed",
+    "ux_text": "Explain why alignment with the funding authority is required for the initiative to succeed",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "identify_the_economic_buyer_by_mapping_decision_st",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Identify the Economic Buyer by mapping decision steps and confirming who owns final funding approval",
+    "ux_text": "Identify the Economic Buyer by mapping decision steps and confirming who owns final funding approval",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "clarify_the_economic_buyers_priorities_decision_c",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Clarify the Economic Buyer\u2019s priorities decision criteria and likely concerns",
+    "ux_text": "Clarify the Economic Buyer\u2019s priorities decision criteria and likely concerns",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "plan_the_economic_buyer_alignment_agenda_with_the",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Plan the Economic Buyer alignment agenda with the Champion around those priorities",
+    "ux_text": "Plan the Economic Buyer alignment agenda with the Champion around those priorities",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "role_play_the_economic_buyer_conversation_and_like",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Role-play the Economic Buyer conversation and likely objections with the Champion",
+    "ux_text": "Role-play the Economic Buyer conversation and likely objections with the Champion",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_the_champion_to_sponsor_and_attend_the_economi",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Ask the Champion to sponsor and attend the Economic Buyer alignment meeting",
+    "ux_text": "Ask the Champion to sponsor and attend the Economic Buyer alignment meeting",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "position_the_case_for_change_in_executive_business",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Position the case for change in executive business-level terms relevant to the Economic Buyer",
+    "ux_text": "Position the case for change in executive business-level terms relevant to the Economic Buyer",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "prepare_the_champion_to_act_as_a_proxy_if_direct_a",
+    "parent_strategy_path": "Secure_EB_Alignment",
+    "description": "Prepare the Champion to act as a proxy if direct access is not possible",
+    "ux_text": "Prepare the Champion to act as a proxy if direct access is not possible",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_a_buyer_of_authority_to_confirm_whether_the_pr",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "Ask a buyer of authority to confirm whether the problem is real",
+    "ux_text": "Ask a buyer of authority to confirm whether the problem is real",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "measurable",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "measurable",
+    "ux_text": "measurable",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "and_worth_solving_now",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "and worth solving now",
+    "ux_text": "and worth solving now",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "ask_who_inside_the_organization_will_personally_dr",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "Ask who inside the organization will personally drive the initiative and what actions they have already taken",
+    "ux_text": "Ask who inside the organization will personally drive the initiative and what actions they have already taken",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "confirm_who_approves_spend_and_whether_they_suppor",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "Confirm who approves spend and whether they support the initiative and timing",
+    "ux_text": "Confirm who approves spend and whether they support the initiative and timing",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "determine_whether_the_deal_has_a_credible_path_to",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "Determine whether the deal has a credible path to Champion ownership and Economic Buyer alignment",
+    "ux_text": "Determine whether the deal has a credible path to Champion ownership and Economic Buyer alignment",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "recommend_deprioritizing_or_exiting_the_deal_if_th",
+    "parent_strategy_path": "Disqualify_or_Deprioritize",
+    "description": "Recommend deprioritizing or exiting the deal if these structural conditions cannot be achieved",
+    "ux_text": "Recommend deprioritizing or exiting the deal if these structural conditions cannot be achieved",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "map_decision_steps_timelines_and_owners",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Map decision steps timelines and owners",
+    "ux_text": "Map decision steps timelines and owners",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "validate_the_process_with_the_champion",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Validate the process with the Champion",
+    "ux_text": "Validate the process with the Champion",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "identify_the_eb_approval_step",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Identify the EB approval step",
+    "ux_text": "Identify the EB approval step",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "share_a_reference_process_if_needed",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Share a reference process if needed",
+    "ux_text": "Share a reference process if needed",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "establish_a_mutual_process_agreement",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Establish a mutual process agreement",
+    "ux_text": "Establish a mutual process agreement",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "reconfirm_steps_as_the_deal_progresses",
+    "parent_strategy_path": "Decision_Process_Alignment",
+    "description": "Reconfirm steps as the deal progresses",
+    "ux_text": "Reconfirm steps as the deal progresses",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "ask_the_champion_to_map_the_people_processes_and_p",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Ask the Champion to map the people processes and protocols involved in securing approval",
+    "ux_text": "Ask the Champion to map the people processes and protocols involved in securing approval",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "agree_on_specific_internal_tasks_where_the_seller",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Agree on specific internal tasks where the seller will assist the Champion",
+    "ux_text": "Agree on specific internal tasks where the seller will assist the Champion",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "co_create_stakeholder_specific_messaging_for_key_p",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Co-create stakeholder-specific messaging for key personas",
+    "ux_text": "Co-create stakeholder-specific messaging for key personas",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "prepare_justification_materials_for_business_techn",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Prepare justification materials for business technical and executive audiences",
+    "ux_text": "Prepare justification materials for business technical and executive audiences",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "role_play_the_most_critical_internal_conversations",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Role-play the most critical internal conversations the Champion expects",
+    "ux_text": "Role-play the most critical internal conversations the Champion expects",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "build_a_consensus_alignment_plan_with_named_stakeh",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Build a consensus alignment plan with named stakeholders and next steps",
+    "ux_text": "Build a consensus alignment plan with named stakeholders and next steps",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "provide_answers_and_materials_for_the_champion_to",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Provide answers and materials for the Champion to address known stakeholder questions or objections",
+    "ux_text": "Provide answers and materials for the Champion to address known stakeholder questions or objections",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "run_focused_champion_empowerment_sessions_tied_to",
+    "parent_strategy_path": "Empower_Champion",
+    "description": "Run focused Champion empowerment sessions tied to upcoming internal steps",
+    "ux_text": "Run focused Champion empowerment sessions tied to upcoming internal steps",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "qualify_each_stakeholders_trust_criteria_across_o",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Qualify each stakeholder\u2019s trust criteria across outcomes risk and success proof",
+    "ux_text": "Qualify each stakeholder\u2019s trust criteria across outcomes risk and success proof",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "design_validation_steps_that_satisfy_each_stakehol",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Design validation steps that satisfy each stakeholder\u2019s trust criteria",
+    "ux_text": "Design validation steps that satisfy each stakeholder\u2019s trust criteria",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "ask_stakeholders_to_sponsor_or_lead_validation_act",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Ask stakeholders to sponsor or lead validation activities tied to their function",
+    "ux_text": "Ask stakeholders to sponsor or lead validation activities tied to their function",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "coordinate_consensus_led_workshops_pilots_or_proof",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Coordinate consensus-led workshops pilots or proof events that create shared outcome evidence",
+    "ux_text": "Coordinate consensus-led workshops pilots or proof events that create shared outcome evidence",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "align_the_group_around_a_shared_success_plan_they",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Align the group around a shared success plan they believe is credible and low risk",
+    "ux_text": "Align the group around a shared success plan they believe is credible and low risk",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "prepare_a_consensus_backed_case_demonstrating_read",
+    "parent_strategy_path": "Activate_Consensus",
+    "description": "Prepare a consensus-backed case demonstrating readiness for Economic Buyer commitment",
+    "ux_text": "Prepare a consensus-backed case demonstrating readiness for Economic Buyer commitment",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "identify_the_champion_partner_for_negotiation",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Identify the Champion partner for negotiation",
+    "ux_text": "Identify the Champion partner for negotiation",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "map_all_parties_involved_on_both_sides",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Map all parties involved on both sides",
+    "ux_text": "Map all parties involved on both sides",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "determine_relative_leverage_and_constraints_for_bo",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Determine relative leverage and constraints for both parties",
+    "ux_text": "Determine relative leverage and constraints for both parties",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "align_on_primary_interests_for_both_sides",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Align on primary interests for both sides",
+    "ux_text": "Align on primary interests for both sides",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "define_value_thresholds_and_non_negotiable_conditi",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Define value thresholds and non-negotiable conditions",
+    "ux_text": "Define value thresholds and non-negotiable conditions",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "establish_anchor_points_and_acceptable_outcome_ran",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Establish anchor points and acceptable outcome ranges",
+    "ux_text": "Establish anchor points and acceptable outcome ranges",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "identify_commercial_and_legal_term_currencies_beyo",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Identify commercial and legal term currencies beyond price",
+    "ux_text": "Identify commercial and legal term currencies beyond price",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "prepare_champion_messaging_for_internal_negotiatio",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Prepare Champion messaging for internal negotiation discussions",
+    "ux_text": "Prepare Champion messaging for internal negotiation discussions",
+    "specificity": "situation-specific"
+  },
+  {
+    "action_key": "exchange_interests_rather_than_positional_demands",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Exchange interests rather than positional demands",
+    "ux_text": "Exchange interests rather than positional demands",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "present_legitimate_options_that_satisfy_shared_pri",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Present legitimate options that satisfy shared priorities",
+    "ux_text": "Present legitimate options that satisfy shared priorities",
+    "specificity": "generic"
+  },
+  {
+    "action_key": "support_champion_accountability_through_final_inte",
+    "parent_strategy_path": "Champion_Negotiation",
+    "description": "Support Champion accountability through final internal alignment and commitment",
+    "ux_text": "Support Champion accountability through final internal alignment and commitment",
+    "specificity": "situation-specific"
+  }
+]

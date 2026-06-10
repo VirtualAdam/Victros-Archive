@@ -1,0 +1,13 @@
+{
+  "id": "9f94b123-a9f5-403e-9b0d-728e44b52b38",
+  "snapshot_id": "9f94b123-a9f5-403e-9b0d-728e44b52b38",
+  "week_start": "2026-04-05",
+  "week_end": "2026-04-11",
+  "generated_at": "2026-04-10T13:54:31.999909+00:00",
+  "pipeline_value": 0.0,
+  "active_deal_count": 2,
+  "deals_at_risk_count": 2,
+  "risks_resolved_count": 0,
+  "pipeline_value_strengthened": 0.0,
+  "deals_strengthened_count": 1
+}

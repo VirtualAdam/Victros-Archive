@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VICTROS — Customer Experience Reference</title>
+<style>
+/* ================================================================
+   VICTROS DESIGN SYSTEM — Customer Experience Reference
+   This file defines every production frontend element.
+   Open in a browser to see the landing page and chat interface.
+   ================================================================ */
+
+/* ========== RESET & TOKENS ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* Surface */
+  --bg-dark: #0d0d0d;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #222;
+  --bg-input: #1e1e1e;
+  --bg-sidebar: #0a0a0a;
+  --border: #2a2a2a;
+  --border-active: #4a90d9;
+
+  /* Text */
+  --text-primary: #e8e8e8;
+  --text-secondary: #999;
+  --text-muted: #666;
+
+  /* Accent */
+  --accent: #4a90d9;
+  --accent-hover: #5ba0e9;
+  --accent-dim: rgba(74,144,217,0.15);
+
+  /* Semantic */
+  --green: #2ecc71;
+  --green-dim: rgba(46,204,113,0.15);
+  --yellow: #f39c12;
+  --yellow-dim: rgba(243,156,18,0.15);
+  --red: #e74c3c;
+  --red-dim: rgba(231,76,60,0.15);
+  --orange: #e67e22;
+  --orange-dim: rgba(230,126,34,0.15);
+  --purple: #9b59b6;
+  --purple-dim: rgba(155,89,182,0.15);
+  --cyan: #1abc9c;
+  --cyan-dim: rgba(26,188,156,0.15);
+
+  /* Shape */
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --transition: 0.2s ease;
+
+  /* Type */
+  --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+html, body { height: 100%; }
+body {
+  font-family: var(--font);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes typing { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+/* ========== TOP BAR ========== */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 56px;
+  background: #111; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar-left { display: flex; align-items: center; gap: 16px; }
+.logo { font-size: 18px; font-weight: 700; letter-spacing: 3px; }
+.logo span { color: var(--accent); }
+.topbar-right { display: flex; align-items: center; gap: 16px; }
+.topbar-user {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text-secondary);
+}
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--accent-dim); border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: var(--accent);
+}
+.topbar-link {
+  font-size: 12px; color: var(--text-muted); text-decoration: none;
+  padding: 6px 12px; border-radius: var(--radius);
+  border: 1px solid var(--border); transition: var(--transition);
+  cursor: pointer;
+}
+.topbar-link:hover { color: var(--text-primary); border-color: var(--accent); }
+
+/* ========== SCREEN MANAGEMENT ========== */
+.screen { display: none; }
+.screen.active { display: flex; }
+
+/* ========================================================================
+   LANDING PAGE
+   ======================================================================== */
+.landing {
+  flex: 1; flex-direction: column; align-items: center;
+  padding: 60px 24px 40px; overflow-y: auto;
+  min-height: calc(100vh - 56px);
+}
+.landing-hero { text-align: center; max-width: 560px; margin-bottom: 48px; }
+.landing-hero h1 { font-size: 28px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+.landing-hero h1 em { font-style: normal; color: var(--accent); }
+.landing-hero p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+.new-session-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; border-radius: var(--radius-lg);
+  background: var(--accent); border: none; color: #fff;
+  font-family: var(--font); font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+  margin-bottom: 48px;
+}
+.new-session-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.new-session-btn .icon { font-size: 18px; }
+
+/* Session list */
+.session-section { width: 100%; max-width: 720px; }
+.session-section-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px;
+}
+.session-list { display: flex; flex-direction: column; gap: 10px; }
+.session-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  cursor: pointer; transition: var(--transition);
+}
+.session-row:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+.session-icon {
+  width: 40px; height: 40px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.session-icon.risk-high { background: var(--red-dim); }
+.session-icon.risk-med { background: var(--yellow-dim); }
+.session-icon.on-track { background: var(--green-dim); }
+.session-info { flex: 1; min-width: 0; }
+.session-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.session-meta { font-size: 12px; color: var(--text-secondary); margin-top: 3px; display: flex; gap: 12px; }
+.session-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 10px;
+  border-radius: 10px; flex-shrink: 0; align-self: center;
+}
+.badge-risk { background: var(--red-dim); color: var(--red); }
+.badge-caution { background: var(--yellow-dim); color: var(--yellow); }
+.badge-healthy { background: var(--green-dim); color: var(--green); }
+.badge-new { background: var(--accent-dim); color: var(--accent); }
+.session-arrow { color: var(--text-muted); font-size: 16px; flex-shrink: 0; }
+
+/* ========================================================================
+   CHAT INTERFACE
+   ======================================================================== */
+.chat-screen { flex: 1; overflow: hidden; min-height: calc(100vh - 56px); }
+.chat-layout { display: flex; height: 100%; }
+
+/* -- Center: Conversation -- */
+.chat-center {
+  flex: 1; display: flex; flex-direction: column;
+  overflow: hidden; min-width: 0;
+}
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 24px 32px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* ========== MESSAGE TYPES ========== */
+
+/* System message */
+.msg-system {
+  max-width: 640px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  animation: fadeIn 0.4s ease forwards;
+}
+.msg-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 12px; font-size: 12px;
+  color: var(--accent); font-weight: 600; letter-spacing: 0.5px;
+}
+.msg-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.msg-body { font-size: 14px; line-height: 1.7; }
+.msg-body p { margin-bottom: 12px; }
+.msg-body p:last-child { margin-bottom: 0; }
+.msg-body strong { color: #fff; }
+.msg-body ul { list-style: none; padding: 0; margin: 8px 0; }
+.msg-body ul li {
+  padding: 8px 0 8px 16px; position: relative;
+  font-size: 13px; line-height: 1.6;
+}
+.msg-body ul li::before {
+  content: '\2022'; position: absolute; left: 0;
+  color: var(--accent); font-weight: 700;
+}
+
+/* User message */
+.msg-user {
+  align-self: flex-end; max-width: 520px;
+  background: var(--accent); color: #fff;
+  border-radius: var(--radius-lg); padding: 14px 20px;
+  font-size: 14px; line-height: 1.6;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* ========== CARD COMPONENTS ========== */
+
+/* Option buttons (single-select) */
+.card-options { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.opt-btn {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+  color: var(--text-primary); font-family: var(--font);
+  font-size: 13px; cursor: pointer;
+  text-align: left; transition: var(--transition); line-height: 1.5;
+}
+.opt-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+.opt-btn.selected {
+  border-color: var(--accent); background: var(--accent-dim);
+  color: var(--accent); font-weight: 600;
+}
+.opt-btn .opt-title { font-weight: 600; }
+.opt-btn .opt-desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+
+/* Signal grid (multi-select) */
+.signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.signal-card {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px;
+  font-size: 13px; cursor: pointer; transition: var(--transition);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;
+}
+.signal-card:hover { border-color: var(--accent); }
+.signal-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+.signal-card .signal-name { font-weight: 600; }
+.signal-card .signal-desc { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+.check {
+  width: 18px; height: 18px; border: 2px solid var(--border);
+  border-radius: 4px; display: flex; align-items: center;
+  justify-content: center; font-size: 11px; flex-shrink: 0;
+}
+.signal-card.selected .check {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+
+/* Confirmation card */
+.confirmation-card {
+  background: var(--bg-card); border: 1px solid var(--cyan);
+  border-radius: var(--radius-lg); padding: 20px; margin-top: 8px;
+  animation: fadeIn 0.4s ease forwards;
+}
+.confirmation-card .conf-header {
+  font-size: 12px; font-weight: 700; color: var(--cyan);
+  letter-spacing: 0.5px; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.confirmation-card .conf-items { margin-bottom: 16px; }
+.confirmation-card .conf-items li {
+  padding: 6px 0 6px 16px; position: relative;
+  font-size: 13px; color: var(--text-primary); line-height: 1.5;
+  list-style: none;
+}
+.confirmation-card .conf-items li::before {
+  content: '\2022'; position: absolute; left: 0;
+  color: var(--cyan); font-weight: 700;
+}
+.conf-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.conf-btn {
+  padding: 10px 20px; border-radius: var(--radius);
+  font-family: var(--font); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: var(--transition); border: 1px solid;
+}
+.conf-btn.confirm {
+  background: var(--cyan-dim); border-color: var(--cyan);
+  color: var(--cyan);
+}
+.conf-btn.confirm:hover { background: var(--cyan); color: #fff; }
+.conf-btn.adjust {
+  background: transparent; border-color: var(--border);
+  color: var(--text-secondary);
+}
+.conf-btn.adjust:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+.conf-btn.reject {
+  background: transparent; border-color: var(--border);
+  color: var(--text-muted);
+}
+.conf-btn.reject:hover { border-color: var(--red); color: var(--red); }
+
+/* Deal snapshot inline */
+.snapshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+.snapshot-item {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px;
+}
+.snapshot-label {
+  font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+}
+.snapshot-value { font-size: 16px; font-weight: 700; margin-top: 4px; }
+
+/* Pattern diagnosis cards */
+.pattern-card {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px;
+}
+.pattern-card .pattern-name {
+  font-weight: 700; font-size: 13px; color: var(--yellow);
+  display: flex; align-items: center; gap: 8px;
+}
+.pattern-card .severity-badge {
+  font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+}
+.severity-critical { background: var(--red-dim); color: var(--red); }
+.severity-high { background: var(--yellow-dim); color: var(--yellow); }
+.pattern-card .pattern-desc {
+  font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;
+}
+
+/* Strategy recommendation card */
+.strategy-card {
+  background: var(--bg-card); border: 1px solid var(--accent);
+  border-radius: var(--radius-lg); padding: 20px; margin-top: 8px;
+  animation: fadeIn 0.4s ease forwards;
+}
+.strategy-card .strat-header {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+}
+.strategy-card .strat-name {
+  font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 4px;
+}
+.strategy-card .strat-desc {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;
+}
+
+/* Action selection cards */
+.action-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.action-card {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  cursor: pointer; transition: var(--transition);
+}
+.action-card:hover { border-color: var(--accent); background: var(--accent-dim); }
+.action-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+.action-card .action-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.action-card .action-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Monitoring / progress check */
+.monitoring-card {
+  background: var(--bg-card); border: 1px solid var(--orange);
+  border-radius: var(--radius-lg); padding: 20px;
+  animation: fadeIn 0.4s ease forwards;
+}
+.monitoring-card .mon-header {
+  font-size: 12px; font-weight: 700; color: var(--orange);
+  letter-spacing: 0.5px; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.monitoring-card .mon-question {
+  font-size: 14px; line-height: 1.7; margin-bottom: 16px;
+}
+.mon-options { display: flex; gap: 8px; flex-wrap: wrap; }
+.mon-btn {
+  padding: 10px 20px; border-radius: var(--radius);
+  font-family: var(--font); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: var(--transition); border: 1px solid;
+}
+.mon-btn.yes { background: var(--green-dim); border-color: var(--green); color: var(--green); }
+.mon-btn.yes:hover { background: var(--green); color: #fff; }
+.mon-btn.no { background: var(--red-dim); border-color: var(--red); color: var(--red); }
+.mon-btn.no:hover { background: var(--red); color: #fff; }
+.mon-btn.partial { background: var(--yellow-dim); border-color: var(--yellow); color: var(--yellow); }
+.mon-btn.partial:hover { background: var(--yellow); color: #fff; }
+
+/* Stakeholder cards */
+.stakeholder-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.stakeholder-card {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  cursor: pointer; transition: var(--transition);
+  display: flex; align-items: center; gap: 12px;
+}
+.stakeholder-card:hover { border-color: var(--accent); }
+.stakeholder-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+.stakeholder-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--purple-dim); border: 1px solid var(--purple);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.stakeholder-info { flex: 1; }
+.stakeholder-name { font-size: 13px; font-weight: 600; }
+.stakeholder-role { font-size: 11px; color: var(--text-secondary); }
+.stakeholder-check {
+  width: 20px; height: 20px; border: 2px solid var(--border);
+  border-radius: 50%; flex-shrink: 0; display: flex;
+  align-items: center; justify-content: center; font-size: 11px;
+}
+.stakeholder-card.selected .stakeholder-check {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+
+/* Attachment upload */
+.attachment-area {
+  border: 2px dashed var(--border); border-radius: var(--radius);
+  padding: 20px; text-align: center; margin-top: 12px;
+  transition: var(--transition); cursor: pointer;
+}
+.attachment-area:hover { border-color: var(--accent); background: var(--accent-dim); }
+.attachment-area .att-icon { font-size: 24px; margin-bottom: 8px; color: var(--text-muted); }
+.attachment-area .att-text { font-size: 12px; color: var(--text-secondary); }
+.attachment-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; background: var(--bg-dark);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 12px; color: var(--text-secondary); margin-top: 8px;
+}
+.attachment-pill .att-file-icon { color: var(--accent); }
+.attachment-pill .att-remove { color: var(--text-muted); cursor: pointer; margin-left: 4px; }
+.attachment-pill .att-remove:hover { color: var(--red); }
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 640px; padding: 16px 20px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.typing-dots { display: flex; gap: 4px; }
+.typing-dots span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  animation: typing 1.4s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+.typing-label { font-size: 12px; color: var(--text-muted); }
+
+/* Dual pattern tradeoff */
+.tradeoff-options { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.tradeoff-card {
+  background: var(--bg-dark); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  cursor: pointer; transition: var(--transition);
+}
+.tradeoff-card:hover { border-color: var(--accent); }
+.tradeoff-card .trade-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+.tradeoff-card .trade-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+.tradeoff-card .trade-risk { font-size: 11px; color: var(--yellow); margin-top: 6px; }
+
+/* ========== CHAT INPUT BAR ========== */
+.chat-input-bar {
+  padding: 12px 32px 16px; border-top: 1px solid var(--border);
+  background: #111; display: flex; align-items: center; gap: 10px;
+}
+.chat-input-wrapper {
+  flex: 1; display: flex; align-items: center; gap: 8px;
+  background: var(--bg-input); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 4px 8px 4px 16px;
+  transition: var(--transition);
+}
+.chat-input-wrapper:focus-within { border-color: var(--accent); }
+.chat-input {
+  flex: 1; background: transparent; border: none; outline: none;
+  font-family: var(--font); font-size: 14px; color: var(--text-primary);
+  padding: 10px 0;
+}
+.chat-input::placeholder { color: var(--text-muted); }
+.input-action-btn {
+  width: 36px; height: 36px; border-radius: var(--radius);
+  border: none; background: transparent; color: var(--text-muted);
+  font-size: 16px; cursor: pointer; transition: var(--transition);
+  display: flex; align-items: center; justify-content: center;
+}
+.input-action-btn:hover { color: var(--accent); background: var(--accent-dim); }
+.send-btn {
+  width: 40px; height: 40px; border-radius: var(--radius-lg);
+  border: none; background: var(--accent); color: #fff;
+  font-size: 16px; cursor: pointer; transition: var(--transition);
+  display: flex; align-items: center; justify-content: center;
+}
+.send-btn:hover { background: var(--accent-hover); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .signal-grid { grid-template-columns: 1fr; }
+  .snapshot-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo"><span>&#10038;</span> VICTROS</div>
+  </div>
+  <div class="topbar-right">
+    <a class="topbar-link" onclick="showScreen('landing')">My Deals</a>
+    <div class="topbar-user">
+      <div class="avatar">SK</div>
+      <span>Sara Kim</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================
+     SCREEN 1: LANDING PAGE
+     ======================================================================== -->
+<div class="screen landing active" id="screen-landing">
+
+  <div class="landing-hero">
+    <h1>What deal are we <em>winning</em> today?</h1>
+    <p>Select an active opportunity or start a new strategy session.</p>
+  </div>
+
+  <button class="new-session-btn" onclick="showScreen('chat')">
+    <span class="icon">+</span> New Strategy Session
+  </button>
+
+  <div class="session-section">
+    <div class="session-section-title">Active Opportunities</div>
+    <div class="session-list">
+
+      <div class="session-row" onclick="showScreen('chat')">
+        <div class="session-icon risk-high">&#9888;</div>
+        <div class="session-info">
+          <div class="session-name">Acme Corp &mdash; Cyera POC</div>
+          <div class="session-meta">
+            <span>$1.2M</span>
+            <span>Zone 3: Validation</span>
+            <span>Close Jun 30</span>
+          </div>
+        </div>
+        <span class="session-badge badge-risk">3 Risks</span>
+        <span class="session-arrow">&#8250;</span>
+      </div>
+
+      <div class="session-row">
+        <div class="session-icon risk-med">&#9888;</div>
+        <div class="session-info">
+          <div class="session-name">Stark Industries &mdash; Data Platform</div>
+          <div class="session-meta">
+            <span>$890K</span>
+            <span>Zone 2: Solution</span>
+            <span>Close Jul 30</span>
+          </div>
+        </div>
+        <span class="session-badge badge-caution">Single-Threaded</span>
+        <span class="session-arrow">&#8250;</span>
+      </div>
+
+      <div class="session-row">
+        <div class="session-icon on-track">&#10003;</div>
+        <div class="session-info">
+          <div class="session-name">Aperture Science &mdash; Full Deploy</div>
+          <div class="session-meta">
+            <span>$680K</span>
+            <span>Zone 4: Close</span>
+            <span>Close Jun 15</span>
+          </div>
+        </div>
+        <span class="session-badge badge-healthy">On Track</span>
+        <span class="session-arrow">&#8250;</span>
+      </div>
+
+      <div class="session-row">
+        <div class="session-icon" style="background: var(--accent-dim);">&#43;</div>
+        <div class="session-info">
+          <div class="session-name">Wayne Enterprises &mdash; Compliance</div>
+          <div class="session-meta">
+            <span>$420K</span>
+            <span>Zone 1: Discovery</span>
+            <span>Close Aug 30</span>
+          </div>
+        </div>
+        <span class="session-badge badge-new">New</span>
+        <span class="session-arrow">&#8250;</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ========================================================================
+     SCREEN 2: CHAT INTERFACE — Component Showcase
+     ======================================================================== -->
+<div class="screen chat-screen" id="screen-chat">
+  <div class="chat-layout">
+
+    <!-- Conversation -->
+    <div class="chat-center">
+      <div class="chat-messages">
+
+        <!-- ========== COMPONENT: System Welcome ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Hi Sara</p>
+            <p>How can I help you win today?</p>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: User Message ========== -->
+        <div class="msg-user">
+          I have a compliance director who really likes Cyera and wants to move fast into a POC. Security and data teams aren't really involved yet. Varonis is strong there and trusted.
+        </div>
+
+        <!-- ========== COMPONENT: Confirmation Card ========== -->
+        <div class="confirmation-card">
+          <div class="conf-header">&#9670; Confirm Understanding</div>
+          <ul class="conf-items">
+            <li>Compliance Director wants to move quickly into a POC</li>
+            <li>Security and Data teams are not aligned yet</li>
+            <li>Varonis is the trusted incumbent</li>
+            <li>Concerned POC will fail without stronger use cases</li>
+          </ul>
+          <div class="conf-actions">
+            <button class="conf-btn confirm">Yes, that's accurate</button>
+            <button class="conf-btn adjust">Adjust</button>
+            <button class="conf-btn reject">Not correct</button>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Option Buttons (single-select) ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p><strong>What buying stage would you place this deal today?</strong></p>
+            <div class="card-options">
+              <button class="opt-btn">Problem alignment</button>
+              <button class="opt-btn">Solution alignment</button>
+              <button class="opt-btn selected">Validation or POC</button>
+              <button class="opt-btn">Commercial or close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Deal Snapshot ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Here's the deal snapshot I found.</p>
+            <div class="snapshot-grid">
+              <div class="snapshot-item"><div class="snapshot-label">Stage</div><div class="snapshot-value">3_Validation</div></div>
+              <div class="snapshot-item"><div class="snapshot-label">Close Date</div><div class="snapshot-value">June 30</div></div>
+              <div class="snapshot-item"><div class="snapshot-label">Amount</div><div class="snapshot-value" style="color: var(--green);">$1.2M</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Attachment Upload ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Type in the chat or attach something. I'll extract the details automatically.</p>
+            <div class="attachment-area">
+              <div class="att-icon">&#128206;</div>
+              <div class="att-text">Drop a file here or click to upload</div>
+            </div>
+            <div class="attachment-pill">
+              <span class="att-file-icon">&#128196;</span>
+              Acme_Corp_Pipeline_Report.xlsx
+              <span class="att-remove">&times;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Signal Grid (multi-select) ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Tap the signals you're seeing in this deal right now.</p>
+            <div class="signal-grid">
+              <div class="signal-card selected">
+                <div><div class="signal-name">Single-Threaded Contact</div><div class="signal-desc">Only one buyer-side stakeholder engaged</div></div>
+                <div class="check">&#10003;</div>
+              </div>
+              <div class="signal-card selected">
+                <div><div class="signal-name">Competition Gaining Mindshare</div><div class="signal-desc">Competitor shaping evaluation criteria</div></div>
+                <div class="check">&#10003;</div>
+              </div>
+              <div class="signal-card selected">
+                <div><div class="signal-name">Validation Misalignment</div><div class="signal-desc">POC approach doesn't favor your strengths</div></div>
+                <div class="check">&#10003;</div>
+              </div>
+              <div class="signal-card">
+                <div><div class="signal-name">Slowdowns or Silence</div><div class="signal-desc">Communication gaps or decision stalls</div></div>
+                <div class="check"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Pattern Diagnosis ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Right now, three structural patterns are showing up:</p>
+            <div class="pattern-card">
+              <div class="pattern-name">Single-Threaded Risk <span class="severity-badge severity-critical">CRITICAL</span></div>
+              <div class="pattern-desc">Only one stakeholder is engaged, limiting consensus formation.</div>
+            </div>
+            <div class="pattern-card">
+              <div class="pattern-name">Competitive Mindshare <span class="severity-badge severity-high">HIGH</span></div>
+              <div class="pattern-desc">Buyer language or evaluation steps are leaning toward a competitor's approach.</div>
+            </div>
+            <div class="pattern-card">
+              <div class="pattern-name">Process Misalignment <span class="severity-badge severity-high">HIGH</span></div>
+              <div class="pattern-desc">Requested validation approach does not align to your strengths.</div>
+            </div>
+            <p style="margin-top: 12px;">The good news is this is a very common situation &mdash; and there's a clear strategy to fix it.</p>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Strategy Recommendation ========== -->
+        <div class="strategy-card">
+          <div class="strat-header">Recommended Strategy Path</div>
+          <div class="strat-name">Selling to Consensus</div>
+          <div class="strat-desc">Key stakeholders are not aligned on the problem, outcomes, or approach. The next move is to expand internal alignment before advancing the validation.</div>
+          <span class="strategy-mode mode-recover">RECOVER</span>
+        </div>
+
+        <!-- ========== COMPONENT: Dual Pattern Tradeoff ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>You're dealing with two structural risks at the same time. One is more critical &mdash; but the other still matters.</p>
+            <p><strong>How would you like to handle this?</strong></p>
+            <div class="tradeoff-options">
+              <div class="tradeoff-card">
+                <div class="trade-title">Focus on priority</div>
+                <div class="trade-desc">Fix the single-threaded risk first before doing anything else.</div>
+                <div class="trade-risk">Risk: may slow visible progress</div>
+              </div>
+              <div class="tradeoff-card">
+                <div class="trade-title">Combine both</div>
+                <div class="trade-desc">Use current motion to also improve competitive positioning.</div>
+                <div class="trade-risk">Risk: can dilute clarity if forced</div>
+              </div>
+              <div class="tradeoff-card">
+                <div class="trade-title">Sequence it</div>
+                <div class="trade-desc">Make progress on consensus, then return to competitive mindshare.</div>
+                <div class="trade-risk">Risk: foundational issue may worsen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Action Selection ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p>Here are the strongest strategic moves from this position.</p>
+            <p><strong>Select the move you want to focus on first.</strong></p>
+            <div class="action-grid">
+              <div class="action-card selected">
+                <div class="action-title">Run persona-specific outcome discussions</div>
+                <div class="action-desc">Short conversations focused on each stakeholder's success criteria.</div>
+              </div>
+              <div class="action-card">
+                <div class="action-title">Connect solution to stakeholder priorities</div>
+                <div class="action-desc">Show how your approach solves what matters most to each persona.</div>
+              </div>
+              <div class="action-card">
+                <div class="action-title">Use targeted proof for each stakeholder</div>
+                <div class="action-desc">Customer stories, workshops, or demos tailored to each role.</div>
+              </div>
+              <div class="action-card">
+                <div class="action-title">Sequence stakeholder conversations</div>
+                <div class="action-desc">Plan the order of engagement to build aligned decision criteria.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Stakeholder Selection ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p><strong>Who needs to believe in this change for the deal to move forward?</strong></p>
+            <div class="stakeholder-grid">
+              <div class="stakeholder-card selected">
+                <div class="stakeholder-avatar">&#128100;</div>
+                <div class="stakeholder-info"><div class="stakeholder-name">CISO</div><div class="stakeholder-role">Security leadership</div></div>
+                <div class="stakeholder-check">&#10003;</div>
+              </div>
+              <div class="stakeholder-card selected">
+                <div class="stakeholder-avatar">&#128100;</div>
+                <div class="stakeholder-info"><div class="stakeholder-name">Head of Data Platform</div><div class="stakeholder-role">Data infrastructure</div></div>
+                <div class="stakeholder-check">&#10003;</div>
+              </div>
+              <div class="stakeholder-card selected">
+                <div class="stakeholder-avatar">&#9733;</div>
+                <div class="stakeholder-info"><div class="stakeholder-name">Compliance Director</div><div class="stakeholder-role">Champion</div></div>
+                <div class="stakeholder-check">&#10003;</div>
+              </div>
+              <div class="stakeholder-card">
+                <div class="stakeholder-avatar">&#128100;</div>
+                <div class="stakeholder-info"><div class="stakeholder-name">Security Architect</div><div class="stakeholder-role">Technical evaluation</div></div>
+                <div class="stakeholder-check"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Monitoring / Progress Check ========== -->
+        <div class="monitoring-card">
+          <div class="mon-header">&#9673; Progress Check</div>
+          <div class="mon-question">
+            <p>Now we watch what happens next. This is the moment where a Champion becomes real.</p>
+            <p><strong>Did your Champion complete the action we asked for?</strong></p>
+          </div>
+          <div class="mon-options">
+            <button class="mon-btn yes">Yes &mdash; they completed it</button>
+            <button class="mon-btn no">No &mdash; didn't follow through</button>
+            <button class="mon-btn partial">Partially &mdash; tried, but incomplete</button>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Rich Option Buttons with descriptions ========== -->
+        <div class="msg-system">
+          <div class="msg-header"><div class="dot"></div> VICTROS</div>
+          <div class="msg-body">
+            <p><strong>Which stakeholder should we prepare for first?</strong></p>
+            <div class="card-options">
+              <button class="opt-btn">
+                <div class="opt-title">CISO</div>
+                <div class="opt-desc">Needs accurate detection, safe deployment, and broad security coverage.</div>
+              </button>
+              <button class="opt-btn selected">
+                <div class="opt-title">Head of Data Platform</div>
+                <div class="opt-desc">Needs no performance impact, no analytics disruption, and simpler data access.</div>
+              </button>
+              <button class="opt-btn">
+                <div class="opt-title">Compliance Director (Champion)</div>
+                <div class="opt-desc">Needs audit-ready reporting, regulated data coverage, and low overhead.</div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== COMPONENT: Typing Indicator ========== -->
+        <div class="typing-indicator">
+          <div class="typing-dots"><span></span><span></span><span></span></div>
+          <span class="typing-label">Victros is thinking&hellip;</span>
+        </div>
+
+      </div>
+
+      <!-- Chat input bar -->
+      <div class="chat-input-bar">
+        <div class="chat-input-wrapper">
+          <input class="chat-input" type="text" placeholder="Ask about this deal&hellip;">
+          <button class="input-action-btn" title="Attach file">&#128206;</button>
+        </div>
+        <button class="send-btn" title="Send">&#10148;</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== NAVIGATION SCRIPT ========== -->
+<script>
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+[
+  {
+    "input": "Compliance director likes Cyera, wants POC, security not involved",
+    "expected_signals": ["single_threaded_contact", "validation_process_misalignment"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["free-text"]
+  },
+  {
+    "input": "Champion went silent after internal reorg",
+    "expected_signals": ["no_named_or_active_champion", "new_stakeholder_appears_late"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["free-text"]
+  },
+  {
+    "input": "Deal: Stage 3 Validation, $1.2M, close June 30",
+    "expected_signals": [],
+    "expected_deal_attributes": {"stage": "3_Validation", "amount": 1200000, "close_date": "2026-06-30"},
+    "acceptable_extras": [],
+    "tags": ["deal-context"]
+  },
+  {
+    "input": "Competitor just got a follow-up meeting. Our champion couldn't get us on the agenda.",
+    "expected_signals": ["competition_gaining_mindshare", "no_named_or_active_champion"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["multi-signal"]
+  },
+  {
+    "input": "Everything is going great, buyer is excited, we're aligned on next steps",
+    "expected_signals": ["champion_coaching_influence", "responsiveness_velocity"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["multi_threading_momentum", "differentiated_validation_momentum"],
+    "tags": ["positive-context"]
+  },
+  {
+    "input": "New VP of security was just introduced. Nobody told us about them before.",
+    "expected_signals": ["new_stakeholder_appears_late"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["free-text"]
+  },
+  {
+    "input": "CRM export: Stage=Negotiation, Amount=$500K, Close=2026-04-15, Notes=budget approved",
+    "expected_signals": [],
+    "expected_deal_attributes": {"stage": "Negotiation", "amount": 500000, "close_date": "2026-04-15"},
+    "acceptable_extras": ["responsiveness_velocity"],
+    "tags": ["attachment"]
+  },
+  {
+    "input": "The buyer keeps asking for things our platform doesn't do well",
+    "expected_signals": ["validation_process_misalignment"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["competition_gaining_mindshare"],
+    "tags": ["free-text"]
+  },
+  {
+    "input": "Lost access to EB. New procurement process requires three vendor eval.",
+    "expected_signals": ["no_eb_validation", "validation_process_misalignment"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["multi-signal"]
+  },
+  {
+    "input": "Nothing relevant to signals — just want to discuss general strategy",
+    "expected_signals": [],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["no-signal"]
+  },
+  {
+    "input": "Champion set up a meeting with the CISO for next Tuesday",
+    "expected_signals": ["champion_coaching_influence"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["economic_buyer_engagement"],
+    "tags": ["positive-signal"]
+  },
+  {
+    "input": "The deal is in stage 2, discovery. Close date is Q3. About $800K.",
+    "expected_signals": [],
+    "expected_deal_attributes": {"stage": "2_Discovery", "amount": 800000},
+    "acceptable_extras": [],
+    "tags": ["deal-context"]
+  },
+  {
+    "input": "Procurement says the decision timeline moved up. Security review is now required before validation.",
+    "expected_signals": ["validation_process_misalignment", "slowdowns_or_silence"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["multi-signal"]
+  },
+  {
+    "input": "Actually the champion is back and they just got budget approval",
+    "expected_signals": ["champion_coaching_influence"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["economic_buyer_engagement", "responsiveness_velocity"],
+    "tags": ["pivot"],
+    "remove_signals": ["no_named_or_active_champion"]
+  },
+  {
+    "input": "We're at stage 4 closing, $2M deal, close date end of quarter. Champion is actively pushing, EB is engaged, but procurement just added a new security review step we weren't expecting and a competitor got a follow-up meeting.",
+    "expected_signals": ["champion_coaching_influence", "economic_buyer_engagement", "validation_process_misalignment", "competition_gaining_mindshare"],
+    "expected_deal_attributes": {"stage": "4_Closing", "amount": 2000000},
+    "acceptable_extras": ["responsiveness_velocity", "new_stakeholder_appears_late"],
+    "tags": ["complex"]
+  },
+
+  {
+    "input": "After the reorg we actually have multiple champions now and the buying group is aligned. The deal is no longer single-threaded.",
+    "expected_signals": ["multi_threading_momentum"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["champion_coaching_influence"],
+    "tags": ["free-text", "negation", "positive-context"]
+  },
+  {
+    "input": "Champion left the company, but their replacement is even MORE engaged and just approved a larger POC",
+    "expected_signals": ["champion_coaching_influence", "economic_buyer_engagement"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["responsiveness_velocity"],
+    "tags": ["champion-change", "positive-pivot"]
+  },
+  {
+    "input": "EB is engaged but procurement just introduced a new 'consensus' gate",
+    "expected_signals": ["economic_buyer_engagement", "validation_process_misalignment"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["mixed-signals"]
+  },
+  {
+    "input": "The champion MIGHT be getting cold — they haven't replied in a week",
+    "expected_signals": [],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["slowdowns_or_silence"],
+    "tags": ["uncertain-negative", "hedged"]
+  },
+  {
+    "input": "I suspect the security team is becoming a new stakeholder, but not confirmed yet",
+    "expected_signals": [],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["new_stakeholder_appears_late"],
+    "tags": ["speculative"]
+  },
+  {
+    "input": "Deal: Acme Corp | Stage: Negotiation | Amount: $2.5M | Close: 2026-Q2 | Notes: Champion is CFO, actively pushing, EB approved budget, competitive pressure from DataDog",
+    "expected_signals": ["champion_coaching_influence", "economic_buyer_engagement", "competition_gaining_mindshare"],
+    "expected_deal_attributes": {"stage": "Negotiation", "amount": 2500000},
+    "acceptable_extras": [],
+    "tags": ["structured-export"]
+  },
+  {
+    "input": "CRM Snapshot:\nAccount: TechCorp\nStage: 3 - Validation\nClose Date: 2026-08-31\nAmount: USD 750,000\nNotes: POC validation not matching our strengths; new CISO introduced mid-process",
+    "expected_signals": ["validation_process_misalignment", "new_stakeholder_appears_late"],
+    "expected_deal_attributes": {"stage": "3 - Validation", "amount": 750000, "close_date": "2026-08-31"},
+    "acceptable_extras": [],
+    "tags": ["multiline-export"]
+  },
+  {
+    "input": "The buyer pushed the close date again and urgency seems to have dropped off.",
+    "expected_signals": ["slowdowns_or_silence"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["responsiveness_velocity"],
+    "tags": ["deal-update", "negative-momentum"]
+  },
+  {
+    "input": "Champion set up a session with the economic buyer and we now have clear budget approval for roughly $900K.",
+    "expected_signals": ["champion_coaching_influence", "economic_buyer_engagement"],
+    "expected_deal_attributes": {"amount": 900000},
+    "acceptable_extras": ["responsiveness_velocity"],
+    "tags": ["positive-signal", "deal-context"]
+  },
+  {
+    "input": "Meeting notes: security director likes us but insists on a custom POC that doesn't match our strengths and a three-vendor eval.",
+    "expected_signals": ["validation_process_misalignment", "competition_gaining_mindshare"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": [],
+    "tags": ["multi-signal", "attachment"]
+  },
+  {
+    "input": "EB was supposed to attend the POC debrief but didn't show up",
+    "expected_signals": ["no_eb_validation"],
+    "expected_deal_attributes": {},
+    "acceptable_extras": ["slowdowns_or_silence"],
+    "tags": ["absent-stakeholder"]
+  }
+]

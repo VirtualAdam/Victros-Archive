@@ -1,0 +1,80 @@
+services:
+
+  # ---------------------------------------------------------------------------
+  # Cosmos DB emulator — identical wire protocol to Azure Cosmos in production.
+  # In production, remove this service and set COSMOS_CONNECTION_STRING to the
+  # real Azure endpoint in your deployment environment.
+  # ---------------------------------------------------------------------------
+  cosmosdb:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
+    environment:
+      AZURE_COSMOS_EMULATOR_PARTITION_COUNT: "3"
+      AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE: "true"
+    ports:
+      - "8081:8081"
+      - "10250-10255:10250-10255"
+    volumes:
+      - cosmos-data:/tmp/cosmos/appdata
+    healthcheck:
+      # The emulator exposes its TLS cert at this endpoint; curl -k skips verification
+      test: ["CMD", "curl", "-f", "-k", "https://localhost:8081/_explorer/emulator.pem"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 45s
+
+  # ---------------------------------------------------------------------------
+  # Backend — hot-reload in dev; production image uses CMD from Dockerfile.
+  # ---------------------------------------------------------------------------
+  backend:
+    build:
+      context: ./victros-poc
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      STORAGE_BACKEND: cosmos
+      # Provide from .env or shell export.
+      COSMOS_CONNECTION_STRING: ${COSMOS_CONNECTION_STRING:-}
+      # SSL verification disabled — emulator uses a self-signed cert
+      COSMOS_VERIFY_SSL: "false"
+      # AI credentials — provide via .env file or shell export
+      VICTROS_AI_ENDPOINT: ${VICTROS_AI_ENDPOINT:-}
+      VICTROS_AI_KEY: ${VICTROS_AI_KEY:-}
+      # ALLOWED_ORIGINS: frontend origin for CORS
+      ALLOWED_ORIGINS: "http://localhost:5173"
+    # Override production CMD with hot-reload for local dev
+    command: ["uvicorn", "server.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    depends_on:
+      cosmosdb:
+        condition: service_healthy
+    volumes:
+      # Mount source for hot-reload without rebuilding the image
+      - ./victros-poc/backend:/app
+
+  # ---------------------------------------------------------------------------
+  # Frontend — Vite dev server (local dev only).
+  # Production uses the multi-stage nginx image built from the same Dockerfile
+  # via: docker build --target builder ... (SWA handles hosting in Azure).
+  # ---------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./victros-poc/frontend
+      # Use builder stage (node + vite dev server) for local dev
+      target: builder
+    ports:
+      - "5173:5173"
+    environment:
+      # Vite proxy rewrites /api → this URL (inside the Docker network)
+      VITE_BACKEND_URL: http://backend:8000
+    # Run Vite dev server (not the nginx production image)
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+    depends_on:
+      - backend
+    volumes:
+      - ./victros-poc/frontend:/app
+      # Preserve the container's node_modules — do not overlay with host
+      - /app/node_modules
+
+volumes:
+  cosmos-data:

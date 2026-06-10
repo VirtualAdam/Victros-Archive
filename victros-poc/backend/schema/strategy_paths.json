@@ -1,0 +1,1065 @@
+[
+  {
+    "key": "Qualify_CaseForChange",
+    "display_name": "Case for Change Not Clearly Defined or Sponsored",
+    "description": "Case for change is not yet compelling or sponsor-backed, creating weak justification for investment or internal alignment.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Has a buyer with authority confirmed a measurable problem and agreed to sponsor a case for change?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "case_for_change_strength",
+      "buyer_urgency"
+    ],
+    "dominant_failure_mode": "No compelling, economically sponsored case for change exists to justify the decision.",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "primary_target_pattern": "Weak Problem Definition",
+    "target_patterns": [
+      "Weak Problem Definition",
+      "Outcome Misalignment",
+      "Stagnant Deal"
+    ],
+    "entry_conditions": [
+      "Buyer acknowledges pain but has not describe measurable impact",
+      "No buyer of authority has confirmed the problem as a priority",
+      "Economic or strategic consequences of the problem are unclear",
+      "No sponsor has committed to advancing a change initiative",
+      "Deal activity is present but qualification or stakeholder progress is not advancing"
+    ],
+    "disqualifying_conditions": [
+      "Case for change is validated with measurable impact",
+      "Buyer of authority confirms the problem as a priority",
+      "Sponsor is committed to advancing the initiative"
+    ],
+    "core_objectives": "A buyer with authority confirms a measurable, sponsor-worthy case for change",
+    "strategic_focus": "Convert unclear buyer pain into a sponsor-owned problem with measurable consequences.",
+    "core_strategies": [
+      "Explore urgency and consequences of inaction across stakeholders",
+      "Co-develop a sponsor-owned case for change",
+      "Pressure-test the case for change across the consensus"
+    ],
+    "prohibited_strategies": [
+      "Assuming pain equals priority or urgency",
+      "Advancing without a buyer willing to sponsor change",
+      "Using demos or feature validation as a substitute for a case for change",
+      "Advancing based on interest without validated impact or ownership"
+    ],
+    "representative_actions": [
+      "ask_why_the_current_approach_is_no_longer_sufficie",
+      "ask_what_happens_if_nothing_changes",
+      "ask_who_is_impacted_by_the_problem",
+      "explore_the_operational_or_financial_impact_of_the",
+      "co_create_a_draft_case_for_change_with_a_champion",
+      "validate_and_expand_the_case_for_change_with_addit"
+    ],
+    "champion_required_behavior": "Buyer with influence actively shapes the case for change and sponsors it with other stakeholders",
+    "economic_buyer_required_behavior": "If engaged, Economic Buyer acknowledges the problem and its potential impact without committing to priority or funding",
+    "positive_progress_signals": [
+      "Buyer of influence articulates the problem and impact in their own words",
+      "Champion Target agrees to sponsor and advance the case for change",
+      "Stakeholders reference their problems as reasons to change",
+      "Conversations shift from interest to implications of change"
+    ],
+    "negative_progress_signals": [
+      "No buyer is willing to sponsor the problem internally",
+      "Discussions remain abstract without impact validation",
+      "Progress depends only on demos trials or pricing",
+      "Buyer defers citing lack of urgency or priority"
+    ],
+    "exit_lever_state": "Case for Change Strength=CONNECTED",
+    "exit_outcome": "Buyer of authority validates a compelling problem and agrees to sponsor the case for change",
+    "transition_signals": [
+      "Outcomes Unclear or Misaligned",
+      "Buyer Objections Surfacing Early",
+      "Champion Coaching & Influence",
+      "Multi-Threading Momentum"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Do not advance deals, forecast stages, or position commercial terms without a validated, sponsored case for change. Pain without a compelling problem is not qualification. Interest without authoritative sponsorship is not momentum. This path must be completed before treating the opportunity as real. A valid Case for Change must clearly articulate: (1) a compelling problem to solve, (2) the measurable negative implications of not changing, (3) the desired future outcomes, and (4) how the solution’s differentiation enables those outcomes. This structure should be co-created and validated with a champion and expanded across the consensus before seeking economic buyer alignment."
+  },
+  {
+    "key": "Position_Outcomes_Vision",
+    "display_name": "Buyer Not Yet Connecting Solution to Desired Outcomes",
+    "description": "Buyer understands the solution but has not connected it to personally meaningful outcomes, creating risk of commoditization or disengagement.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Can the buyer clearly explain the desired outcomes this solution enables in their own words?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "differentiation_leverage",
+      "case_for_change_strength"
+    ],
+    "dominant_failure_mode": "The buyer does not see the solution as directly relevant to their desired outcomes.",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "primary_target_pattern": "Outcome Misalignment",
+    "target_patterns": [
+      "Outcome Misalignment",
+      "Commodity Relegation",
+      "Messaging Disconnect"
+    ],
+    "entry_conditions": [
+      "Buyer discusses features but has not articulate desired outcomes",
+      "Solution relevance to buyer priorities is unclear",
+      "Competing solutions are treated as interchangeable",
+      "Objections reflect unclear value rather than technical issues"
+    ],
+    "disqualifying_conditions": [
+      "Buyer has defined desired outcomes",
+      "Solution is mapped to buyer priorities",
+      "Competing solutions are no longer treated as interchangeable"
+    ],
+    "core_objectives": "Buyer has defined desired outcomes and linked them to the solution",
+    "strategic_focus": "Align stakeholders around a shared future-state outcome and solution direction.",
+    "core_strategies": [
+      "Anchor discussions in buyer problems and outcomes",
+      "Frame a future-state vision tied to buyer priorities",
+      "Map differentiation to outcome enablement with proof"
+    ],
+    "prohibited_strategies": [
+      "Leading with features or requirements",
+      "Making abstract differentiation claims without outcome linkage",
+      "Running competitive comparisons not grounded in buyer outcomes",
+      "Assuming buyers will infer relevance without guidance"
+    ],
+    "representative_actions": [
+      "reframe_the_discussion_by_connecting_the_solution",
+      "validate_the_buyers_desired_future_outcomes_and_c",
+      "use_relevant_customer_stories_and_proof_points_to",
+      "map_solution_differentiation_directly_to_the_outco",
+      "challenge_feature_based_or_requirement_only_thinki"
+    ],
+    "champion_required_behavior": "Potential Champion engages in outcome vision discussions and acknowledges how the solution enables meaningful change",
+    "economic_buyer_required_behavior": "If engaged, Economic Buyer acknowledges the relevance of the problems and outcomes without committing to priority or funding",
+    "positive_progress_signals": [
+      "Buyer articulates outcome-level improvements tied to solving the problem",
+      "Buyer frames discussions in future-state outcomes rather than features",
+      "Buyer connects solution differentiation to desired outcomes",
+      "Buyer agrees to low-risk actions to experience progress"
+    ],
+    "negative_progress_signals": [
+      "Buyer evaluates solutions only on features or requirements",
+      "Buyer treats all solutions as equivalent",
+      "Buyer disengages or defers citing unclear relevance"
+    ],
+    "exit_lever_state": "Case for Change Strength=COMMITTED, Differentiation Leverage=CONNECTED",
+    "exit_outcome": "Buyer connects the solution to their problems and desired outcomes and expresses outcome-driven interest",
+    "transition_signals": [
+      "Differentiated Validation Momentum",
+      "Multi-Threading Momentum",
+      "No Differentiated Decision Criteria"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Do not rely on buyers to infer relevance or outcome attribution on their own. Sellers must actively shape vision and correct incomplete or incorrect assumptions about how outcomes are enabled. Avoid feature-led positioning or abstract differentiation claims not tied to buyer-specific outcomes.\n \n Vision must enable experience\n - Buyer certainty is formed through results, not explanation.\n - Sellers must create safe ways for buyers to take action and experience progress before purchase.\n \n Do not force analytical evaluation prematurely\n - Introducing differentiation or proof before the buyer’s perspective has shifted reinforces protective survival behavior."
+  },
+  {
+    "key": "Discover_Value_From_Usage",
+    "display_name": "Value From Existing Usage Is Not Yet Connected to a Buying Decision",
+    "description": "Product usage exists but its value has not yet been translated into an owned business case that can support a buying decision.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Is existing product usage creating meaningful value that can be connected to an accountable business owner and translated into a buying decision?",
+    "activation_polarity": "YES_ACTIVATES_PATH",
+    "target_levers": [
+      "case_for_change_strength",
+      "champion_strength"
+    ],
+    "dominant_failure_mode": "Usage exists but remains trapped at the practitioner level without business ownership or decision progression.",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "primary_target_pattern": "Adoption Without Conversion",
+    "target_patterns": [
+      "Adoption Without Conversion",
+      "Weak Problem Definition",
+      "Champion Absence"
+    ],
+    "entry_conditions": [
+      "Product Usage Presence not None",
+      "Usage Depth = Active Use OR Workflow Dependent",
+      "Case for Change Strength weak or unvalidated",
+      "Internal Owner Identified = No OR Commercial Awareness = None"
+    ],
+    "disqualifying_conditions": [
+      "Case for Change Strength already strong",
+      "Champion Coaching & Influence active",
+      "Economic Buyer Engagement direct",
+      "Decision Process defined and progressing",
+      "Usage demonstrates value but no measurable consequence exists for not expanding or formalizing usage"
+    ],
+    "core_objectives": "Translate real product usage into business value, ownership, and decision motion.",
+    "strategic_focus": "Convert user-level value into a business-owned case for change.",
+    "core_strategies": [
+      "Identify value in real workflows",
+      "Translate usage into business outcomes",
+      "Elevate from practitioner usage to accountable ownership"
+    ],
+    "prohibited_strategies": [
+      "Assuming usage alone creates a deal",
+      "Treating practitioner enthusiasm as executive sponsorship",
+      "Jumping to commercial negotiation before value is translated",
+      "Remaining at the user level without testing ownership or access",
+      "Treating product usage enthusiasm or frequent engagement as evidence of Champion viability without proof of influence",
+      "ownership",
+      "or access"
+    ],
+    "representative_actions": [
+      "identify_which_individuals_or_teams_are_actively_u",
+      "confirm_which_workflows_the_product_is_used_in_and",
+      "assess_how_broadly_this_usage_exists_and_where_sim",
+      "determine_how_critical_the_product_is_by_asking_wh",
+      "identify_and_translate_where_usage_creates_time_sa",
+      "identify_who_owns_or_is_accountable_for_the_busine"
+    ],
+    "champion_required_behavior": "Potential Champion or owner acknowledges responsibility for the business outcome enabled by the product and is willing to help advance internal visibility and access.",
+    "economic_buyer_required_behavior": "No direct Economic Buyer action required; path is successful when a credible owner or Champion target is identified and can support progression toward economic authority.",
+    "positive_progress_signals": [
+      "Usage Demonstrates Material Value",
+      "Adoption Conversion Momentum",
+      "Multi-Threading Momentum",
+      "Champion Coaching & Influence"
+    ],
+    "negative_progress_signals": [
+      "Adoption With Negative User Experience",
+      "Slowdowns or Silence",
+      "No Named or Active Champion",
+      "Conflict in Pricing or Terms"
+    ],
+    "exit_lever_state": "Case for Change Strength = Emerging, Champion Strength = Connected",
+    "exit_outcome": "Clear business outcomes are defined from usage and at least one internal owner or potential Champion is identified to advance the initiative.",
+    "transition_signals": [
+      "Usage Demonstrates Material Value",
+      "Adoption Conversion Momentum",
+      "Champion Coaching & Influence",
+      "Multi-Threading Momentum"
+    ],
+    "operator_notes": "Do not let strong practitioner usage create false confidence. This path is complete only when value is translated into business ownership that can support Champion development and eventual Economic Buyer alignment. In PLG or open source motions, usage is evidence—not yet sponsorship, budget, or decision authority.\n\nIf the primary users do not have credible access to economic authority or business ownership, they must be treated as signal sources rather than Champion Targets. In this case, the system must redirect to Identify_Champion_Targets rather than attempting to build a Champion from the existing users.\n\nIf usage demonstrates value but lacks urgency or measurable consequence, the system must redirect to Qualify_CaseForChange to establish a sponsor-backed case for change before proceeding."
+  },
+  {
+    "key": "Identify_Champion_Targets",
+    "display_name": "No Clear Champion Targets Identified",
+    "description": "No specific buyer has been identified as a viable Champion Target, leaving the deal without internal advocacy.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Have we identified at least one buyer who meets the criteria to become a Champion?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "dominant_failure_mode": "No buyer is positioned to act as a credible internal Champion.",
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "primary_target_pattern": "Champion Absence",
+    "target_patterns": [
+      "Champion Absence",
+      "Single-Threaded Risk"
+    ],
+    "entry_conditions": [
+      "No buyer has been identified who meets Champion criteria",
+      "Engagement is limited to one contact or narrow group",
+      "No stakeholder is introducing others or driving internal momentum",
+      "Decision ownership is unclear",
+      "No stakeholder is taking responsibility for advancing the initiative"
+    ],
+    "disqualifying_conditions": [
+      "A stakeholder meets Champion criteria",
+      "Multiple stakeholders are engaged in the initiative",
+      "Decision ownership is clearly established"
+    ],
+    "core_objectives": "At least one stakeholder meets Champion criteria across the buying group",
+    "strategic_focus": "Identify buyers with authority and influence to drive the initiative internally.",
+    "core_strategies": [
+      "Assess buyer authority",
+      "influence",
+      "and EB access",
+      "Identify multiple Champion Targets across the consensus",
+      "Prioritize buyers with ownership orientation"
+    ],
+    "prohibited_strategies": [
+      "Assuming interest equals Champion potential",
+      "Treating a single contact as sufficient",
+      "Confusing meeting access with influence or authority",
+      "Advancing without named Champion Targets"
+    ],
+    "representative_actions": [
+      "map_stakeholders_and_assess_power_influence_and_ad",
+      "ask_about_decision_ownership_and_internal_influenc",
+      "test_ability_to_introduce_other_stakeholders_or_eb",
+      "identify_at_least_one_champion_target",
+      "reframe_deal_around_who_is_the_champion_target"
+    ],
+    "champion_required_behavior": "Champion Target demonstrates authority over the decision, credible influence across stakeholders, and willingness to provide access to additional stakeholders and economic authority",
+    "economic_buyer_required_behavior": "No EB engagement required; Champion Target has plausible access and credibility to engage the Economic Buyer when needed",
+    "positive_progress_signals": [
+      "Seller identifies one or more Champion Targets with evidence of influence",
+      "Champion Targets introduce additional stakeholders",
+      "Buyers move discussions toward internal alignment or validation",
+      "Seller gains visibility into decision influence and structure"
+    ],
+    "negative_progress_signals": [
+      "Seller remains single-threaded without access expansion",
+      "Buyers express interest but avoid commitment or action",
+      "Meetings repeat without progress in access criteria or process clarity",
+      "Buyers defer ownership without advocacy"
+    ],
+    "exit_lever_state": "Champion Strength=CONNECTED",
+    "exit_outcome": "One or more Champion Targets are identified and meet power influence access and advocacy criteria",
+    "transition_signals": [
+      "No Named or Active Champion",
+      "Single-Threaded Contact",
+      "Champion Coaching & Influence"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Champion ≠ Coach\n - A Coach may provide information, feedback, or encouragement. A Champion Target must show evidence of influence, action, and advocacy. Liking the seller or product is insufficient.\n \n Interest is not qualification\n - High engagement, technical curiosity, or frequent meetings do not constitute Champion potential without proof of action and influence.\n \n Power and influence are distinct\n - Power (authority) is appointed; influence (people credibility) is earned. Influence is prioritized when tradeoffs exist.\n \n Access ≠ Authority\n - Access to an Economic Buyer means the ability to engage in meaningful business alignment discussion, not merely calendar access or indirect communication.\n \n Multiple Champion Targets are expected\n - In complex multi-use case, multi-persona, or cross-enterprise consensus deals, identifying only one Champion Target is considered a risk signal, not a success state.\n \n This path does not build Champions\n - It strictly identifies and qualifies Champion Targets. Development, empowerment, and testing of Champions occur in downstream StrategyPaths."
+  },
+  {
+    "key": "Build_Champion",
+    "display_name": "Champion Target Not Yet Committed",
+    "description": "A potential Champion exists but has not formed a personal commitment to drive the initiative, creating risk of passive support without action.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Has a Champion Target committed to advancing the initiative and owning next steps internally?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "champion_strength",
+      "case_for_change_strength"
+    ],
+    "dominant_failure_mode": "The identified Champion Target is not personally committed to advancing the initiative.",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "Champion Absence",
+    "target_patterns": [
+      "Champion Absence",
+      "Competitive Mindshare",
+      "Validation Disadvantage"
+    ],
+    "entry_conditions": [
+      "Champion Target is identified but not personally committed",
+      "Buyer engagement is positive but passive",
+      "Buyer agrees without taking ownership of next steps",
+      "Initiative is framed as the seller’s project rather than the buyer’s",
+      "Buyer references alternative solutions as primary options"
+    ],
+    "disqualifying_conditions": [
+      "Champion is personally committed",
+      "Champion is taking internal actions",
+      "Initiative is owned by the buyer rather than the seller"
+    ],
+    "core_objectives": "A Champion Target has made a personal commitment to sponsor the solution",
+    "strategic_focus": "Secure explicit personal ownership from a Champion Target for forward progress.",
+    "core_strategies": [
+      "Build emotional connection before seeking commitment",
+      "Anchor vision in the Champion’s personal outcomes",
+      "Surface and close commitment gaps explicitly"
+    ],
+    "prohibited_strategies": [
+      "Skipping emotional connection and moving directly to proof or pressure",
+      "Assuming interest equals commitment",
+      "Driving activity before commitment exists",
+      "Using engagement or EB access as a proxy for commitment"
+    ],
+    "representative_actions": [
+      "attach_the_solution_to_the_champion_targets_prior",
+      "help_the_champion_visualize_a_future_state_where_t",
+      "design_a_small_safe_action_that_lets_the_champion",
+      "use_workshops_custom_demos_references_or_simulatio",
+      "surface_and_address_commitment_gaps_directly_and_c",
+      "agree_on_champion_owned_next_steps_that_reflect_pe"
+    ],
+    "champion_required_behavior": "Champion Target explicitly commits to the seller’s solution, uses ownership language, and accepts personal credibility risk in sponsoring the initiative",
+    "economic_buyer_required_behavior": "No direct EB engagement required; Champion acknowledges future EB alignment and agrees to support that progression",
+    "positive_progress_signals": [
+      "Champion verbalizes personal ownership tied to the case for change",
+      "Champion shares internal risks or resistance openly",
+      "Champion introduces key stakeholders with intent to influence",
+      "Champion initiates next steps aligned to the seller’s approach"
+    ],
+    "negative_progress_signals": [
+      "Champion avoids commitment-oriented discussions",
+      "Champion frames the initiative as informational",
+      "Engagement decreases or stops",
+      "Champion defers decision ownership without advocacy"
+    ],
+    "exit_lever_state": "Champion Strength=COMMITTED",
+    "exit_outcome": "At least one Champion Target commits to advancing the initiative and owning next steps internally",
+    "transition_signals": [
+      "Champion Coaching & Influence",
+      "Multi-Threading Momentum",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Commitment precedes testing\n - Advocacy and proof are invalid without commitment.\n \n Emotion before logic\n - Emotional connection precedes intellectual commitment\n \n Connection is emotional; Commitment is a chosen bias for action\n Commitment integrates purpose, certainty, and personal ownership — not agreement alone.\n \n Agreement ≠ ownership\n - Intellectual alignment without personal risk acceptance is insufficient.\n \n Commitment ≠ advocacy\n - This path establishes willingness to support the seller and solution.\n Proof of internal selling occurs only in Test_Champion.\n \n This path does not test Champions\n - Any attempt to validate advocacy belongs strictly in Test_Champion."
+  },
+  {
+    "key": "Test_Champion",
+    "display_name": "Champion Commitment Not Yet Proven",
+    "description": "A suspected Champion has not demonstrated internal actions on the seller’s behalf, leaving Champion status unproven.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Has the suspected Champion taken a meaningful internal action on our behalf?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "dominant_failure_mode": "The assumed Champion is not taking internal actions to move the deal forward.",
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "Validation Disadvantage",
+    "target_patterns": [
+      "Validation Disadvantage",
+      "Process Misalignment",
+      "Momentum Loss"
+    ],
+    "entry_conditions": [
+      "Champion status is assumed based on interest or engagement",
+      "No internal actions have been observed on the seller’s behalf",
+      "Deal progress depends primarily on seller-driven activity",
+      "Qualification gaps remain unresolved without internal sponsorship",
+      "Future decision steps are not defined"
+    ],
+    "disqualifying_conditions": [
+      "Champion has demonstrated internal influence",
+      "Internal actions are occurring on the seller’s behalf",
+      "Decision process is defined beyond the current step"
+    ],
+    "core_objectives": "Champion has performed an internal action of advocacy for the solution",
+    "strategic_focus": "Confirm Champion strength through observable internal advocacy actions.",
+    "core_strategies": [
+      "Test only when Champion status is suspected",
+      "Request a meaningful internal action tied to a qualification gap",
+      "Treat the result as decisive evidence of Champion strength"
+    ],
+    "prohibited_strategies": [
+      "Testing when a Champion is not genuinely suspected",
+      "Testing before commitment exists",
+      "Asking low-impact or non-strategic actions",
+      "Continuing to assume Champion status after a failed test"
+    ],
+    "representative_actions": [
+      "request_an_introduction_to_the_economic_buyer_or_k",
+      "ask_the_champion_to_sponsor_an_internal_alignment",
+      "request_a_next_step_tied_to_a_qualification_gap",
+      "ask_the_champion_to_influence_decision_criteria",
+      "ask_the_champion_to_position_the_solution_internal"
+    ],
+    "champion_required_behavior": "Champion performs one or more meaningful internal actions that advance a qualification or decision gap",
+    "economic_buyer_required_behavior": "No direct EB engagement required during testing; Champion actions should progress access or alignment toward the Economic Buyer",
+    "positive_progress_signals": [
+      "Champion completes requested internal actions",
+      "Champion provides access to stakeholders or economic authority",
+      "Champion shares internal context or competitive insight",
+      "Champion sponsors internal alignment discussions",
+      "Champion modifies next steps to favor the seller’s approach"
+    ],
+    "negative_progress_signals": [
+      "Champion deflects the requested strategic action",
+      "Champion agrees verbally but takes no internal action",
+      "Champion fails to provide access or alignment",
+      "Deal momentum remains seller-driven"
+    ],
+    "exit_lever_state": "Champion Strength=EXECUTING",
+    "exit_outcome": "Champion completes a meaningful internal action that proves advocacy and influence",
+    "transition_signals": [
+      "Champion Coaching & Influence",
+      "No Named or Active Champion",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Testing is a technique, not a qualification substitute\n \n Only test when a Champion is suspected but not yet proven.\n \n If no Champion is believed to exist, return to earlier Champion development paths.\n \n Commitment precedes testing\n \n Do not test before emotional connection and personal commitment are established.\n \n Test with purpose\n \n Every Champion test must close a real deal gap while validating advocacy.\n \n Protect the Champion’s credibility\n \n Never request actions that create unreasonable political or reputational risk.\n \n Behavior, not words, defines a Champion\n \n Advocacy is proven through observable internal actions, not sentiment or agreement.\n \n Testing is situational, not procedural\n \n Tests may be triggered by either positive or negative signals and patterns.\n \n A successful test is evidence, not the end state\n \n Champion validation should immediately transition to empowerment, consensus, or EB alignment paths."
+  },
+  {
+    "key": "Selling_to_Consensus",
+    "display_name": "Consensus Not Yet Aligned",
+    "description": "Stakeholder alignment is limited to a small group, leaving the decision dependent on too few personas.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Have the key stakeholders individually aligned on the case for change and solution direction?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "buyer_consensus",
+      "case_for_change_strength"
+    ],
+    "dominant_failure_mode": "Consensus is limited to a narrow group, leaving key stakeholders misaligned or unengaged.",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "Outcome Misalignment",
+    "target_patterns": [
+      "Outcome Misalignment",
+      "Single-Threaded Risk",
+      "Competitive Mindshare"
+    ],
+    "entry_conditions": [
+      "Consensus is limited to one or two stakeholders",
+      "Champion exists but broader alignment is not established",
+      "Key stakeholders have not validated the case for change",
+      "Decision support is concentrated in a narrow group",
+      "Solution scope is limited to a single use case or capability",
+      "Stakeholders reference alternative solutions or approaches"
+    ],
+    "disqualifying_conditions": [
+      "Multiple stakeholders are actively aligned to the case for change",
+      "Decision support is distributed across key stakeholders",
+      "Solution scope extends beyond a single use case"
+    ],
+    "core_objectives": "Multiple stakeholders are individually aligned to the case for change and solution criteria",
+    "strategic_focus": "Align key stakeholders individually on the case for change and solution criteria.",
+    "core_strategies": [
+      "Map the full stakeholder consensus",
+      "Align each stakeholder on outcomes and decision criteria",
+      "Sequence engagement to align case for change and solution direction"
+    ],
+    "prohibited_strategies": [
+      "Treating a single Champion as proof of consensus",
+      "Treating consensus as a group assumption instead of individual alignment",
+      "Skipping stakeholder-specific outcomes and criteria",
+      "Assuming product alignment equals consensus"
+    ],
+    "representative_actions": [
+      "explain_why_alignment_across_the_full_stakeholder",
+      "map_the_full_consensus_group_with_the_champion_and",
+      "engage_each_stakeholder_in_persona_specific_outcom",
+      "connect_the_solution_to_the_problems_and_outcomes",
+      "use_targeted_stories_workshops_or_proof_points_to",
+      "sequence_engagement_so_stakeholders_individually_r"
+    ],
+    "champion_required_behavior": "Champion introduces additional stakeholders, provides consensus insight, and helps align individuals on the case for change and solution criteria",
+    "economic_buyer_required_behavior": "EB engagement may occur later; Champion is actively aligning stakeholders who will influence the Economic Buyer",
+    "positive_progress_signals": [
+      "Champion introduces additional stakeholders with positive context",
+      "New stakeholders engage around problems and outcomes",
+      "Stakeholders align on the case for change",
+      "Stakeholders begin aligning on solution criteria",
+      "Internal discussions move toward coordinated decision steps"
+    ],
+    "negative_progress_signals": [
+      "Seller remains single-threaded despite known stakeholders",
+      "New stakeholders introduce conflicting priorities",
+      "Stakeholders disengage or deprioritize",
+      "Decision progress stalls despite Champion engagement"
+    ],
+    "exit_lever_state": "Buyer Consensus=CONNECTED",
+    "exit_outcome": "Key stakeholders are individually aligned on the case for change and solution direction",
+    "transition_signals": [
+      "Multi-Threading Momentum",
+      "Differentiated Validation Momentum",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Consensus is a collection of individuals, Alignment must occur person by person, not as a group assumption, Champion-led consensus, The Champion is the primary vehicle for gaining access and alignment across stakeholders, Two dimensions of consensus, Stakeholders must align on the case for change and the solution criteria, Connection precedes commitment, Each stakeholder must first see personal relevance before intellectual commitment can form, Outcome alignment is persona-specific, Each stakeholder has different desired outcomes and decision criteria, Single-threaded deals are high risk, Lack of consensus often leads to silent internal resistance or reprioritization, This path builds alignment, Trust-based activation of an aligned consensus occurs in Activate_Consensus"
+  },
+  {
+    "key": "Secure_EB_Alignment",
+    "display_name": "Economic Buyer Not Yet Aligned",
+    "description": "Economic Buyer has not aligned on the case for change, investment level, or timing, leaving the deal financially unqualified.",
+    "mode": "RECOVER",
+    "diagnostic_question": "Has the Economic Buyer aligned on the business case, investment level, and timing?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "economic_buyer_commitment",
+      "case_for_change_strength"
+    ],
+    "dominant_failure_mode": "The Economic Buyer is not aligned on the decision, investment, or timing.",
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "EB Alignment Gap",
+    "target_patterns": [
+      "EB Alignment Gap",
+      "Commercial Misalignment",
+      "High Champion Advocacy"
+    ],
+    "entry_conditions": [
+      "No direct Economic Buyer engagement",
+      "Case for change not validated by Economic Buyer",
+      "Budget or timing not confirmed by Economic Buyer",
+      "All active deal stakeholders are non-Economic Buyer roles",
+      "Stakeholders express disagreement on pricing",
+      "scope",
+      "or commercial terms"
+    ],
+    "disqualifying_conditions": [
+      "Economic Buyer is directly engaged",
+      "Case for change is validated by the Economic Buyer",
+      "Budget and timing are confirmed by the Economic Buyer"
+    ],
+    "core_objectives": "Economic Buyer has confirmed the case for change, investment level, and timing",
+    "strategic_focus": "Secure Economic Buyer alignment on the business case, investment, and timing.",
+    "core_strategies": [
+      "Engage the Economic Buyer through a Champion-led approach",
+      "Prepare around EB priorities and business outcomes",
+      "Treat EB feedback as decisive qualification input"
+    ],
+    "prohibited_strategies": [
+      "Approaching the Economic Buyer without Champion sponsorship",
+      "Bypassing the Champion",
+      "Treating the EB meeting as a product pitch",
+      "Advancing without confirmed EB support for investment and timing"
+    ],
+    "representative_actions": [
+      "explain_why_alignment_with_the_funding_authority_i",
+      "identify_the_economic_buyer_by_mapping_decision_st",
+      "clarify_the_economic_buyers_priorities_decision_c",
+      "plan_the_economic_buyer_alignment_agenda_with_the",
+      "role_play_the_economic_buyer_conversation_and_like",
+      "ask_the_champion_to_sponsor_and_attend_the_economi",
+      "position_the_case_for_change_in_executive_business",
+      "prepare_the_champion_to_act_as_a_proxy_if_direct_a"
+    ],
+    "champion_required_behavior": "Champion sponsors access to the Economic Buyer, collaborates on alignment strategy, and advocates for the case for change at the executive level",
+    "economic_buyer_required_behavior": "Economic Buyer confirms alignment on the case for change, solution direction, investment level, and timing",
+    "positive_progress_signals": [
+      "Champion secures Economic Buyer access",
+      "Economic Buyer validates the case for change as a business priority",
+      "Economic Buyer supports the solution direction",
+      "Economic Buyer aligns on investment level and timing",
+      "Economic Buyer enables next steps across the organization"
+    ],
+    "negative_progress_signals": [
+      "Economic Buyer rejects or questions the case for change",
+      "Economic Buyer pushes back on investment or timing",
+      "Champion cannot secure EB alignment",
+      "Deal momentum slows after EB interaction"
+    ],
+    "exit_lever_state": "Economic Buyer Commitment=COMMITTED",
+    "exit_outcome": "Economic Buyer aligns on the case for change solution direction investment level and timing",
+    "transition_signals": [
+      "Economic Buyer Engagement",
+      "Conflict in Pricing or Terms",
+      "Responsiveness Velocity"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Economic Buyer definition is precise; The Economic Buyer is the individual with discretionary authority to approve the spend. Identification is not the objective; Alignment on solution, amount, and timing is the true success condition. Never approach the Economic Buyer without a Champion; The Champion is the mediator, sponsor, and internal advocate. Never go around the Champion; Bypassing the Champion erodes trust and political alignment. Economic Buyer meetings are alignment conversations; These are executive business discussions, not sales or product pitches. Champion-mediated preparation is mandatory; The agenda, positioning, and contingencies must be planned with the Champion. Early alignment reduces risk; Economic Buyer alignment should occur once a preliminary case for change is Champion-validated and consensus alignment is in progress. Misalignment is decisive evidence; Economic Buyer objections must be respected and addressed through Champion-led strategy, expanded consensus value, or deal exit if alignment cannot be achieved."
+  },
+  {
+    "key": "Disqualify_or_Deprioritize",
+    "display_name": "Disqualify or Deprioritize Opportunity",
+    "description": "No sponsor-backed path to a qualified decision exists under current conditions, making continued pursuit a misallocation of time and resources.",
+    "mode": "EXIT",
+    "diagnostic_question": "Is there a sponsor-backed path to a qualified decision within this opportunity?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "case_for_change_strength",
+      "champion_strength",
+      "buyer_urgency",
+      "economic_buyer_commitment"
+    ],
+    "dominant_failure_mode": "No viable path to a sponsor-backed, economically justified decision exists.",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "Unqualified Deal",
+    "target_patterns": [
+      "Unqualified Deal",
+      "Weak Problem Definition",
+      "No Champion",
+      "Low Urgency",
+      "Economic Buyer Absence",
+      "Stagnant Deal"
+    ],
+    "entry_conditions": [
+      "No buyer of authority confirms a compelling case for change",
+      "No stakeholder demonstrates Champion behavior or willingness to sponsor the initiative",
+      "No credible path to Economic Buyer alignment or engagement exists"
+    ],
+    "disqualifying_conditions": [
+      "A buyer of authority confirms a compelling case for change and agrees to sponsor the initiative",
+      "A credible Champion actively advocates and drives internal alignment",
+      "Economic Buyer acknowledges the initiative and signals potential support"
+    ],
+    "core_objectives": "Determine whether the opportunity should be actively pursued, reset, or deprioritized based on structural qualification viability.",
+    "strategic_focus": "Decide whether to continue, reset, or exit the opportunity based on the presence of a viable, sponsor-backed path to a decision.",
+    "core_strategies": [
+      "Validate whether a sponsor-backed case for change exists",
+      "Validate whether an active Champion exists with influence and willingness to act",
+      "Validate whether Economic Buyer alignment or support is achievable"
+    ],
+    "prohibited_strategies": [
+      "Continuing deal activity without a validated case for change",
+      "Assuming interest or engagement implies deal viability",
+      "Over-investing time without Champion ownership",
+      "Pursuing Economic Buyer access without Champion support",
+      "Treating all deals as recoverable regardless of structural gaps"
+    ],
+    "representative_actions": [
+      "ask_a_buyer_of_authority_to_confirm_whether_the_pr",
+      "measurable",
+      "and_worth_solving_now",
+      "ask_who_inside_the_organization_will_personally_dr",
+      "confirm_who_approves_spend_and_whether_they_suppor",
+      "determine_whether_the_deal_has_a_credible_path_to",
+      "recommend_deprioritizing_or_exiting_the_deal_if_th"
+    ],
+    "champion_required_behavior": "A buyer of influence demonstrates willingness to sponsor the case for change, shows intent to take internal action, and can credibly influence stakeholders or decision authority",
+    "economic_buyer_required_behavior": "No Economic Buyer engagement is required to exit; however, absence of a credible path to Economic Buyer alignment confirms disqualification risk",
+    "positive_progress_signals": [
+      "A buyer acknowledges the problem as a priority and engages in defining impact",
+      "A Champion Target emerges with willingness to sponsor and act",
+      "Buyer shows openness to establishing urgency and consequences",
+      "Access to additional stakeholders or Economic Buyer becomes feasible"
+    ],
+    "negative_progress_signals": [
+      "No buyer is willing to sponsor or own the problem",
+      "No Champion Target emerges with influence or intent to act",
+      "Buyer cannot define measurable impact or urgency",
+      "No credible path to Economic Buyer access exists",
+      "Deal remains active without structural progress"
+    ],
+    "exit_lever_state": "Case for Change Strength=DISCONNECTED, Champion Strength=ABSENT",
+    "exit_outcome": "Opportunity is intentionally deprioritized or exited due to lack of qualification, or a new sponsor-backed qualification path emerges and the deal is re-engaged under a recovery strategy",
+    "transition_signals": [
+      "Problem Not Validated",
+      "Adoption With Negative User Experience",
+      "Slowdowns or Silence"
+    ],
+    "operator_notes": "Operator UX Constraint: The agent must translate this structural assessment into a clear, direct, and empathetic recommendation, presenting disqualification or deprioritization as a strategic decision rather than a failure. The agent should offer the user structured options (continue, reset, or exit) with concise pros and cons, enabling informed autonomy while preventing unqualified deal progression. Do not allow continued pursuit of opportunities without a sponsor-backed case for change, Champion ownership, and a credible path to Economic Buyer alignment. Not all deals are recoverable. Time and focus are finite resources, and misallocation toward structurally unqualified deals degrades overall performance. The purpose of this path is to protect seller effectiveness by enforcing qualification discipline and enabling intentional prioritization decisions."
+  },
+  {
+    "key": "Decision_Process_Alignment",
+    "display_name": "Decision Process Not Fully Aligned",
+    "description": "Decision steps, owners, or timelines are unclear or unaligned, creating process risk and loss of control.",
+    "mode": "ADVANCE",
+    "diagnostic_question": "Is the decision process clearly defined, with agreed steps, timeline, and responsible stakeholders?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "decision_process_alignment",
+      "buyer_urgency"
+    ],
+    "dominant_failure_mode": "The decision process is unclear or not mutually validated, creating late-stage surprises.",
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "primary_target_pattern": "Process Misalignment",
+    "target_patterns": [
+      "Process Misalignment",
+      "Momentum Loss",
+      "Single-Threaded Risk"
+    ],
+    "entry_conditions": [
+      "Decision steps are unclear or incomplete",
+      "Timeline for approval stages is undefined",
+      "Ownership of decision steps is undetermined",
+      "Decision process beyond the current step is not defined",
+      "Deal progress has slowed or stalled",
+      "Engagement remains limited to one or two stakeholders"
+    ],
+    "disqualifying_conditions": [
+      "Decision steps are clearly defined",
+      "Timeline for approval stages is confirmed",
+      "Ownership of decision steps is established"
+    ],
+    "core_objectives": "Decision steps, owners, and timelines are defined and mutually confirmed",
+    "strategic_focus": "Define and confirm decision steps, owners, and timing across the process.",
+    "core_strategies": [
+      "Define the decision process with steps",
+      "timelines",
+      "and owners",
+      "Align the process with the Champion and key stakeholders",
+      "Reconcile process changes as they occur"
+    ],
+    "prohibited_strategies": [
+      "Progressing without defined steps",
+      "timelines",
+      "and owners",
+      "Relying on assumed decision processes",
+      "Ignoring changes in process or ownership",
+      "Allowing momentum without clear next-step accountability"
+    ],
+    "representative_actions": [
+      "map_decision_steps_timelines_and_owners",
+      "validate_the_process_with_the_champion",
+      "identify_the_eb_approval_step",
+      "share_a_reference_process_if_needed",
+      "establish_a_mutual_process_agreement",
+      "reconfirm_steps_as_the_deal_progresses"
+    ],
+    "champion_required_behavior": "Champion defines decision steps timelines and owners, and partners with the seller to align and maintain the process",
+    "economic_buyer_required_behavior": "Economic Buyer confirms approval step authority and timing for final funding or authorization",
+    "positive_progress_signals": [
+      "Champion defines decision steps timelines and owners",
+      "Decision process is documented and agreed",
+      "EB approval step is confirmed",
+      "Next steps have clear owners and dates",
+      "Process changes are surfaced and realigned early"
+    ],
+    "negative_progress_signals": [
+      "Decision steps emerge unexpectedly",
+      "Timelines change without explanation",
+      "Ownership of approval steps is unclear",
+      "Champion cannot describe the decision process"
+    ],
+    "exit_lever_state": "Decision Process Alignment=CONNECTED",
+    "exit_outcome": "Decision steps timelines and responsible stakeholders are defined and mutually aligned",
+    "transition_signals": [
+      "Validation / Process Misalignment",
+      "Responsiveness Velocity",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Decision process must be qualified early; Lack of decision process clarity creates reactive, surprise-driven deals. Use the STP rule; Always define steps, timelines, and people. Champion-led qualification; Decision process must be validated through a credible Champion. Economic Buyer is revealed through the process; The funding or approval step identifies true economic authority. Alignment is a mutual contract; Seller and Champion agree to follow and realign the process as needed. Decision processes evolve; Re-qualification is required as steps or stakeholders change. Unaligned process equals risk; Seller must surface concerns and partner with the Champion to de-risk."
+  },
+  {
+    "key": "Empower_Champion",
+    "display_name": "Champion Not Yet Fully Enabled",
+    "description": "A committed Champion exists but lacks the preparation, messaging, or support needed to succeed internally.",
+    "mode": "ADVANCE",
+    "diagnostic_question": "Is the Champion equipped with messaging, strategy, and next steps to sell internally?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "champion_strength",
+      "buyer_consensus",
+      "economic_buyer_commitment",
+      "decision_process_alignment"
+    ],
+    "dominant_failure_mode": "The Champion is not equipped to handle internal stakeholders, process, or objections.",
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "primary_target_pattern": "High Champion Advocacy",
+    "target_patterns": [
+      "High Champion Advocacy",
+      "Competitive Mindshare",
+      "EB Alignment Gap"
+    ],
+    "entry_conditions": [
+      "Champion is committed but facing internal resistance or complexity",
+      "Champion is preparing for consensus",
+      "validation",
+      "or executive alignment",
+      "Internal stakeholders or process hurdles are present",
+      "Economic Buyer has not engaged with the initiative"
+    ],
+    "disqualifying_conditions": [
+      "Champion has active internal sponsors",
+      "Internal resistance or process hurdles are resolved",
+      "Economic Buyer is actively engaged in the initiative"
+    ],
+    "core_objectives": "Champion is has the information and resources needed to execute internal alignment steps across stakeholders",
+    "strategic_focus": "Prepare the Champion to lead internal alignment and approval activities.",
+    "core_strategies": [
+      "Anticipate resistance across people",
+      "process",
+      "and protocols",
+      "Equip the Champion with messaging and justification assets",
+      "Co-develop internal alignment materials and plans"
+    ],
+    "prohibited_strategies": [
+      "Assuming the Champion will advocate without preparation",
+      "Stepping back after Champion commitment",
+      "Treating the Champion as a messenger instead of a partner",
+      "Ignoring internal resistance or process hurdles"
+    ],
+    "representative_actions": [
+      "ask_the_champion_to_map_the_people_processes_and_p",
+      "agree_on_specific_internal_tasks_where_the_seller",
+      "co_create_stakeholder_specific_messaging_for_key_p",
+      "prepare_justification_materials_for_business_techn",
+      "role_play_the_most_critical_internal_conversations",
+      "build_a_consensus_alignment_plan_with_named_stakeh",
+      "provide_answers_and_materials_for_the_champion_to",
+      "run_focused_champion_empowerment_sessions_tied_to"
+    ],
+    "champion_required_behavior": "Champion collaborates on internal alignment plans, shares stakeholder and process insight, and participates in preparation for consensus validation and executive decisions",
+    "economic_buyer_required_behavior": "Champion actively aligns the Economic Buyer with seller support in executive-level preparation",
+    "positive_progress_signals": [
+      "Champion requests help preparing for internal discussions",
+      "Champion introduces additional stakeholders",
+      "Champion co-develops justification or validation plans",
+      "Champion participates in executive preparation",
+      "Internal momentum increases through Champion-led actions"
+    ],
+    "negative_progress_signals": [
+      "Champion cannot gain internal alignment or access",
+      "Stakeholders raise objections the Champion cannot address",
+      "Competitors gain influence",
+      "Validation or justification efforts stall"
+    ],
+    "exit_lever_state": "Champion Strength=EXECUTING, Decision Process Alignment=CONNECTED",
+    "exit_outcome": "Champion actively drives internal alignment and process steps with seller support",
+    "transition_signals": [
+      "Champion Coaching & Influence",
+      "Multi-Threading Momentum",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Champion empowerment begins early; Empowerment should start as soon as commitment is established, not only at the closing stage. Champions are not professional sellers; Internal environments contain adversaries, competing priorities, and process friction. Follow the three empowerment dimensions; Empower across people, process, and protocols. Champion is the internal selling engine; Most mid- and late-stage risks manifest as gaps in Champion enablement. Take work off the Champion’s plate; Reduce their workload and increase their credibility. Use structured empowerment sessions; Schedule 1:1 sessions focused on preparation and internal obstacles. Empowerment evolves by stage; Early: consensus and EB alignment, Mid: justification and validation, Late: process, protocols, and negotiation readiness."
+  },
+  {
+    "key": "Activate_Consensus",
+    "display_name": "Aligned Stakeholders Not Yet Acting as Internal Sponsors",
+    "description": "Stakeholders are aligned conceptually but are not taking internal actions to advance the decision.",
+    "mode": "ADVANCE",
+    "diagnostic_question": "Are aligned stakeholders actively taking internal actions to move the decision forward?",
+    "activation_polarity": "YES_ACTIVATES_PATH",
+    "target_levers": [
+      "buyer_consensus",
+      "economic_buyer_commitment"
+    ],
+    "dominant_failure_mode": "Aligned stakeholders are passive and not actively supporting the decision.",
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "primary_target_pattern": "Validation Advantage",
+    "target_patterns": [
+      "Validation Advantage",
+      "Late Stakeholder Risk",
+      "Consensus Expansion Momentum"
+    ],
+    "entry_conditions": [
+      "Multiple stakeholders agree with the case for change",
+      "Consensus is aligned but not advocating for the solution",
+      "Stakeholders express support without active internal sponsorship",
+      "Champion lacks active internal sponsors",
+      "Supportive stakeholders have unresolved trust concerns about the solution",
+      "company",
+      "or implementation",
+      "Key decision stakeholders have not participated in validation or alignment activities"
+    ],
+    "disqualifying_conditions": [
+      "Stakeholders are actively advocating for the solution",
+      "Champion has multiple active internal sponsors",
+      "Key stakeholders have completed validation or alignment activities"
+    ],
+    "core_objectives": "Aligned stakeholders are actively advocating for the solution internally",
+    "strategic_focus": "Convert aligned stakeholders into active internal sponsors of the decision.",
+    "core_strategies": [
+      "Qualify trust criteria across stakeholders",
+      "Align validation to stakeholder standards",
+      "Convert aligned stakeholders into active internal sponsors"
+    ],
+    "prohibited_strategies": [
+      "Assuming alignment equals willingness to act",
+      "Leaving stakeholders as passive observers",
+      "Designing validation only around product capabilities",
+      "Ignoring late stakeholder risks or resistance"
+    ],
+    "representative_actions": [
+      "qualify_each_stakeholders_trust_criteria_across_o",
+      "design_validation_steps_that_satisfy_each_stakehol",
+      "ask_stakeholders_to_sponsor_or_lead_validation_act",
+      "coordinate_consensus_led_workshops_pilots_or_proof",
+      "align_the_group_around_a_shared_success_plan_they",
+      "prepare_a_consensus_backed_case_demonstrating_read"
+    ],
+    "champion_required_behavior": "Champion coordinates stakeholders, aligns them on the case for change, and activates them as internal sponsors",
+    "economic_buyer_required_behavior": "Economic Buyer supports the case for change and solution direction but requires stakeholder alignment and a credible success plan before approval",
+    "positive_progress_signals": [
+      "Stakeholders advocate for the solution internally",
+      "Consensus members sponsor validation or alignment steps",
+      "Economic Buyer shows increased confidence in timing",
+      "Stakeholders collaborate on a shared success plan",
+      "New stakeholders enter with positive context"
+    ],
+    "negative_progress_signals": [
+      "Aligned stakeholders remain passive",
+      "Economic Buyer delays due to risk or uncertainty",
+      "Late stakeholders introduce new objections",
+      "Champion becomes isolated without consensus support"
+    ],
+    "exit_lever_state": "Buyer Consensus=EXECUTING",
+    "exit_outcome": "Multiple stakeholders sponsor validation justification or approval actions",
+    "transition_signals": [
+      "Multi-Threading Momentum",
+      "Responsiveness Velocity",
+      "Economic Buyer Engagement"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Alignment ≠ activation, Stakeholders may agree with the case for change but still refuse to act without sufficient trust, Trust precedes action, Stakeholders will not sponsor or advocate until their trust standards are met, Consensus is a coalition not a contact list, Each stakeholder must be treated as an individual decision maker with unique trust criteria, Champion leads and consensus proves safety, The Champion opens doors and coordinates alignment while the consensus demonstrates organizational readiness and low execution risk, Validation is for trust not product proof, Validation events must be designed around stakeholder trust criteria not just feature demonstrations, Activation is collective, The goal is coordinated internal advocacy not isolated support from one or two stakeholders"
+  },
+  {
+    "key": "Champion_Negotiation",
+    "display_name": "Negotiation Not Yet Aligned with Champion Strategy",
+    "description": "Deal has entered negotiation without a structured, Champion-aligned strategy, creating risk of reactive concessions or stalled agreement.",
+    "mode": "ADVANCE",
+    "diagnostic_question": "Have the Champion and seller aligned on a clear negotiation strategy, interests, and boundaries?",
+    "activation_polarity": "NO_ACTIVATES_PATH",
+    "target_levers": [
+      "economic_buyer_commitment",
+      "decision_process_alignment"
+    ],
+    "dominant_failure_mode": "Negotiation is handled reactively without Champion alignment on strategy and boundaries.",
+    "zone_bias": [
+      "zone3",
+      "zone4"
+    ],
+    "primary_target_pattern": "Commercial Misalignment",
+    "target_patterns": [
+      "Commercial Misalignment",
+      "EB Sponsorship Motion",
+      "Validation Advantage"
+    ],
+    "entry_conditions": [
+      "Opportunity has entered formal contract or procurement discussions",
+      "Requests for pricing",
+      "terms",
+      "or scope changes are present",
+      "Procurement",
+      "legal",
+      "or commercial stakeholders are engaged",
+      "Internal stakeholders have conflicting positions on the proposed solution or decision",
+      "Economic Buyer is actively engaged in commercial or approval discussions"
+    ],
+    "disqualifying_conditions": [
+      "Champion strength is weak or absent",
+      "Final contract is issued and awaiting signature"
+    ],
+    "core_objectives": "Commercial terms are aligned and internal commitment is secured",
+    "strategic_focus": "Execute a Champion-aligned negotiation that preserves value and secures commitment.",
+    "core_strategies": [
+      "Align with the Champion on negotiation interests and constraints",
+      "Define value thresholds and acceptable options",
+      "Resolve positions through interest-based options"
+    ],
+    "prohibited_strategies": [
+      "Entering negotiation without Champion alignment",
+      "Reactively discounting under procurement pressure",
+      "Treating negotiation as purely transactional",
+      "Negotiating positions without understanding underlying interests"
+    ],
+    "representative_actions": [
+      "identify_the_champion_partner_for_negotiation",
+      "map_all_parties_involved_on_both_sides",
+      "determine_relative_leverage_and_constraints_for_bo",
+      "align_on_primary_interests_for_both_sides",
+      "define_value_thresholds_and_non_negotiable_conditi",
+      "establish_anchor_points_and_acceptable_outcome_ran",
+      "identify_commercial_and_legal_term_currencies_beyo",
+      "prepare_champion_messaging_for_internal_negotiatio",
+      "exchange_interests_rather_than_positional_demands",
+      "present_legitimate_options_that_satisfy_shared_pri",
+      "support_champion_accountability_through_final_inte"
+    ],
+    "champion_required_behavior": "Champion aligns on negotiation priorities and boundaries, advocates internally for value-based terms, and helps resolve objections through shared interests",
+    "economic_buyer_required_behavior": "Champion prepares to align or negotiate with the Economic Buyer or procurement using clear interests boundaries and value justification",
+    "positive_progress_signals": [
+      "Champion seeks alignment on negotiation strategy",
+      "Champion shares internal priorities and constraints",
+      "Negotiations focus on interests rather than positions",
+      "Stakeholders accept structured options",
+      "Final terms move toward mutually acceptable thresholds"
+    ],
+    "negative_progress_signals": [
+      "Champion defers entirely to procurement",
+      "Seller is asked for concessions without interest alignment",
+      "Negotiation becomes price-driven",
+      "Champion cannot articulate priorities or boundaries"
+    ],
+    "exit_lever_state": "Economic Buyer Commitment=EXECUTING",
+    "exit_outcome": "Champion and Economic Buyer align on final terms and execute the purchase decision",
+    "transition_signals": [
+      "Conflict in Pricing or Terms",
+      "Economic Buyer Engagement",
+      "Responsiveness Velocity"
+    ],
+    "operator_notes": "Operator UX Constraint:\n The agent must translate this structural logic into a concise, empathetic coaching narrative, present only the next required reasoning step, and use low cognitive-load interactions (clear choices, buttons, or short prompts) rather than open-ended or abstract instructions.\n \n Negotiation is the highest point of Champion partnership, Do not retreat from the Champion at the negotiation stage, Negotiate on interests not positions, Champion alignment precedes external negotiation, Value thresholds define acceptable outcomes, Anchor points establish strategic reference positions, Some terms are non-negotiable and must be declared early, Currencies extend beyond price, Negotiation structure should match deal complexity, Simple transactions require light alignment, Complex enterprise negotiations require full planning alignment positioning and resolution phases, Procurement is a participant not the driver when a Champion is active"
+  }
+]

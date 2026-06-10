@@ -1,0 +1,27 @@
+,,,,
+SCHEMA INPUTS: ,Facts and environmental context,,,
+Input Name,Example Values,Type,Source,Notes
+Stage,"Early/Mid/Late, Stage names, Stage numbers",Enum,"User Input, Document, System field",Frames deal context and stage logic. Stage is descriptive only; do not infer deal quality or forecast.
+Close Date,Date,Numeric,"User Input, Document, System field",Defines time horizon for planning. Raw date only; urgency or risk are evaluated downstream.
+Amount,Currency,Numeric,"User Input, Document, System field","Deal size. Used as factual input for risk, scrutiny, and resourcing models (evaluated downstream)."
+Active Persona,IT/LOB/Finance/Exec/Title,Enum List,"User Input, Document, System field",Roles involved in evaluation. Input is factual; downstream logic will determine influence and alignment.
+Compelling Problem,"Enablement, Speed, Risk Mitigation, Efficiency, Transformation",Enum,User Input,Primary business or technical pain or objective as stated by the buyer. Raw user input only.
+Champion Status,Activity evidence: meetings/intros/selling,Enum,User Input,"Observable champion behaviors (selling on our behalf, coaching, information share, intros, partnering). Do not infer strength—measured in Champion Strength lever."
+EB Alignment & Support,Yes/No,Boolean,User Input,Whether EB alignment and support is confirmed. Binary input; strength is evaluated downstream.
+Compelling Event,"Security exposure, Cost savings disappearing, Regulatory requirement start date, Finance milestone, Purchase before budget freeze, Seasonality",Numeric,"User Input, Document, System field",External or internal trigger that affects timing. Input only—urgency interpretation happens in levers layer.
+Timeline Requirement,"None, Deadline, Project start, Audit date, Renewal date, Budget cycle, Commercial term ",Numeric,"User Input, Document, System field","Stated timeline, deadline, or term requirement. Raw data only."
+Decision Process ,"RFP, Discovery, Demos, Preliminary pricing, POC/Pilot, Workshop, Security review, Finance approval, Legal review, Negotiation",Enum List,"User Input, Document, System field","Known steps, timelines, and people in the buyer decision process. Capture only what is explicitly known; do not infer clarity or completeness."
+Competitive Landscape,"Vendor Names, RFP issued, Number of Vendors, Incument ",Enum,"User Input, Document, System field","Known competitors, relevant incuments, or vendor actions. Raw inputs only; threat evaluation happens downstream."
+Recent Interaction Summary,"Last interaction timing, Next step defined or not, Buyer responsiveness (fast/normal/slow), Stakeholder attendance (single/multiple/new), Buyer-initiated actions",Enum List,User Input,"Seller-provided summary of recent buyer interactions and engagement signals. Not a system log or integration; used to capture current interaction state (momentum, responsiveness, stakeholder involvement) for signal evaluation."
+Product Usage Presence,"None, Individual, Team, Multi-Team",Enum,"User Input, Product Data",Indicates whether and how broadly the product is currently used. Descriptive only; does not imply deal maturity or expansion potential.
+Usage Depth,"Testing, Active Use, Workflow Dependent",Enum,User Input,Describes how deeply the product is embedded in workflows. Input only; business impact and expansion viability evaluated downstream.
+Desired Outcomes,"Revenue growth, Cost reduction, Risk mitigation, Efficiency gain, Transformation",Enum List,"User Input, Document",Defines the future business outcomes or success criteria as stated by the buyer. Raw input only; quality and alignment evaluated downstream.
+Measurable Impact,"Percentage improvement, Cost savings amount, Time reduction, Revenue increase, metrics",Enum List,"User Input, Document",Quantified or measurable impact tied to the problem or outcomes. Capture only what is explicitly stated; do not infer.
+Stakeholder Coverage,"None, Single stakeholder, Multiple stakeholders, Cross-functional",Enum,"User Input, Document",Indicates breadth of stakeholder involvement. Input is descriptive only; alignment and influence evaluated downstream.
+Economic Buyer Identified,"Yes, No",Boolean,User Input,Whether the Economic Buyer (discretionary spend authority) has been identified. Do not infer based on title alone.
+Economic Buyer Engagement,"None, Indirect, Direct",Enum,User Input,Indicates level of direct engagement with the Economic Buyer. Raw input only; commitment evaluated downstream.
+Internal Owner Identified,"Yes, No",Boolean,User Input,"Indicates whether a specific individual is responsible for driving evaluation, expansion, or internal coordination of the initiative."
+Commercial Awareness,"None, Aware, Discussed",Enum,User Input,"Indicates whether the buyer is aware of pricing, licensing, or the need for a commercial agreement. Does not imply willingness to buy."
+Usage Trend,"Increasing, Stable, Declining",Enum,"Product Data, User Input",Indicates direction of product usage over time. Descriptive only; impact evaluated downstream.
+Workflow Dependency,"None, Partial, Critical",Enum,User Input,Indicates whether workflows depend on the product. Input only; importance evaluated downstream.
+Removal Impact,"No impact, Minor disruption, Significant disruption",Enum,User Input,Describes expected impact if the product is removed. Capture stated or observable impact only; do not infer.

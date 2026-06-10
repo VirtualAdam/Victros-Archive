@@ -1,0 +1,14 @@
+sessions/
+__MACOSX/
+*.pyc
+__pycache__/
+.env
+node_modules/
+.venv/
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+inputs/
+.claude/
+.github/

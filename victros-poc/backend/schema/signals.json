@@ -1,0 +1,577 @@
+[
+  {
+    "key": "problem_not_validated",
+    "name": "Problem Not Validated",
+    "description": "Pain is mentioned, but no specific problem with measurable business impact has been established",
+    "observable_condition": "Buyer confirms pain or interest but has not described a specific problem with measurable impact or consequence",
+    "polarity": "negative",
+    "severity": "CRITICAL",
+    "type": "structural_risk",
+    "affected_levers": [
+      "case_for_change_strength",
+      "buyer_urgency"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Pain field populated AND Measurable Impact field empty OR user states no measurable business impact if problem is not solved",
+    "target_patterns": [
+      "weak_problem_definition"
+    ],
+    "confidence_threshold": 0.7,
+    "requires_evidence": true,
+    "calibration_note": "HIGH = buyer confirms no measurable impact; LOW = impact mentioned but not quantified"
+  },
+  {
+    "key": "outcomes_unclear_or_misaligned",
+    "name": "Outcomes Unclear or Misaligned",
+    "description": "Buyer has not defined a clear future state or success outcome tied to the initiative",
+    "observable_condition": "Buyer discusses features or capabilities but has not described desired future outcomes or success criteria",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "structural_risk",
+    "affected_levers": [
+      "case_for_change_strength",
+      "buyer_urgency"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Desired Outcomes field empty OR buyer discusses solution capabilities without defining future business outcomes",
+    "target_patterns": [
+      "outcome_misalignment"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer discusses features only with no outcomes; LOW = outcomes mentioned but vague"
+  },
+  {
+    "key": "buyer_objections_surfacing_early",
+    "name": "Buyer Objections Surfacing Early",
+    "description": "Buyer raises objections before the case for change and differentiation are established",
+    "observable_condition": "Buyer raises objections about priority, approach, or price before desired outcomes or the case for change are validated",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "structural_risk",
+    "affected_levers": [
+      "case_for_change_strength",
+      "differentiation_leverage"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Buyer raises objection related to price, priority, or approach AND Desired Outcomes field empty AND Measurable Impact field empty",
+    "target_patterns": [
+      "messaging_disconnect",
+      "weak_problem_definition"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = objections raised before case for change; LOW = minor pushback noted"
+  },
+  {
+    "key": "no_differentiated_decision_criteria",
+    "name": "No Differentiated Decision Criteria",
+    "description": "Buyer\u2019s evaluation criteria do not reflect your differentiated strengths",
+    "observable_condition": "Decision criteria are stated, but none uniquely favor your differentiated strengths or outcomes",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "structural_risk",
+    "affected_levers": [
+      "differentiation_leverage",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "trigger_input_conditions": "Competitive Landscape indicates multiple vendors AND Desired Outcomes field populated AND Measurable Impact field populated AND buyer language does not reference differentiated strengths",
+    "target_patterns": [
+      "commodity_relegation",
+      "competitive_mindshare"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = criteria actively favor competitor; LOW = criteria are generic"
+  },
+  {
+    "key": "no_named_or_active_champion",
+    "name": "No Named or Active Champion",
+    "description": "No stakeholder is actively advocating, coaching, or driving the deal internally",
+    "observable_condition": "No stakeholder is providing internal insight, introducing others, or taking actions to advance the decision",
+    "polarity": "negative",
+    "severity": "CRITICAL",
+    "type": "structural_risk",
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Champion Status field empty OR Champion Status indicates passive or neutral behavior",
+    "target_patterns": [
+      "champion_absence"
+    ],
+    "confidence_threshold": 0.7,
+    "requires_evidence": true,
+    "calibration_note": "HIGH = no stakeholder takes any internal action; LOW = passive supporter identified"
+  },
+  {
+    "key": "single_threaded_contact",
+    "name": "Single-Threaded Contact",
+    "description": "Engagement is limited to a single stakeholder with no consensus-building motion",
+    "observable_condition": "Only one stakeholder is actively engaged in meetings or communications",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "structural_risk",
+    "affected_levers": [
+      "buyer_consensus",
+      "champion_strength"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "trigger_input_conditions": "Stakeholder Coverage = Single stakeholder",
+    "target_patterns": [
+      "singlethreaded_risk"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = only one person in all communications; LOW = second contact mentioned but not engaged"
+  },
+  {
+    "key": "activity_without_progress",
+    "name": "Activity Without Progress",
+    "description": "Deal activity is occurring, but qualification, alignment, or stage advancement is not improving",
+    "observable_condition": "Two or more interactions occur with no new stakeholders, no new qualification data, and no stage progression",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "momentum_risk",
+    "affected_levers": [
+      "champion_strength",
+      "buyer_urgency"
+    ],
+    "zone_bias": [
+      "zone2"
+    ],
+    "trigger_input_conditions": "Recent Interaction Summary indicates multiple interactions AND Stakeholder Coverage = Single stakeholder AND Stage unchanged",
+    "target_patterns": [
+      "stagnant_deal"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = 3+ interactions with no advancement; LOW = 2 interactions with minimal progress"
+  },
+  {
+    "key": "competition_gaining_mindshare",
+    "name": "Competition Gaining Mindshare",
+    "description": "Competitor influence is shaping buyer thinking, language, or evaluation direction",
+    "observable_condition": "Buyer references a competitor as the default or preferred option, or requests evaluation steps aligned to the competitor\u2019s approach",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "structural_risk",
+    "affected_levers": [
+      "differentiation_leverage",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Competitive Landscape indicates active competitor AND buyer language reflects competitor preference or evaluation alignment",
+    "target_patterns": [
+      "competitive_mindshare",
+      "commodity_relegation"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer uses competitor language/frameworks; LOW = competitor mentioned in passing"
+  },
+  {
+    "key": "no_eb_validation",
+    "name": "No EB Validation",
+    "description": "Economic Buyer is not known, engaged, or aligned to the initiative",
+    "observable_condition": "Economic Buyer is not identified, and support from any economic authority is unknown",
+    "polarity": "negative",
+    "severity": "CRITICAL",
+    "type": "structural_risk",
+    "affected_levers": [
+      "economic_buyer_commitment",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Economic Buyer Identified = No OR Economic Buyer Engagement = None",
+    "target_patterns": [
+      "eb_alignment_gap"
+    ],
+    "confidence_threshold": 0.7,
+    "requires_evidence": true,
+    "calibration_note": "HIGH = economic buyer unknown or unresponsive; LOW = EB identified but not yet engaged"
+  },
+  {
+    "key": "validation_process_misalignment",
+    "name": "Validation / Process Misalignment",
+    "description": "Buyer\u2019s preferred evaluation or decision steps do not align with your strengths",
+    "observable_condition": "Buyer requests a validation or evaluation step that does not test the outcomes or capabilities your differentiation depends on",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "structural_risk",
+    "affected_levers": [
+      "decision_process_alignment",
+      "differentiation_leverage"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "trigger_input_conditions": "Decision Process defined AND buyer requests evaluation steps not aligned to differentiated strengths",
+    "target_patterns": [
+      "process_misalignment",
+      "validation_disadvantage"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer evaluation tests competitor strengths; LOW = evaluation steps are generic"
+  },
+  {
+    "key": "slowdowns_or_silence",
+    "name": "Slowdowns or Silence",
+    "description": "Deal momentum drops as responsiveness and engagement decrease",
+    "observable_condition": "Buyer response time slows materially, meetings are cancelled or delayed, or no next steps are agreed after an interaction",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "momentum_risk",
+    "affected_levers": [
+      "buyer_urgency",
+      "champion_strength"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Recent Interaction Summary indicates delayed responses OR no upcoming meeting or next step recorded",
+    "target_patterns": [
+      "momentum_loss"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = no response in 2+ weeks; LOW = response time increased but still communicating"
+  },
+  {
+    "key": "new_stakeholder_appears_late",
+    "name": "New Stakeholder Appears Late",
+    "description": "A new stakeholder enters late and reopens scope, priorities, or requirements",
+    "observable_condition": "A new stakeholder is introduced after evaluation or validation has begun and introduces new requirements, objections, or decision criteria",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "structural_risk",
+    "affected_levers": [
+      "buyer_consensus",
+      "decision_process_alignment"
+    ],
+    "zone_bias": [
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Stage >= Mid AND Recent Interaction Summary indicates new stakeholder introduction",
+    "target_patterns": [
+      "late_stakeholder_risk"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = new stakeholder reopens decided requirements; LOW = new stakeholder observing only"
+  },
+  {
+    "key": "conflict_in_pricing_or_terms",
+    "name": "Conflict in Pricing or Terms",
+    "description": "Commercial objections indicate weak value alignment or Economic Buyer commitment",
+    "observable_condition": "Buyer challenges pricing or terms without confirming value metrics, success outcomes, or consensus sponsorship",
+    "polarity": "negative",
+    "severity": "MEDIUM",
+    "type": "structural_risk",
+    "affected_levers": [
+      "economic_buyer_commitment",
+      "differentiation_leverage"
+    ],
+    "zone_bias": [
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Commercial Awareness = Discussed AND Measurable Impact field empty AND Desired Outcomes field empty",
+    "target_patterns": [
+      "commercial_misalignment"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer challenges price without acknowledging value; LOW = price sensitivity noted"
+  },
+  {
+    "key": "adoption_without_internal_ownership",
+    "name": "Adoption Without Internal Ownership",
+    "description": "Product usage is present but no individual is responsible for driving evaluation or expansion",
+    "observable_condition": "Product usage is present, but no internal owner has been identified",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "structural_risk",
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Product Usage Presence not None AND Internal Owner Identified = No",
+    "target_patterns": [
+      "champion_absence",
+      "singlethreaded_risk"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = no identified owner despite active usage; LOW = informal owner but no mandate"
+  },
+  {
+    "key": "adoption_without_decision_formation",
+    "name": "Adoption Without Decision Formation",
+    "description": "Product usage is present but has not formed into a structured buying process or initiative",
+    "observable_condition": "Product usage is present, but no decision process, stakeholders, or commercial steps have been defined",
+    "polarity": "negative",
+    "severity": "CRITICAL",
+    "type": "structural_risk",
+    "affected_levers": [
+      "decision_process_alignment",
+      "buyer_urgency"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Product Usage Presence not None AND Internal Owner Identified = Yes AND Commercial Awareness = None AND Decision Process empty",
+    "target_patterns": [
+      "stagnant_deal",
+      "process_misalignment"
+    ],
+    "confidence_threshold": 0.7,
+    "requires_evidence": true,
+    "calibration_note": "HIGH = usage exists with no buying process; LOW = early commercial discussions forming"
+  },
+  {
+    "key": "adoption_with_negative_user_experience",
+    "name": "Adoption With Negative User Experience",
+    "description": "Product usage exists but is not delivering meaningful value to the user or business",
+    "observable_condition": "Users are not relying on the product in their workflows or would not be impacted if it were removed",
+    "polarity": "negative",
+    "severity": "HIGH",
+    "type": "momentum_risk",
+    "affected_levers": [
+      "case_for_change_strength",
+      "differentiation_leverage"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3"
+    ],
+    "trigger_input_conditions": "Product Usage Presence not None AND (Usage Trend = Declining OR Workflow Dependency = None OR Removal Impact = No impact)",
+    "target_patterns": [
+      "weak_problem_definition",
+      "competitive_mindshare",
+      "momentum_loss"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = users would not notice removal; LOW = usage declining but still present"
+  },
+  {
+    "key": "champion_coaching_influence",
+    "name": "Champion Coaching & Influence",
+    "description": "Champion actively coaches the seller and drives internal alignment",
+    "observable_condition": "A stakeholder shares internal dynamics, introduces additional stakeholders, or guides next steps to advance the decision",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "structural_strength",
+    "affected_levers": [
+      "champion_strength",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Champion Status indicates active advocacy AND Recent Interaction Summary reflects stakeholder introductions or internal guidance",
+    "target_patterns": [
+      "high_champion_advocacy",
+      "consensus_expansion_momentum"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = champion introduces stakeholders and shares internal dynamics; LOW = champion is supportive but passive"
+  },
+  {
+    "key": "economic_buyer_engagement",
+    "name": "Economic Buyer Engagement",
+    "description": "Economic Buyer is directly engaged and aligned with the initiative",
+    "observable_condition": "Economic Buyer participates directly in meetings or validates the initiative direction",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "structural_strength",
+    "affected_levers": [
+      "economic_buyer_commitment",
+      "buyer_consensus"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Economic Buyer Identified = Yes AND Economic Buyer Engagement = Direct",
+    "target_patterns": [
+      "eb_sponsorship_motion",
+      "eb_alignment_gap"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = EB directly participates in meetings; LOW = EB delegates but is aware"
+  },
+  {
+    "key": "multi_threading_momentum",
+    "name": "Multi-Threading Momentum",
+    "description": "New stakeholders are being introduced and consensus is expanding",
+    "observable_condition": "Additional stakeholders are introduced and engage in problem, outcome, or decision discussions",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "momentum_strength",
+    "affected_levers": [
+      "buyer_consensus",
+      "champion_strength"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Stakeholder Coverage = Multiple stakeholders OR Stakeholder Coverage = Cross-functional",
+    "target_patterns": [
+      "consensus_expansion_momentum"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = cross-functional stakeholders engaged; LOW = second contact recently introduced"
+  },
+  {
+    "key": "differentiated_validation_momentum",
+    "name": "Differentiated Validation Momentum",
+    "description": "Buyer shapes evaluation steps around your strengths and acknowledges competitor weaknesses",
+    "observable_condition": "Buyer proposes or accepts validation steps that highlight your differentiated capabilities",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "structural_strength",
+    "affected_levers": [
+      "differentiation_leverage",
+      "case_for_change_strength"
+    ],
+    "zone_bias": [
+      "zone2",
+      "zone3"
+    ],
+    "trigger_input_conditions": "Decision Process defined AND Desired Outcomes field populated AND Measurable Impact field populated AND buyer validation aligns to differentiated strengths",
+    "target_patterns": [
+      "validation_advantage",
+      "validation_disadvantage"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer proposes evaluation around your strengths; LOW = buyer accepts your suggested evaluation"
+  },
+  {
+    "key": "responsiveness_velocity",
+    "name": "Responsiveness Velocity",
+    "description": "Buyer engagement accelerates, indicating growing urgency or alignment",
+    "observable_condition": "Buyer initiates next steps, responds quickly, or increases meeting cadence",
+    "polarity": "positive",
+    "severity": "MEDIUM",
+    "type": "momentum_strength",
+    "affected_levers": [
+      "buyer_urgency",
+      "champion_strength"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2",
+      "zone3",
+      "zone4"
+    ],
+    "trigger_input_conditions": "Recent Interaction Summary indicates rapid responses OR increased interaction frequency OR buyer-initiated next steps",
+    "target_patterns": [
+      "high_responsiveness_momentum"
+    ],
+    "confidence_threshold": 0.3,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = buyer initiates next steps unprompted; LOW = buyer responds faster than before"
+  },
+  {
+    "key": "usage_demonstrates_material_value",
+    "name": "Usage Demonstrates Material Value",
+    "description": "Product usage is delivering meaningful operational or business value to the user or organization",
+    "observable_condition": "The product is relied on in workflows or its removal would negatively impact the business",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "structural_strength",
+    "affected_levers": [
+      "case_for_change_strength"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Product Usage Presence not None AND (Workflow Dependency = Critical OR Removal Impact = Significant disruption)",
+    "target_patterns": [
+      "adoption_converting_to_decision"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = product removal would disrupt workflows; LOW = product used but not critical"
+  },
+  {
+    "key": "adoption_conversion_momentum",
+    "name": "Adoption Conversion Momentum",
+    "description": "Product usage is beginning to translate into ownership, stakeholder alignment, and a structured buying process",
+    "observable_condition": "Product usage is present, an internal owner is driving the initiative, and commercial or decision steps are forming",
+    "polarity": "positive",
+    "severity": "HIGH",
+    "type": "structural_strength",
+    "affected_levers": [
+      "champion_strength",
+      "decision_process_alignment"
+    ],
+    "zone_bias": [
+      "zone1",
+      "zone2"
+    ],
+    "trigger_input_conditions": "Product Usage Presence not None AND Internal Owner Identified = Yes AND Commercial Awareness not None AND Decision Process defined",
+    "target_patterns": [
+      "adoption_converting_to_decision"
+    ],
+    "confidence_threshold": 0.5,
+    "requires_evidence": false,
+    "calibration_note": "HIGH = internal owner driving commercial process; LOW = owner identified but no commercial steps"
+  }
+]
