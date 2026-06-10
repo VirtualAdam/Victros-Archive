@@ -6,6 +6,10 @@
 #   az login  (you're already logged in if this was just provisioned)
 #   npm       (for the frontend build)
 #
+# NOTE: These resource names match the Bicep output (infra/main.bicep).
+# If you changed the 'environment' parameter or resource group name,
+# update these values to match your deployment outputs.
+#
 set -euo pipefail
 
 RG="rg-victros-prod"
@@ -63,4 +67,4 @@ case "${1:-both}" in
 esac
 
 echo ""
-echo "Done. App live at: https://<YOUR_SWA_HOSTNAME>.azurestaticapps.net"
+echo "Done. Check your SWA URL from the Bicep deployment output."

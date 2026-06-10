@@ -50,14 +50,14 @@ Configured on `sp-victros-github` (2026-04-11):
 
 | Credential name | Subject |
 |----------------|---------|
-| `victros-main` | `repo:VirtualAdam/victros:ref:refs/heads/main` |
-| `victros-production-env` | `repo:VirtualAdam/victros:environment:production` |
+| `victros-main` | `repo:VirtualAdam/Victros-Archive:ref:refs/heads/main` |
+| `victros-production-env` | `repo:VirtualAdam/Victros-Archive:environment:production` |
 
 ---
 
 ## GitHub Secrets Required
 
-Add these at **GitHub → VirtualAdam/victros → Settings → Secrets and variables → Actions**:
+Add these at **GitHub → VirtualAdam/Victros-Archive → Settings → Secrets and variables → Actions**:
 
 | Secret | Value |
 |--------|-------|

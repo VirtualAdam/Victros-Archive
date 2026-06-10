@@ -260,7 +260,7 @@ az ad app federated-credential create \
   --parameters '{
     "name": "victros-main",
     "issuer": "https://token.actions.githubusercontent.com",
-    "subject": "repo:VirtualAdam/victros:ref:refs/heads/main",
+    "subject": "repo:VirtualAdam/Victros-Archive:ref:refs/heads/main",
     "audiences": ["api://AzureADMultiTenantApp"]
   }'
 
@@ -270,7 +270,7 @@ az ad app federated-credential create \
   --parameters '{
     "name": "victros-production-env",
     "issuer": "https://token.actions.githubusercontent.com",
-    "subject": "repo:VirtualAdam/victros:environment:production",
+    "subject": "repo:VirtualAdam/Victros-Archive:environment:production",
     "audiences": ["api://AzureADMultiTenantApp"]
   }'
 ```
@@ -279,7 +279,7 @@ az ad app federated-credential create \
 
 ## 10. Configure GitHub Secrets and Variables
 
-Go to **GitHub → VirtualAdam/victros → Settings → Secrets and variables → Actions**.
+Go to **GitHub → VirtualAdam/Victros-Archive → Settings → Secrets and variables → Actions**.
 
 ### Secrets tab
 

@@ -3,7 +3,7 @@
     "identityProviders": {
       "azureActiveDirectory": {
         "registration": {
-          "openIdIssuer": "https://victros.ciamlogin.com/<YOUR_ENTRA_EXTERNAL_TENANT_ID>/v2.0",
+          "openIdIssuer": "https://<YOUR_ENTRA_DOMAIN>.ciamlogin.com/<YOUR_ENTRA_EXTERNAL_TENANT_ID>/v2.0",
           "clientIdSettingName": "AAD_CLIENT_ID",
           "clientSecretSettingName": "AAD_CLIENT_SECRET"
         }
