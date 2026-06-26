@@ -11,4 +11,5 @@ dist/
 build/
 inputs/
 .claude/
+!.claude/skills/
 .github/
